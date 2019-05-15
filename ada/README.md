@@ -1,4 +1,4 @@
-## 1 Sparsity
+## Sparsity
 ---
 
 > Author: <font color='#f78c40'>[Samuel Farrens](http://www.cosmostat.org/people/sfarrens)</font>    
@@ -11,7 +11,7 @@ in 2018. The objective is to provide a beginner level introduction to the concep
 
 This tutorial is comprised of a series of <a href="https://jupyter-notebook.readthedocs.io/en/stable/" target_="blanck">Jupyter notebooks</a> that demonstrate how the tools implemented in sparsity work as well as showing the applicability of these tools to various simple problems.
 
-All code blocks are provided in Python (support for both 2.7 and 3.6+) and the number of external packages required to run the examples has be kept to a minimum. With the exception of plotting routines, all of the code has been clearly presented inside the the notebooks at least once to avoid the use of any "black boxes" for solving the problems presented.
+All code blocks are provided in Python (support for both 2.7 and 3.6+) and the number of external packages required to run the examples has be kept to a minimum. With the exception of plotting routines, all of the code has been clearly presented inside the notebooks at least once to avoid the use of any "black boxes" for solving the problems presented.
 
 ### Requirements
 

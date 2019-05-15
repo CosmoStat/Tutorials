@@ -13,7 +13,11 @@ understanding of the various tools we use in our work.
 ## Contents
 ---
 
-1. [1 Sparsity](./ada/README.md)
+1. [Sparsity](./ada/README.md)
    * [Requirements](./ada/README.md#Requirements)
    * [Notebooks](./ada/README.md#Notebooks)
    * [Acknowledgements](./ada/README.md#Acknowledgements)
+2. [Low-Rank](./low-rank/README.md)
+   * [Requirements](./low-rank/README.md#Requirements)
+   * [Notebooks](./low-rank/README.md#Notebooks)
+   * [Acknowledgements](./low-rank/README.md#Acknowledgements)
