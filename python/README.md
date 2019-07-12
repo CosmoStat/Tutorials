@@ -39,9 +39,9 @@ $ conda install numpy scipy astropy matplotlib jupyter
 
 ### Notebooks
 
-1. [Table of Contents](./Intro.ipynb)
-1. [Native Python](./Native.ipynb)
-1. [Numpy](./Numpy.ipynb)
-1. [Matplotlib](./Matplotlib.ipynb)
-1. [Other Packages](./Other-Packages.ipynb)
-1. [Answers to Exercises](./Answers-to-Exercises.ipynb)
+1. [Table of Contents](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fpython%2FIntro.ipynb)
+1. [Native Python](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fpython%2FNative.ipynb)
+1. [Numpy](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fpython%2FNumpy.ipynb)
+1. [Matplotlib](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fpython%2FMatplotlib.ipynb)
+1. [Other Packages](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fpython%2FOther-Packages.ipynb)
+1. [Answers to Exercises](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fpython%2FAnswers-to-Exercises.ipynb)
