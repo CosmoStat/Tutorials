@@ -38,7 +38,7 @@ $ conda install numpy scipy astropy matplotlib jupyter
 
 ### Notebooks
 
-1. [Introduction to Low-Rank Approximation](./low-rank.ipynb)
+1. [Introduction to Low-Rank Approximation](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Flow-rank%2Flow-rank.ipynb)
 
 ### Acknowledgements
 
