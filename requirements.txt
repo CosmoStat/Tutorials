@@ -1,4 +1,8 @@
 astropy>=3.0.0
+jupyter
 matplotlib
 numpy
+pandas
 scipy
+scikit-learn
+seaborn
