@@ -16,6 +16,9 @@ understanding of the various tools we use in our work.
 ---
 
 1. [Set Up](#Set-Up)
+   * [Requirements](#Requirements)
+   * [Running Remotely](#Running-Remotely)
+   * [Running Locally](#Running-Locally)
 1. [Introduction to Python](./python/README.md)
    * [Requirements](./python/README.md#Requirements)
    * [Beginner Topics](./python/README.md#tutorial-1-beginner-topics)
@@ -71,7 +74,7 @@ In order to run the tutorials offline, please follow these steps:
 
     ```bash
     conda env create -f environment.yml
-    conda activate cstutorial
+    conda activate cstutorials
     ```
 
 3. Finally, the notebooks can be launched by running:
