@@ -40,7 +40,7 @@ The objective of this tutorial is to provide a first look at Python for beginner
 1. [Basic Numpy](./Numpy.ipynb)
 1. [Matplotlib](./Matplotlib.ipynb)
 1. [Other Packages](./Other-Packages.ipynb)
-1. [Answers to Exercises](./Answers-to-Exercises.ipynb)
+1. [Answers to Exercises](./Answers-to-exercises.ipynb)
 
 #### Tutorial 2: Intermediate and Advanced Topics
 
@@ -54,3 +54,4 @@ Python and good knowledge of basic object types. This tutorial will likely benef
 1. [Pandas](./Pandas-Intro.ipynb)
 1. [The Anatomy of a Python Class: Part I](./Classes_I.ipynb)
 1. [The Anatomy of a Python Class: Part II](./Classes_II.ipynb)
+1. [Answers to Exercises](./Answers-to-exercises-2.ipynb)
