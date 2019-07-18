@@ -52,6 +52,7 @@ Python and good knowledge of basic object types. This tutorial will likely benef
 1. [Pythonic Thinking](./Pythonic.ipynb)
 1. [Numpy](./Numpy-Intro.ipynb)
 1. [Pandas](./Pandas-Intro.ipynb)
+1. [Scipy-Cosmo](./Scipy-Cosmo.ipynb)
 1. [The Anatomy of a Python Class: Part I](./Classes_I.ipynb)
 1. [The Anatomy of a Python Class: Part II](./Classes_II.ipynb)
 1. [Answers to Exercises](./Answers-to-exercises-2.ipynb)
