@@ -1,84 +1,58 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/python)
 
-# CosmoStat Tutorials
+## Introduction to Python
 ---
 
-CosmoStat is committed to the philosophy of reproducible research, endeavouring
-to provide source code and data for all publications. In this spirit, we have
-additionally put significant effort into providing useful educational
-materials. The aim being to provide other researchers with an in-depth
-understanding of the various tools we use in our work.
+> Authors: <font color='#f78c40'>[Samuel Farrens](http://www.cosmostat.org/people/sfarrens)</font>, <font color='#f78c40'>[Santiago Casas](http://www.cosmostat.org/people/santiago-casas)</font>  
+> Year: 2019  
+> Email: [samuel.farrens@cea.fr](mailto:samuel.farrens@cea.fr), [santiago.casas@cea.fr](mailto:santiago.casas@cea.fr)
 
 
-## Contents
----
 
-1. [Set Up](#Set-Up)
-   * [Requirements](#Requirements)
-   * [Running Remotely](#Running-Remotely)
-   * [Running Locally](#Running-Locally)
-1. [Introduction to Python](./python/README.md)
-   * [Requirements](./python/README.md#Requirements)
-   * [Beginner Topics](./python/README.md#tutorial-1-beginner-topics)
-   * [Intermediate and Advanced Topics](./python/README.md#tutorial-2-intermediate-and-advanced-topics)
-1. [Sparsity](./ada/README.md)
-   * [Requirements](./ada/README.md#Requirements)
-   * [Notebooks](./ada/README.md#Notebooks)
-   * [Acknowledgements](./ada/README.md#Acknowledgements)
-1. [Low-Rank](./low-rank/README.md)
-   * [Requirements](./low-rank/README.md#Requirements)
-   * [Notebooks](./low-rank/README.md#Notebooks)
-   * [Acknowledgements](./low-rank/README.md#Acknowledgements)
+This tutorial is comprised of a series of <a href="https://jupyter-notebook.readthedocs.io/en/stable/" target_="blanck">Jupyter notebooks</a> with simple demonstrations and exercises.
 
-## Set Up
----
+All code blocks are provided in Python (support for >=3.5) and the number of external packages required to run the examples has be kept to a minimum. All of the code has been clearly presented inside the notebook at least once to avoid the use of any "black boxes" for solving the problems presented.
 
 ### Requirements
 
-Each tutorial has its own set of requirements, but all require Python 3.5 or higher.
+In order to run the tutorial notebooks tutees will need to have the following installed:
 
 * <a href="https://www.python.org/" target_="blank">Python</a> (require >=3.5)
+* <a href="https://www.astropy.org/" target_="blank">Astropy</a> (recommend >=3.1.2)
+* <a href="http://jupyter.org/" target_="blank">Jupyter</a> (recommend >=1.0.0)
+* <a href="https://matplotlib.org/" target_="blank">Matplotlib</a> (recommend >=3.0.3)
+* <a href="http://www.numpy.org/" target_="blank">NumPy</a> (recommend >=1.16.2)
+* <a href="https://pandas.pydata.org/" target_="blank">Pandas</a> (recommend >= 0.24.0)
+* <a href="https://scikit-learn.org/stable/" target_="blank">scikit-learn</a> (recommend >= 0.21.0)
+* <a href="https://www.scipy.org/" target_="blank">SciPy</a> (recommend >=1.2.1)
+* <a href="https://seaborn.pydata.org/" target_="blank">Seaborn</a> (recommend >= 0.9.0)
 
+### Notebooks
 
-### Running Remotely
+#### Tutorial 1: Beginner Topics
 
-All of the tutorials can be run remotely by launching the repository
-[Binder](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master). No further set
-up is required.
+The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
 
-### Running Locally
+1. [Table of Contents](./Intro.ipynb)
+1. [Native Python](./Native.ipynb)
+1. [Basic Numpy](./Numpy.ipynb)
+1. [Matplotlib](./Matplotlib.ipynb)
+1. [Other Packages](./Other-Packages.ipynb)
+1. [Answers to Exercises](./Answers-to-exercises.ipynb)
 
-In order to run the tutorials offline, please follow these steps:
+#### Tutorial 2: Intermediate and Advanced Topics
 
-1. Download or clone the GitHub repository.
+The objective of this tutorial is to provide a more in-depth look at object-oriented
+and pythonic coding. The level is aimed at individuals with some experience with
+Python and good knowledge of basic object types. This tutorial will likely benefit all except the most advanced users.
 
-    <img src="http://www.cs.williams.edu/~dbarowy/cs334s18/assets/tutorials/github/github-clone-button.png" width="300">
-
-    *e.g.*
-
-    ```bash
-    git clone https://github.com/CosmoStat/Tutorials.git
-    ```
-
-2. Install the tutorial dependencies.
-
-    This can be done using `pip` as follows:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-      or using `conda` as follows:
-
-    ```bash
-    conda env create -f environment.yml
-    conda activate cstutorials
-    ```
-
-3. Finally, the notebooks can be launched by running:
-
-    ```bash
-    jupyter notebook
-    ```
+1. [Table of Contents](./Intro-2.ipynb)
+1. [Pythonic Thinking](./Pythonic.ipynb)
+1. [Numpy](./Numpy-Intro.ipynb)
+1. [Pandas](./Pandas-Intro.ipynb)
+1. [Scipy-Cosmo](./Scipy-Cosmo.ipynb)
+1. [The Anatomy of a Python Class: Part I](./Classes_I.ipynb)
+1. [The Anatomy of a Python Class: Part II](./Classes_II.ipynb)
+1. [Answers to Exercises](./Answers-to-exercises-2.ipynb)
