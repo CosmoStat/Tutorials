@@ -1,6 +1,4 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 # CosmoStat Tutorials
 ---
@@ -19,9 +17,7 @@ understanding of the various tools we use in our work.
 
   [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/python)
 
-    Authors: 
-<a class="github-button" href="https://github.com/santiagocasas" aria-label="Follow @santiagocasas on GitHub">Follow @santiagocasas</a>
-<a class="github-button" href="https://github.com/sfarrens" aria-label="Follow @santiagocasas on GitHub">Follow @sfarrens</a>
+    Authors: [@sfarrens](https://github.com/sfarrens), [@santiagocasas](https://github.com/santiagocasas)
 
   * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/master/python#tutorial-1-beginner-topics)
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
