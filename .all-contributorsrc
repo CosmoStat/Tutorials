@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sfarrens",
+      "name": "Samuel Farrens",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6851839?v=4",
+      "profile": "http://sfarrens.github.io",
+      "contributions": [
+        "code",
+        "content",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Tutorials",
+  "projectOwner": "CosmoStat",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
