@@ -1,4 +1,7 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CosmoStat Tutorials
 ---
@@ -37,3 +40,22 @@ understanding of the various tools we use in our work.
 2. **[Jekyll Tutorial](https://github.com/sfarrens/jekyll_tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/sfarrens/jekyll_tutorial)  
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   The objective of this tutorial is to introduce Jekyll and show you how to build a website that you can host on GitHub for free.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://sfarrens.github.io"><img src="https://avatars1.githubusercontent.com/u/6851839?v=4" width="100px;" alt=""/><br /><sub><b>Samuel Farrens</b></sub></a><br /><a href="https://github.com/CosmoStat/Tutorials/commits?author=sfarrens" title="Code">💻</a> <a href="#content-sfarrens" title="Content">🖋</a> <a href="#ideas-sfarrens" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
