@@ -12,7 +12,7 @@ additionally put significant effort into providing useful educational
 materials. The aim being to provide other researchers with an in-depth
 understanding of the various tools we use in our work.
 
-We always welcome new tutorial request, just click [here](https://github.com/CosmoStat/Tutorials/issues/new?assignees=&labels=tutorial+request&template=tutorial-request.md&title=%5BTutorial%5D+Your+idea+for+a+tutorial).
+We always welcome new tutorial requests, just click [here](https://github.com/CosmoStat/Tutorials/issues/new?assignees=&labels=tutorial+request&template=tutorial-request.md&title=%5BTutorial%5D+Your+idea+for+a+tutorial).
 
 ## Contents
 
