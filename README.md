@@ -15,9 +15,9 @@ understanding of the various tools we use in our work.
 
 1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)  
     *Authors:* [@sfarrens](https://github.com/sfarrens),  [@santiagocasas](https://github.com/santiagocasas)  
-  * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/python/python#tutorial-1-beginner-topics)
+  * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-1-beginner-topics)
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
-  * [Tutorial 2: Intermediate and Advanced Topics](https://github.com/CosmoStat/Tutorials/tree/python/python#tutorial-2-intermediate-and-advanced-topics)
+  * [Tutorial 2: Intermediate and Advanced Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-2-intermediate-and-advanced-topics)
     The objective of this tutorial is to provide a more in-depth look at object-oriented and pythonic coding. The level is aimed at individuals with some experience with Python and good knowledge of basic object types. This tutorial will likely benefit all except the most advanced users.
 
 2. **[Sparsity](https://github.com/CosmoStat/Tutorials/tree/ada)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)  
