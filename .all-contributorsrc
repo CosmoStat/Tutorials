@@ -16,7 +16,7 @@
         "ideas"
       ]
     },
-     {
+    {
       "login": "santiagocasas",
       "name": "Santiago Casas",
       "avatar_url": "https://avatars0.githubusercontent.com/u/6987716?v=4",
@@ -25,6 +25,15 @@
         "code",
         "content",
         "ideas"
+      ]
+    },
+    {
+      "login": "zaccharieramzi",
+      "name": "Zaccharie Ramzi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6387497?v=4",
+      "profile": "http://www.cosmostat.org/people/zaccharie-ramzi",
+      "contributions": [
+        "content"
       ]
     }
   ],
