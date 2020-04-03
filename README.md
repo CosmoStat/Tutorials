@@ -51,6 +51,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://sfarrens.github.io"><img src="https://avatars1.githubusercontent.com/u/6851839?v=4" width="100px;" alt=""/><br /><sub><b>Samuel Farrens</b></sub></a><br /><a href="https://github.com/CosmoStat/Tutorials/commits?author=sfarrens" title="Code">💻</a> <a href="#content-sfarrens" title="Content">🖋</a> <a href="#ideas-sfarrens" title="Ideas, Planning, & Feedback">🤔</a></td>
+     <td align="center"><a href="http://www.cosmostat.org/people/santiago-casas"><img src="https://avatars0.githubusercontent.com/u/6987716?v=4" width="100px;" alt=""/><br /><sub><b>Santiago Casas</b></sub></a><br /><a href="https://github.com/CosmoStat/Tutorials/commits?author=santiagocasas" title="Code">💻</a> <a href="#content-santiagocasas" title="Content">🖋</a> <a href="#ideas-santiagocasas" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
