@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "santiagocasas",
+      "name": "Santiago Casas",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6987716?v=4",
+      "profile": "http://www.cosmostat.org/people/santiago-casas",
+      "contributions": [
+        "code",
+        "content",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Tutorials",
+  "projectOwner": "CosmoStat",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
