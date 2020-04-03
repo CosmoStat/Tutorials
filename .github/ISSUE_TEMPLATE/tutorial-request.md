@@ -7,12 +7,17 @@ assignees: ''
 
 ---
 
-** What is the main topic of this tutorial**: [Please provide one/two words, e.g. python, sparsity, etc.]
+**What is the main topic of this tutorial**: [Please provide one/two words, e.g. python, sparsity, etc.]
 
-** One line description **
+**One line description**
 [Please describe here what you would hope to learn/teach]
 
-** Learning goals **
+**Level**
+- [x] Beginner
+- [ ] Intermediate
+- [ ] Advanced
+
+**Learning goals**
 [Please give here a few clear learning goals]
   - goal 1
   - goal 2
