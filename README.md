@@ -1,5 +1,6 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
-
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 # CosmoStat Tutorials
 ---
@@ -18,6 +19,10 @@ understanding of the various tools we use in our work.
 
   [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/python)
 
+    Authors: 
+<a class="github-button" href="https://github.com/santiagocasas" aria-label="Follow @santiagocasas on GitHub">Follow @santiagocasas</a>
+<a class="github-button" href="https://github.com/sfarrens" aria-label="Follow @santiagocasas on GitHub">Follow @sfarrens</a>
+
   * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/master/python#tutorial-1-beginner-topics)
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
 
@@ -28,11 +33,15 @@ understanding of the various tools we use in our work.
 
   [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)
 
+  Authors: [@sfarrens](https://github.com/sfarrens)
+
   This tutorial is comprised of a series of Jupyter notebooks that demonstrate how the tools implemented in sparsity work as well as showing the applicability of these tools to various simple problems.
 
 3. [Low-Rank](https://github.com/CosmoStat/Tutorials/tree/low-rank)
 
   [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/low-rank) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/low-rank)
+
+  Authors: [@sfarrens](https://github.com/sfarrens)
 
   The objective is to provide a beginner level introduction to the concept of low-rank approximation, in particular as a regularisation method for solving linear inverse problems.
 
@@ -42,10 +51,14 @@ understanding of the various tools we use in our work.
 
  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/zaccharieramzi/git-tuto)  [![slides](https://img.shields.io/badge/slides-google-yellow)](https://docs.google.com/presentation/d/1vfsG__2-T7xJYGKFs9HfPKmaoMN1Je0V0h7gLyiY1AU/edit?usp=sharing)
 
+  Authors: [@zaccharieramzi](https://github.com/zaccharieramzi)
+
  This tutorial will help you practice the basics of the GitHub flow and how to work on open source projects.
 
 2. [Jekyll Tutorial](https://github.com/sfarrens/jekyll_tutorial)
 
   [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/sfarrens/jekyll_tutorial)
+
+  Authors: [@sfarrens](https://github.com/sfarrens)
 
   The objective of this tutorial is to introduce Jekyll and show you how to build a website that you can host on GitHub for free.
