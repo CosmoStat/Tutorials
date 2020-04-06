@@ -1,3 +1,2 @@
 tensorflow
-scikit-image
 git+https://github.com/zaccharieramzi/fastmri-reproducible-benchmark
