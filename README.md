@@ -52,7 +52,7 @@ Python and good knowledge of basic object types. This tutorial will likely benef
 1. [Pythonic Thinking](./Tutorial_2/Pythonic.ipynb)
 1. [Numpy](./Tutorial_2/Numpy-Advanced.ipynb)
 1. [Pandas](./Tutorial_2/Pandas.ipynb)
-1. [Scipy-Cosmo](./Tutorial_2/Scipy-Matplotlib-Cosmo.ipynb)
+1. [Scipy and Matplotlib with Cosmology](./Tutorial_2/Scipy-Matplotlib-Cosmo.ipynb)
 1. [The Anatomy of a Python Class: Part I](./Tutorial_2/Classes_I.ipynb)
 1. [The Anatomy of a Python Class: Part II](./Tutorial_2/Classes_II.ipynb)
 1. [Answers to Exercises](./Tutorial_2/Answers-to-exercises-2.ipynb)
