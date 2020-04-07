@@ -1,2 +1,5 @@
+matplotlib
+numpy
 tensorflow
+tqdm
 git+https://github.com/zaccharieramzi/fastmri-reproducible-benchmark
