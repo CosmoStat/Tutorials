@@ -2,7 +2,9 @@
 ---
 
 > Author: <font color='#f78c40'>[Zaccharie Ramzi](http://www.cosmostat.org/people/zaccharie-ramzi), [Francois Lanusse](http://www.cosmostat.org/people/francois-lanusse)</font>
+
 > Year: 2020
+
 > Email: [zaccharie.ramzi@gmail.com](mailto:zaccharie.ramzi@gmail.com), [francois.lanusse@cea.fr](mailto:francois.lanusse@cea.fr)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kmw_6O39vP9u9EA06-lIZXHc_eRbkWqK)
