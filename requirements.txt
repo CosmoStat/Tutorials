@@ -3,3 +3,4 @@ numpy
 tensorflow
 tqdm
 git+https://github.com/zaccharieramzi/fastmri-reproducible-benchmark
+git+https://github.com/scikit-image/scikit-image
