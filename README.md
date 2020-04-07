@@ -34,7 +34,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
   The objective is to provide a beginner level introduction to the concept of low-rank approximation, in particular as a regularisation method for solving linear inverse problems.
 
 4. **[TensorFlow](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kmw_6O39vP9u9EA06-lIZXHc_eRbkWqK)
-  *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi)
+  *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi), [@EiffL](https://github.com/EiffL)
   The objective is to show different use cases of TensorFlow, in the context of MRI reconstruction: as an optimisation library and as a deep learning library.
 
 ### Software carpentries
