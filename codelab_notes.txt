@@ -1,0 +1,12 @@
+These are some notes on how we built this codelab
+
+# Installing CLAAT
+
+On linux, I just went ahead and installed `go`, then:
+$ go get github.com/googlecodelabs/tools/claat
+
+# References
+main repo: https://github.com/googlecodelabs/tools
+simple getting started: https://dev.to/bpetetot/build-your-own-codelab-with-google-codelab-1hdi
+reference: https://github.com/googlecodelabs/tools/blob/master/FORMAT-GUIDE.md
+https://github.com/zenika-open-source/claat-image
