@@ -1,0 +1,165 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>From zero to MRI hero in 60 minutes with TensorFlow</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="tensorflow-introduction"
+                  title="From zero to MRI hero in 60 minutes with TensorFlow"
+                  environment="web"
+                  feedback-link="https://github.com/CosmoStat/Tutorials/issues/new?assignees=&amp;labels=bug&amp;template=bug_report.md&amp;title=%5BBUG%5D">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <p class="image-container"><img alt="tensorflow" src="img/a60af55fe5d0fd8a.png"></p>
+<p>In this codelab you will learn the core concepts for TensorFlow 2.0 and will apply them to solve a classical MRI problem in a few lines of code. We will not focus on neural networks, but rather on the powerful automatic differentiation capabilities of TensorFlow which can be used for a wide range of applications.</p>
+<h3 class="checklist" is-upgraded>What you&#39;ll learn</h3>
+<ul class="checklist">
+<li>What is Tensor and how it differs from a Numpy array</li>
+<li>How to define a computational graph and compute gradients</li>
+<li>How to introduce variables, and perform optimization</li>
+<li>How to apply these techniques to solve an MRI problem</li>
+</ul>
+<h3 is-upgraded>What you&#39;ll need</h3>
+<p>Nothing but a web browser, everything will happen on Google Colaboratory.</p>
+<h2 is-upgraded>Feedback</h2>
+<p>Don&#39;t hesitate to suggest modifications or report issues through GitHub [<a href="https://github.com/CosmoStat/Tutorials/issues/new" target="_blank">feedback link</a>].</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Quick Introduction to Google Colaboratory" duration="5">
+        <p>Before diving into this tutorial, let us just review the basics of google colab.</p>
+<p>TODO here:</p>
+<ul>
+<li>Provide details on how long colab runs, what compute is available</li>
+<li>Show how to select GPU acceleration</li>
+<li>Link to reference for more info</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What is a Tensor?" duration="5">
+        <p>TODO here:</p>
+<ul>
+<li>Import tensorflow</li>
+<li>Create a tensor, explain</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Writing a computational graph" duration="4">
+        <p>TODO here:</p>
+<ul>
+<li>Show how to combine several ops</li>
+<li>Maybe explain the concept of tf functions (maybe this is out of scope)</li>
+<li>Explain briefly what happens under the hood when the code is executed</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Computing gradients" duration="5">
+        <p>TODO here:</p>
+<ul>
+<li>Introduce the concept of gradient tape</li>
+<li>Show how to compute gradients of a simple expression</li>
+<li>Compare to analytic solution obtained manually in numpy</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Optimization" duration="5">
+        <p>TODO here:</p>
+<ul>
+<li>Introduce variables</li>
+<li>Show how to perform gradient descent manually</li>
+<li>Introduce keras optimizers</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="MRI example" duration="5">
+        <p>Now that we know the basics of TensorFlow, let&#39;s apply what we know to a signal processing toy example.</p>
+<p>TODO here:</p>
+<ul>
+<li>Explain the MRI problem</li>
+<li>Show how to access the Shepp-Logan phantom<pre><code>image = np.load(&#39;Tutorials/shepp_logan.npy&#39;)
+...
+kspace = tf_fft(image)
+</code></pre>
+</li>
+<li>Illustrate with plots <img alt="Fully sampled Shepp-Logan Phantom" src="img/8ad9a88c250857a0.png"></li>
+<li>Apply mask in Fourier domain</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Classical iterative reconstruction" duration="15">
+        <p>TODO here:</p>
+<ul>
+<li>Quickly explain what TV is, why it&#39;s cool and the sparse problem we are trying to solve</li>
+<li>Introduce things like <code>tf.image.total_variation</code></li>
+<li>Let people write their own loss</li>
+<li>Let people optimize that loss</li>
+<li>Evaluation of the results</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Deep Learning approach" duration="15">
+        <p>TODO here:</p>
+<ul>
+<li>Explain training data, skip over tf.data stuff</li>
+<li>Briefly introduce the Keras API</li>
+<li>Leave it as an exercise to train their own models</li>
+<li>Evaluation of the results</li>
+</ul>
+<p>Solution to this notebook here: [Add link to finished notebook]</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations!" duration="1">
+        <p>TODO:</p>
+<ul>
+<li>Add references and links to further reading material</li>
+<li>Add link to github issue for complaints</li>
+<li>Pictures of the nice people who made this tutorial</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-04-07T23:13:59+02:00",
+  "id": "tensorflow-introduction",
+  "duration": 61,
+  "title": "From zero to MRI hero in 60 minutes with TensorFlow",
+  "authors": "Francois, Zaccharie",
+  "summary": "Introduction to TensorFlow for CosmoStat Folks",
+  "source": "tutorial.md",
+  "theme": "",
+  "status": null,
+  "category": [
+    "meta"
+  ],
+  "tags": [
+    "beginner"
+  ],
+  "feedback": "https://github.com/CosmoStat/Tutorials/issues/new?assignees=\u0026labels=bug\u0026template=bug_report.md\u0026title=%5BBUG%5D",
+  "url": "tensorflow-introduction"
+}
