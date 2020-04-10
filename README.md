@@ -12,11 +12,11 @@ point of view but from an optimization and inverse problem perspective.
 
 We propose two notebooks:
 
-  - **First Steps with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)  
+  - **First Steps with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)
   A short introduction to the basic concepts underpinning TensorFlow, in particular
   automatic differentation.
 
-  - **MRI reconstruction with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)   
+  - **MRI reconstruction with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/MRIReconstructionWithTensorflow.ipynb)   
   An illustration of how to use TensorFlow in 2 different settings, for the same problem of MRI reconstruction:
     - as an optimisation library to perform classical iterative reconstruction
     - as a deep learning library to train a CNN to reconstruct fourier undersampled images
