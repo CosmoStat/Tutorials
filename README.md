@@ -43,12 +43,12 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### Software carpentries
 
-1. **[Git Tutorial](https://github.com/zaccharieramzi/git-tuto)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/zaccharieramzi/git-tuto)  [![slides](https://img.shields.io/badge/slides-google-yellow)](https://docs.google.com/presentation/d/1vfsG__2-T7xJYGKFs9HfPKmaoMN1Je0V0h7gLyiY1AU/edit?usp=sharing)
-  *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi)
+1. **[Git Tutorial](https://github.com/zaccharieramzi/git-tuto)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/zaccharieramzi/git-tuto)  [![slides](https://img.shields.io/badge/slides-google-yellow)](https://docs.google.com/presentation/d/1vfsG__2-T7xJYGKFs9HfPKmaoMN1Je0V0h7gLyiY1AU/edit?usp=sharing)  
+  *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi)  
  This tutorial will help you practice the basics of the GitHub flow and how to work on open source projects.
 
-2. **[Jekyll Tutorial](https://github.com/sfarrens/jekyll_tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/sfarrens/jekyll_tutorial)
-  *Authors:* [@sfarrens](https://github.com/sfarrens)
+2. **[Jekyll Tutorial](https://github.com/sfarrens/jekyll_tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/sfarrens/jekyll_tutorial)  
+  *Authors:* [@sfarrens](https://github.com/sfarrens)  
   The objective of this tutorial is to introduce Jekyll and show you how to build a website that you can host on GitHub for free.
 
 ## Contributors ✨
