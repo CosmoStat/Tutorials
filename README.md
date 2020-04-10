@@ -50,6 +50,10 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   The objective of this tutorial is to introduce Jekyll and show you how to build a website that you can host on GitHub for free.
 
+3. **[Make and CMake Tutorial](https://github.com/sfarrens/make-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/sfarrens/make-tutorial)  [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=K27-uncFZgM)  
+  *Authors:* [@sfarrens](https://github.com/sfarrens)  
+  This tutorial is designed to provide a first look at using Make and CMake to build C/C++ projects.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
