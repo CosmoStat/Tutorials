@@ -18,24 +18,28 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### Data Science
 
-1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)
-    *Authors:* [@sfarrens](https://github.com/sfarrens),  [@santiagocasas](https://github.com/santiagocasas)
+1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)  
+    *Authors:* [@sfarrens](https://github.com/sfarrens),  [@santiagocasas](https://github.com/santiagocasas)  
   * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-1-beginner-topics)
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
   * [Tutorial 2: Intermediate and Advanced Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-2-intermediate-and-advanced-topics)
     The objective of this tutorial is to provide a more in-depth look at object-oriented and pythonic coding. The level is aimed at individuals with some experience with Python and good knowledge of basic object types. This tutorial will likely benefit all except the most advanced users.
 
-2. **[Sparsity](https://github.com/CosmoStat/Tutorials/tree/ada)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)
-  *Authors:* [@sfarrens](https://github.com/sfarrens)
+2. **[Sparsity](https://github.com/CosmoStat/Tutorials/tree/ada)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)  
+  *Authors:* [@sfarrens](https://github.com/sfarrens)  
   This tutorial is comprised of a series of Jupyter notebooks that demonstrate how the tools implemented in sparsity work as well as showing the applicability of these tools to various simple problems.
 
-3. **[Low-Rank](https://github.com/CosmoStat/Tutorials/tree/low-rank)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/low-rank) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/low-rank)
-  *Authors:* [@sfarrens](https://github.com/sfarrens)
+3. **[Low-Rank](https://github.com/CosmoStat/Tutorials/tree/low-rank)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/low-rank) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/low-rank)  
+  *Authors:* [@sfarrens](https://github.com/sfarrens)  
   The objective is to provide a beginner level introduction to the concept of low-rank approximation, in particular as a regularisation method for solving linear inverse problems.
 
-4. **[TensorFlow](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kmw_6O39vP9u9EA06-lIZXHc_eRbkWqK)
-  *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi), [@EiffL](https://github.com/EiffL)
-  The objective is to show different use cases of TensorFlow, in the context of MRI reconstruction: as an optimisation library and as a deep learning library.
+4. **[TensorFlow](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)  
+  *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi), [@EiffL](https://github.com/EiffL)  
+
+    - **First Steps with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)  
+  A short introduction to the basic concepts underpinning TensorFlow, in particular automatic differentation.
+    - **MRI reconstruction with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)  
+  An illustration of how to use TensorFlow to solve a toy MRI reconstruction problem using classical iterative reconstructions, and a deep learning approach.
 
 ### Software carpentries
 
