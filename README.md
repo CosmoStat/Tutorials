@@ -18,8 +18,8 @@ We propose two notebooks:
 
   - **MRI reconstruction with TensorFlow**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)   
   An illustration of how to use TensorFlow in 2 different settings, for the same problem of MRI reconstruction:
-- as an optimisation library to perform classical iterative reconstruction
-- as a deep learning library to train a CNN to reconstruct fourier undersampled images
+    - as an optimisation library to perform classical iterative reconstruction
+    - as a deep learning library to train a CNN to reconstruct fourier undersampled images
 
 ### Requirements
 
