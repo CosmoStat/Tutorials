@@ -18,22 +18,26 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### Data Science
 
-1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)  
+1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=cbekcGxm70Q&list=PLquvp9RIoLGBFfsz8dqzPtLeaEngHYybM)  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)  
     *Authors:* [@sfarrens](https://github.com/sfarrens),  [@santiagocasas](https://github.com/santiagocasas)  
   * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-1-beginner-topics)
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
   * [Tutorial 2: Intermediate and Advanced Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-2-intermediate-and-advanced-topics)
     The objective of this tutorial is to provide a more in-depth look at object-oriented and pythonic coding. The level is aimed at individuals with some experience with Python and good knowledge of basic object types. This tutorial will likely benefit all except the most advanced users.
 
-2. **[Sparsity](https://github.com/CosmoStat/Tutorials/tree/ada)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)  
+2. **[C++](https://github.com/CosmoStat/Tutorials/tree/CPlusPlus)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/CPlusPlus) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=47Ldg6i2B8Y&list=PLquvp9RIoLGD5yDykupoCueNp2EHEjuZB)  
+  *Authors:* [@kansal9](https://github.com/kansal9)  
+  This tutorial aims to help newcomers learn C++ and solve their programming problems. It is assumed that readers are already familiar with C, or at least that they do not have any difficulty reading C code. In other words, those who have experience in C and peo·ple who desire to quickly understand the features of modern C++ in a short period of time are well suited to follow this tutorial.
+
+3. **[Sparsity](https://github.com/CosmoStat/Tutorials/tree/ada)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)  
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   This tutorial is comprised of a series of Jupyter notebooks that demonstrate how the tools implemented in sparsity work as well as showing the applicability of these tools to various simple problems.
 
-3. **[Low-Rank](https://github.com/CosmoStat/Tutorials/tree/low-rank)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/low-rank) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/low-rank)  
+4. **[Low-Rank](https://github.com/CosmoStat/Tutorials/tree/low-rank)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/low-rank) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/low-rank)  
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   The objective is to provide a beginner level introduction to the concept of low-rank approximation, in particular as a regularisation method for solving linear inverse problems.
 
-4. **[TensorFlow](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)  
+5. **[TensorFlow](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tensorflow-tutorial)  
    *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi), [@EiffL](https://github.com/EiffL)  
    * *First Steps with TensorFlow*: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)  
    A short introduction to the basic concepts underpinning TensorFlow, in particular automatic differentation.
