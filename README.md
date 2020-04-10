@@ -27,7 +27,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 2. **[C++](https://github.com/CosmoStat/Tutorials/tree/CPlusPlus)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/CPlusPlus) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=47Ldg6i2B8Y&list=PLquvp9RIoLGD5yDykupoCueNp2EHEjuZB)  
   *Authors:* [@kansal9](https://github.com/kansal9)  
-  This tutorial aims to help newcomers learn C++ and solve their programming problems. It is assumed that readers are already familiar with C, or at least that they do not have any difficulty reading C code. In other words, those who have experience in C and people who desire to quickly understand the features of modern C++ in a short period of time are well suited to follow this tutorial.
+  This tutorial aims to help newcomers learn C++ and solve their programming problems. It is assumed that readers are already familiar with C, or at least that they do not have any difficulty reading C code. In other words, those who have experience in C and peo·ple who desire to quickly understand the features of modern C++ in a short period of time are well suited to follow this tutorial.
 
 3. **[Sparsity](https://github.com/CosmoStat/Tutorials/tree/ada)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/ada) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)  
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
