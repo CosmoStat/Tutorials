@@ -1,0 +1,23 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-05-15T13:04:44+02:00",
+  "id": "docker-introduction",
+  "duration": 57,
+  "title": "Getting started with Docker for Data Scientists",
+  "authors": "Francois Lanusse",
+  "summary": "Introduction to Docker",
+  "source": "tutorial.md",
+  "theme": "",
+  "status": null,
+  "category": [
+    "meta"
+  ],
+  "tags": [
+    "beginner"
+  ],
+  "feedback": "https://github.com/CosmoStat/Tutorials/issues/new?assignees=\u0026labels=bug\u0026template=bug_report.md\u0026title=%5BBUG%5D",
+  "url": "docker-introduction"
+}

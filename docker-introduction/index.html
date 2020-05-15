@@ -1,0 +1,283 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Getting started with Docker for Data Scientists</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="docker-introduction"
+                  title="Getting started with Docker for Data Scientists"
+                  environment="web"
+                  feedback-link="https://github.com/CosmoStat/Tutorials/issues/new?assignees=&amp;labels=bug&amp;template=bug_report.md&amp;title=%5BBUG%5D">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <p>In this codelab you will learn how to use Docker to package your software tools for painless distribution and easy reproducibility of your research.</p>
+<p>We will use as an example the common case of building a container to distribute Jupyter notebooks, for instance accompanying a paper or for a tutorial. Here is the tutorial we will be looking at: <a href="https://github.com/CosmoStat/octave_image_processing_example" target="_blank"> https://github.com/CosmoStat/octave_image_processing_example</a>.</p>
+<h3 class="checklist" is-upgraded>What you&#39;ll learn</h3>
+<ul class="checklist">
+<li>What is Docker and what is a container</li>
+<li>How to run a container</li>
+<li>How to build your own container</li>
+<li>How to host containers on dockerhub</li>
+</ul>
+<h3 is-upgraded>What you&#39;ll need</h3>
+<p>We will assume that you have pre-installed the Docker command line tools on your<br> machine. You can find OS specific instructions for installing Docker at the following links:</p>
+<ul>
+<li>Mac OS: <a href="https://docs.docker.com/docker-for-mac/install/" target="_blank">https://docs.docker.com/docker-for-mac/install/</a></li>
+<li>Windows: <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">https://docs.docker.com/docker-for-windows/install/</a></li>
+<li>Ubuntu: <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a></li>
+<li>archlinux: <code>pacman -S docker</code></li>
+</ul>
+<h2 is-upgraded>Feedback</h2>
+<p>Don&#39;t hesitate to suggest modifications or report issues through GitHub [<a href="https://github.com/CosmoStat/Tutorials/issues/new" target="_blank">feedback link</a>].</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What is a Docker container?" duration="10">
+        <p>Before diving into this tutorial, we will first try to understand what is a container, and how it differs from a virtual machine.</p>
+<h2 is-upgraded>Containers package executables and libraries</h2>
+<p>Any software you might build is never completely standalone, it depends on external libraries and is typically compiled for a specific OS.</p>
+<p>So how do you make sure someone else can use your code on their own machine?</p>
+<p>In principle, you would have to exactly specify all the libraries you use, and leave it to the user to install those. Even then, you typically cannot guarantee that your code will 100% reproduce the expected results as the behavior of some of these external libraries might change between versions and might be environment specific.</p>
+<p><strong>The solution</strong>: packaging not only your code, but a complete environment including all external libraries. This is what a container does.</p>
+<p class="image-container"><img alt="assets/docker-vm-container.png" src="img/9ecb5f932601e994.png"></p>
+<p>This is reminiscent of what virtual machines used to do, remember virual box and VMware? But there is one crucial difference:</p>
+<ul>
+<li>In virtual machines each application requires a full guest operating system running on a software emulation of a physical machine: they are slow and very heavy.</li>
+<li>A container is only packaging executables and libraries, which are executed on a shared kernel provided by the Docker Engine: it&#39;s essentially just like running any other application on your system, there is no boot up time required.</li>
+</ul>
+<h2 is-upgraded>Containers are based on layers, layers can be shared</h2>
+<p>Not only are containers lighter than VM since they don&#39;t need to run full guest OSes, they can also share some common libraries/tools between several containers.</p>
+<p>In order to make this work, containers are build by layers. You can add a new layer on top of an existing container, for instance to add a new library, and you get a new container, but  the base layers will be identical between the two.</p>
+<p class="image-container"><img alt="assets/fotPN.jpg" src="img/acf6fbf1deda1e9.jpg"></p>
+<p>This means that if you build 10 containers for 10 small executables, but based on the same base container you only need to store the base and the 10 small different additional layers.</p>
+<p>Here is an illustration that shows how different containers built out of same or different base containers share common layers:</p>
+<p class="image-container"><img alt="assets/fig1.png" src="img/36583b720224d456.png"></p>
+<p>Alright, so now that we have a little idea of what a container is, the next step is to use one :-)</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Running our first container" duration="10">
+        <h2 is-upgraded>Retrieving an image from DockerHub</h2>
+<p>The first step will be to download a minimal container from <a href="https://hub.docker.com/" target="_blank">DockerHub</a>, a central repository for docker containers. You can search this repository and find many useful and already built images for many software. To retrieve a container from this repository, you simply use  the <code>docker pull</code> command.</p>
+<p>To get started, let&#39;s use the minimal Alpine Linux container available <a href="https://hub.docker.com/_/alpine" target="_blank">here</a>. This is an official image provided by Docker, with only a 5 MB footprint.</p>
+<p>Let&#39;s go ahead and download it from the command line:</p>
+<pre><code>$ docker pull alpine
+Using default tag: latest
+latest: Pulling from library/alpine
+cbdbe7a5bc2a: Pull complete
+Digest: sha256:9a839e63dad54c3a6d1834e29692c8492d93f90c59c978c1ed79109ea4fb9a54
+Status: Downloaded newer image for alpine:latest
+docker.io/library/alpine:latest
+</code></pre>
+<p>Success! What we see here is that Docker is pulling the latest version of that image from the repository.</p>
+<h2 is-upgraded>Running a command in the container</h2>
+<p>Now that the image is downloaded, we can run commands from that container. Let&#39;s start with the following:</p>
+<pre><code>$ docker run -it alpine sh
+/ #
+</code></pre>
+<p>What happened here? We are now using the <code>docker run</code> command, this starts a new process using the executable <code>sh</code> from the image <code>alpine</code>. The <code>-it</code> is necessary for interactive commands. And what we see on the prompt of the second line is now the shell prompt from the container.</p>
+<p>At this point, you can look around, everything you do is in the container, isolated from the host system:</p>
+<pre><code>/ # ls
+bin    etc    lib    mnt    proc   run    srv    tmp    var
+dev    home   media  opt    root   sbin   sys    usr
+</code></pre>
+<p>what we see here is the content of the root directory of the container.</p>
+<p>To exit the container, just exit the shell:</p>
+<pre><code>/ # exit
+$
+</code></pre>
+<p>Here we have started a shell inside the container, but you can also call any other binary from the container like so:</p>
+<pre><code>$ docker run -it alpine ls
+bin    etc    lib    mnt    proc   run    srv    tmp    var
+dev    home   media  opt    root   sbin   sys    usr
+</code></pre>
+<p>At this point, you may realize that there is an issue, this <code>ls</code> command is only showing the files from inside the image, not the files on your current directory. Luckily, we can fix that!</p>
+<h2 is-upgraded>Mounting a local folder to access your files</h2>
+<p>s In the previous example, the container filesystem was completely isolated from the host, so that&#39;s moderately useful, you want to be able to see your local files. You can do that by mounting your local folder on a given directory inside the image with the <code>-v [host directory]:[image directory]</code> flag. Here is an example where we mount the local folder to /workdir inside the image:</p>
+<pre><code>$ docker run -v ${PWD}:/workdir -it alpine ls /workdir
+assets               docker-introduction
+codelab_notes.txt    tutorial.md
+</code></pre>
+<p>and now we see the files of our current folder.</p>
+<p>So this is how you access your data from the container.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="The illustrative example: distributing codes and notebooks for a tutorial" duration="5">
+        <p>Now that we understand the basics of Docker, we can move on to the actual problem we want to solve in this tutorial, how can Fadi distribute his Octave notebooks and hope that people can actually run them on their own machine?</p>
+<p>We will begin by forking a copy of Fadi&#39;s original repository, and clone it locally. Follow these steps:</p>
+<ul>
+<li>Go to <a href="https://github.com/CosmoStat/octave_image_processing_example" target="_blank">https://github.com/CosmoStat/octave_image_processing_example</a> and click the fork button: <img alt="assets/im1.png" src="img/22d38baa331329a7.png"> You can fork this repository to your own GitHub account, and don&#39;t worry you can always remove it later.</li>
+<li>Now that you have made a fork, clone it locally by clicking the big green clone button: <img alt="assets/im2.png" src="img/cacf515df37081cd.png"> and copying the content of the text box to complete a git clone command line, which look like this, except with the path to your own fork:<pre><code>$ git clone git@github.com:CosmoStat/octave_image_processing_example.git
+</code></pre>
+if you haven&#39;t setup git with SSH keys and you get any complaints at this step, click the <code>Use HTTPS</code> option in the box above to switch to HTTPS downloading, it would then look like this:<pre><code>$ git clone https://github.com/CosmoStat/octave_image_processing_example.git
+</code></pre>
+</li>
+<li>Finally, you can <code>cd</code> into this cloned directory:<pre><code>$ cd octave_image_processing_example
+$ ls
+apt.txt            canards.png         environment.yml  filtre_min.m     README.md
+canards_gauss.mat  canards_poivre.mat  example.ipynb    generate_data.m
+canards.mat        canards_sel.mat     filtre_max.m     moyenneur.m
+</code></pre>
+Alright, so we have downloaded the content of the tutorial, but now, imagine that we wanted to run the examples. You can try the following:<pre><code>$ jupyter notebook
+</code></pre>
+</li>
+</ul>
+<p>Hopefully you have jupyter installed, but maybe not, and even if you do try opening <code>example.ipynb</code> with jupyter, chances are that won&#39;t work because you don&#39;t have Octave installed.</p>
+<p>We are now going to see how to use Docker to make sure people can run the notebook on their machine without having to install anything.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Composing a Dockerfile" duration="5">
+        <p>We are going to build an image that contains all of the environment required to run jupyter notebooks with the Octave kernel, and also package the tutorial contents.</p>
+<p>To define a new Docker container, you need to create an empty text file name <code>Dockerfile</code> in the current directory. Now in this file we will add the following content:</p>
+<pre><code>FROM jupyter/base-notebook
+
+LABEL Description=&#34;Jupyter Octave&#34;
+
+USER root
+RUN apt-get update &amp;&amp; \
+    apt-get install -y gnuplot octave &amp;&amp; \
+    apt-get clean
+
+USER jovyan
+RUN pip install octave_kernel &amp;&amp; \
+    export OCTAVE_EXECUTABLE=$(which octave)
+</code></pre>
+<p>Let&#39;s unpack what&#39;s going on here:</p>
+<h3 is-upgraded>Inheriting from a base image</h3>
+<pre><code>FROM jupyter/base-notebook
+</code></pre>
+<p>This tells Docker that your container will inherit the <code>jupyter/base-notebook</code> image, which you can see <a href="https://hub.docker.com/r/jupyter/base-notebook/" target="_blank">here</a>. In general, it is good practice for you to try to base your container on an existing and popular one containing most of the environment you want already, instead of composing an image from a bare linux.</p>
+<h3 is-upgraded>Changing user inside the container</h3>
+<pre><code>USER root
+</code></pre>
+<p>This instruction tells Docker that the  following commands will be executed as <code>root</code> which allows you to install system packages.</p>
+<h3 is-upgraded>Installing new packages from the linux package manager</h3>
+<pre><code>RUN apt-get update &amp;&amp; \
+    apt-get install -y gnuplot octave &amp;&amp; \
+    apt-get clean
+</code></pre>
+<p>This is the main part of the Dockerfile, here we use the <code>RUN</code> command, to run a command inside the container, here, it&#39;s in order to install additional packages. We run the standard Ubuntu package manager to install <code>gnuplot</code> and <code>octave</code> which were not already on the image. The <code>apt-get clean</code> part is to remove any unnecessary cached files at the end of this install.</p>
+<aside class="warning"><p>Each <code>RUN</code> command essentially adds a new layer to the container. The new state of the image will be recorded at the end of the <code>RUN</code> and the layer is defined as the delta compared to the previous step. This is why we make sure to <code>clean</code> at the end because we don&#39;t want unnecessary files to get added to the layer.</p>
+</aside>
+<h3 is-upgraded>Installing pip packages</h3>
+<pre><code>USER jovyan
+RUN pip install octave_kernel &amp;&amp; \
+    export OCTAVE_EXECUTABLE=$(which octave)
+</code></pre>
+<p>Finally here, what we are doing is switching to the <code>jovyan</code> user, the standard non-privileged user for the jupyter image, defined in the base image, and installing Python packages as a normal user. We simply add the <code>octave_kernel</code> so that Jupyter knows how to run Octave code.</p>
+<p>And that&#39;s it, that&#39;s all there is to writing a Dockerfile, it&#39;s just a series of <code>RUN</code> commands that you can use to install any tools/libraries you need.</p>
+<aside class="special"><p>Note that one of the reasons it&#39;s so easy to define this Jupyter-Octave container is that all the heavy lifting of installing and setting up Jupyter is done in the parent <code>jupyter/base-notebook</code> image. You can have a look at the Dockerfile of that parent image <a href="https://hub.docker.com/r/jupyter/base-notebook/dockerfile" target="_blank">here</a>. And you&#39;ll quickly see why it&#39;s a good idea to build on top of an existing container ;-)</p>
+</aside>
+<p>Now the next step is to build your container from this Dockerfile description.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Building your container" duration="10">
+        <p>Given the Dockerfile defined at the previous step, we can now tell Docker to process it in order to build your new container. This is done with the <code>docker build</code> command. Assuming you are still in the same folder as your Dockerfile, just run:</p>
+<pre><code>$ docker build -t jupyter-octave .
+</code></pre>
+<p>This instructs Docker to process the local directory <code>.</code>, parse your Dockerfile, and build a new image that will be tagged <code>jupyter-octave</code> version <code>1.0</code> thanks to the <code>-t</code> flag.</p>
+<p>Running this command, you will see Docker first pull all the layer of the base image, and then execute the <code>RUN</code> commands you have defined. In principle everything should work :-)</p>
+<p>Once built, let&#39;s try to use it to start a Jupyter notebook with an Octave kernel. From your current directory, run:</p>
+<pre><code>$ docker run -p 8888:8888 -v ${PWD}:/home/jovyan/work -it jupyter-octave
+</code></pre>
+<p>What we are doing here, is running our newly created <code>jupyter-octave</code> container, using the <code>-v</code> flag we have seen before to mount our local directory inside the container, and the new <code>-p</code> flag to forward the <code>8888</code> port which is where the jupyter notebook server will be listening in for connections. Note that we are not telling Docker to run any particular commands at the end, in this case, Docker will default to an <code>ENTRYPOINT</code> defined in the parent container, and automatically start <code>jupyter-notebook</code>.</p>
+<p>Jupyter should start inside the container and give you a message like this:</p>
+<pre><code>[C 08:52:00.695 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
+    Or copy and paste one of these URLs:
+        http://bc85b42df82d:8888/?token=085a531b2df604a9089320c09af9601135604e607ace921b
+     or http://127.0.0.1:8888/?token=085a531b2df604a9089320c09af9601135604e607ace921b
+</code></pre>
+<p>Just follow the last link in <code>http://127.0.0.1:8888...</code> and open it in your web browser. And tadaa! you are now accessing the Jupyter notebook running in your container!</p>
+<p>Go on to the <code>work/example.ipynb</code> notebook, and you should now be able to run Octave code without issues.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Pushing to dockerhub" duration="15">
+        <p>The last step is publishing your docker image so that others can use it easily. To do that, we will want to push it to DockerHub.</p>
+<h3 is-upgraded>Step 1: Adding the Dockerfile to your git fork</h3>
+<p>We will use DockerHub to automatically build your container from your git repository. In order to set that up, let&#39;s start by adding your Dockerfile to the repository:</p>
+<pre><code>$ git add Dockerfile
+$ git commit -m &#34;Adding Docker container file&#34;
+$ git push
+</code></pre>
+<p>This updates your fork of Fadi&#39;s repository to include the Dockerfile. To make sure that worked, you can check that you see the Dockerfile on GitHub.</p>
+<h3 is-upgraded>Step 2: Creating a DockerHub account</h3>
+<p>We will need a Docker Hub account, you can sign up for one here:</p>
+<p><a href="https://hub.docker.com/signup" target="_blank">https://hub.docker.com/signup</a></p>
+<p>or if you already have an account, you can sign-in here: <a href="https://hub.docker.com/sso/start" target="_blank">https://hub.docker.com/sso/start</a></p>
+<h3 is-upgraded>Step 3: Connect your GitHub account</h3>
+<p>Now that you are connected on DockerHub go to Account Settings</p>
+<p class="image-container"><img alt="assets/docker1.png" src="img/33648a56db9f9856.png"></p>
+<p>And in the <code>Linked Accounts</code> tab, click the <code>Connect</code> button for GitHub:</p>
+<p class="image-container"><img alt="assets/docker2.png" src="img/788c7c093ab49653.png"></p>
+<p>Follow the instructions, and grant DockerHub access to repos under your account on GitHub.</p>
+<h3 is-upgraded>Step 4: Create an automatic build of your Dockerfile</h3>
+<p>Now that everything is setup, you can go back to the landing page of <code>DockerHub</code> at this link: <a href="https://hub.docker.com/" target="_blank">https://hub.docker.com/</a> and click the <code>Create Repository</code> blue button on the top right.</p>
+<ul>
+<li>In the first field, you can create a new image called <code>jupyter-octave</code>, and add a short description in the field below: <img alt="assets/docker3.png" src="img/5956cd0822621efc.png"></li>
+<li>Then in the <code>Build Settings</code>, click on the GitHub icon and navigate to your fork of the repo. Next to the <code>BUILD RULES</code> header, click the <code>+</code> sign to add a build rule, and by  default DockerHub will propose a build rule looking for your Dockerfile at the root of the master branch of your repository. It should look like this: <img alt="assets/docker3.png" src="img/b14350b6f38159eb.png"></li>
+</ul>
+<p>And finally click the <code>Create &amp; Build</code> button!</p>
+<p>This will bring you to the page of your newly minted container! Head over to the <code>Builds</code> tab to see the status of your automated build.</p>
+<aside class="special"><p>New builds will automatically get triggered everytime you make a push to your GitHub repo so you are sure that your image is always up to date.</p>
+</aside>
+<p>As soon as you see that your build is ready, you can pull it on your local computer:</p>
+<pre><code>$ docker pull [your dockerhub name]/jupyter-octave
+</code></pre>
+<p>And done! Anyone on earth can now run your notebooks without having to install Jupyter or Octave on their machine !</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations!" duration="1">
+        <p>You are now a Docker Guru :-) Or at least a Docker baby Yoda.</p>
+<p>We have covered the basics of how to use Docker but glossed over a lot of details and features. If you want to know more, Google is your friend, there are tons of tutorial out there. But here are some useful references:</p>
+<ul>
+<li><a href="https://docs.docker.com/get-started/" target="_blank">Official Docker intro</a></li>
+<li><a href="https://docs.docker.com/engine/reference/builder" target="_blank">Dockerfile reference</a></li>
+</ul>
+<p>Happy containerization!!!!</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
