@@ -58,7 +58,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   This tutorial is designed to provide a first look at using Make and CMake to build C/C++ projects.
 
-4. **[Introduction to Docker for Data Scientists](https://cosmostat.github.io/Tutorials/docker/docker-introduction)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/Tutorials/blob/docker/)  
+4. **[Introduction to Docker for Data Scientists](https://cosmostat.github.io/Tutorials/docker/docker-introduction)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/docker)  
   *Authors:* [@EiffL](https://github.com/EiffL)  
   This tutorial demonstrates how to create a Docker container to distribute a complete Jupyter notebook environment.
 
