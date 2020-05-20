@@ -41,7 +41,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
    *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi), [@EiffL](https://github.com/EiffL)  
    * *First Steps with TensorFlow*: [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=kawHQpxytLo) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/TensorFlowFirstSteps.ipynb)  
    A short introduction to the basic concepts underpinning TensorFlow, in particular automatic differentation.
-   * *MRI reconstruction with TensorFlow*: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/MRIReconstructionWithTensorflow.ipynb)  
+   * *MRI reconstruction with TensorFlow*: [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=HqNm5fowdTU) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/MRIReconstructionWithTensorflow.ipynb)  
    An illustration of how to use TensorFlow to solve a toy MRI reconstruction problem using classical iterative reconstructions, and a deep learning approach.
 
 ### Software carpentries
@@ -57,6 +57,10 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 3. **[Make and CMake Tutorial](https://github.com/sfarrens/make-tutorial)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/sfarrens/make-tutorial)  [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=K27-uncFZgM)  
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   This tutorial is designed to provide a first look at using Make and CMake to build C/C++ projects.
+
+4. **[Introduction to Docker for Data Scientists](https://cosmostat.github.io/Tutorials/docker/docker-introduction)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/docker)  
+  *Authors:* [@EiffL](https://github.com/EiffL)  
+  This tutorial demonstrates how to create a Docker container to distribute a complete Jupyter notebook environment.
 
 ## Contributors ✨
 
