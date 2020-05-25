@@ -1,8 +1,0 @@
-[submodule "docs/tensorflow-introduction"]
-	path = docs/tensorflow-introduction
-	url = https://github.com/CosmoStat/Tutorials.git
-	branch = tensorflow-tutorial
-[submodule "docs/docker"]
-	path = docs/docker
-	url = https://github.com/CosmoStat/Tutorials.git
-	branch = docker
