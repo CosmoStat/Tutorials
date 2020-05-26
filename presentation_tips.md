@@ -69,7 +69,7 @@ Material contained here is based on:
 - Professional experience
 - Feedback I got from people over the years
 - [Coursera Presentation Skills Specialization](https://www.coursera.org/specializations/presentation-skills?) by Alexei Kapterev that I attended
-- Lectures on spoken communication by my father (Massimo Pettorino) 
+- Lectures on spoken communication by my father (Prof. Massimo Pettorino) 
 
 This tutorial is mainly meant for scientists, but several tips can be useful for other types of talks. 
 
@@ -328,6 +328,44 @@ Identify the location and which tools you have available
 Positive
 : **My tip:** if you can, it is advisable to enquire with the organisers before your talk. 
 
+
+## How long?
+
+How long can your talk be? How much time do you have to prep?
+
+It will be a **compromise**: 
+- maybe you won’t have time to check everything
+- maybe there is no need to check everything (you may be instructed  not to spend too much time preparing) 
+- maybe you have to (job interview). 
+
+The more you get confident with choices you have, the more efficient you will become in reaching your goal without wasting time. 
+
+Negative
+: **Important:** if you are given X minutes, you have to reach your conclusion in X minutes. 
+
+✅Ask in advance. 
+
+✅Decide in advance how long you can spend on Introduction / 
+Development / Conclusions.  
+
+✅Check the time during your talk to make sure you can adapt.
+
+✅May ask for a warning 5 minutes before.
+
+✅Give up on saying everything.
+
+
+❌Complain about lack of time.
+
+❌You are still in your Introduction after > X/3 minutes.
+
+❌*Time is up so I'll talk faster.*
+
+❌*Time is up so I'll go fast on all the remaining 20 slides.*  If you are 5 minutes from the end and you still have several slides,  going fast through plots/slides/caveats won't help, it just makes the audience more aware that you screwed up your talk. It shouldn't happen, but if it does, keep control, **skip slides entirely and just say your final message**. Make sure the audience understands at least that.
+
+❌Chair tells me time is up but I'll continue anyway. 
+
+
 ## What?
 
 What do you want people to retain from your talk? 
@@ -406,42 +444,6 @@ Positive
 : **My Tip:** remember that you are **not giving the talk to yourself**. You are talking to people, with their professional and personal histories, culture, beliefs, difficulties, of which you typically know very little. If in doubt, just avoid it. There are *other ways* to make your talk more *fun*: **consider instead playing with design, voice and your story telling**.
 
 
-## How long?
-
-How long can your talk be? How much time do you have to prep?
-
-It will be a **compromise**: 
-- maybe you won’t have time to check everything
-- maybe there is no need to check everything (you may be instructed  not to spend too much time preparing) 
-- maybe you have to (job interview). 
-
-The more you get confident with choices you have, the more efficient you will become in reaching your goal without wasting time. 
-
-Negative
-: **Important:** if you are given X minutes, you have to reach your conclusion in X minutes. 
-
-✅Ask in advance. 
-
-✅Decide in advance how long you can spend on Introduction / 
-Development / Conclusions.  
-
-✅Check the time during your talk to make sure you can adapt.
-
-✅May ask for a warning 5 minutes before.
-
-✅Give up on saying everything.
-
-
-❌Complain about lack of time.
-
-❌You are still in your Introduction after > X/3 minutes.
-
-❌*Time is up so I'll talk faster.*
-
-❌*Time is up so I'll go fast on all the remaining 20 slides.*  If you are 5 minutes from the end and you still have several slides,  going fast through plots/slides/caveats won't help, it just makes the audience more aware that you screwed up your talk. It shouldn't happen, but if it does, keep control, **skip slides entirely and just say your final message**. Make sure the audience understands at least that.
-
-❌Chair tells me time is up but I'll continue anyway. 
-
 
 ## How?
 
@@ -454,10 +456,184 @@ How do you capture attention?
 
 Audience will be mixed: some will hear what you are saying, some will prefer to read, some will concentrate on plots and visualisations. To reach everyone, you'll **typically include all three of these elements**. You will use your voice, you will leave the time to read some text, you will use a plot to illustrate your results. 
 
-Let's look at some tips to design your slides. 
+Let's look at some tips to use your voice and design your slides. 
 
 Positive
 : **Priority:** Functionality. However you need to think about fun, cost-effectiveness and professional look. 
+
+
+## Voice
+
+When **reading**, text gives the main message. When **speaking**, things are much more difficult. Text is only a small part of your message.
+
+Negative
+: People may not remember anything of what you said, but will tend to remember **how** you said it.
+
+
+Sometimes we think we said something but the message we gave was actually different. Many parameters contribute to your message.
+
+**Example:** 
+A: "Yesterday I ate a risotto" 
+
+B: "Oh, How was it?" 
+
+A: "Good."
+<!-- ok, decent -->
+<!-- gooood, delicious -->
+<!-- niente di che, non lo mangerei>
+<!--- 3 different risotto's -->
+
+
+
+### Prosody 
+Prosody does not refer to the text you pronounce but to **how you say it**.
+
+#### Volume/intensity 
+can be high or low: it is related to how much air you use when you speak. 
+
+Negative
+: The audience has to be able to hear what you are saying.
+
+  ✅ Pick a person who is far away and talk to that person
+
+  ❌ Don't talk to yourself
+
+
+#### Intonation  
+
+You can use a higher or lower pitch. Tone is related to contracting a muscle, the more tense it is, the higher the tone, like for a guitar. 
+
+  ❌avoid speaking always with a flat intonation.
+
+
+#### Speech rate: (syllables/s)
+  - very fast (you don't want too much attention, medicines side effects are 9 syllables/s)
+  - slow (baby-talk, 3 syllables/s)
+  - talking live or remotely requires also a different speech rate
+
+  ❌avoid speaking always at the same rate. 
+
+#### Silences 
+
+ Have no fear of silences. 
+
+- They can be used to emphasise something.
+- They can be used to give the audience the time to think.
+- Be aware of them, otherwise they become hesitations. 
+ 
+- Silent pauses 
+- Filled pauses: pause in which there is no silence. 
+
+#### Disfluencies
+
+- *filled pauses*, vocalisations (eee, oooo) 
+- nasalisations (mmmm)
+- repetitions (repeat a word), 
+- false starts (start, then adjust sentence while speaking)
+- lengthenings 
+
+Are you aware of which one do you do? **Try to be aware of them, and possibly reduce them**. 
+
+Negative
+: **Note:** despite their name, they are not really a bad thing. They are part of *spontaneous* speech so it is *normal* (and good) to have *some* of them, it shows that **you are thinking and not reading**.
+
+
+Positive
+: **Tip:** Try to vary some prosodic elements during your talk. Do not read your slides word by word. Give it your rhythm.
+
+
+#### Dominant or not?
+
+Your voice will contribute to identify yourself in a role which is somewhere between dominant and sub-dominant. 
+
+**Dominant:**
+slow, many silences, thinking a lot about what you *don't* want to say; it can show confidence but also puts distance with your audience. Not advisable at the start of a talk. It may give the idea that you *think* you are in a *higher* role (and it may look like you put the audience in a lower role).
+
+
+ **Sub-dominant:**
+fast, many things to say, few silences.
+
+
+### Body language
+
+- Regard: look at the audience (ex. to all committee panel members)
+- Preferably not sitting (removing body language)
+- Moving is ok. However don't move all the time, it's distracting. 
+- Comfortable position, calm and ready to say things that you believe are important. 
+- Easier to feel comfortable if you manage to arrive rested, after a good sleep. 
+
+
+
+## Exercises
+Here are a few exercises using your voice. 
+
+### Exercise 1.
+
+Read the numbers choosing one intention among the ones
+in brackets:
+
+12 34 23 75 (disgust, enthusiasm, resignation)
+
+4 5 7 9 2 (sadness, fear, satisfaction)
+
+
+### Exercise 2.
+Pronounce 'Good morning' with different intentions and ask someone to guess which intention you sent.
+
+- hasty <!-- frettoloso -->
+- happy
+- sad
+- threatening
+- afraid
+- insincere
+- commanding
+- enthusiastic
+
+
+### Exercise 3.
+
+Read this text
+- First following syntactic silences (, . ;)
+- Re-read with higher tone or emphasis on words in bold
+
+Massive neutrinos influence the background evolution of the Universe as well as the growth of structure. Being able to model this effect and constrain the sum of their masses is one of the key challenges in modern cosmology.
+
+Massive **neutrinos** influence the **background** evolution of the Universe as well as the **growth** of structure. Being able to **model** this effect and constrain the sum of their **masses** is one of the key **challenges** in modern cosmology.
+
+**Massive** neutrinos influence the background evolution of the **Universe** as well as the growth of structure. Being able to model this effect and constrain the **sum** of their masses is one of the key challenges in **modern** cosmology.
+
+
+### Exercise 4.
+
+Try to pronounce the following sentence using one of the intentions listed below.
+
+*We'll talk about that tomorrow*
+
+- sad
+- enthusiastic
+- threatening
+
+
+### Exercise 5.
+
+The teacher said the detective is French.
+
+**Who is French?** The teacher or the detective?
+
+**Changing pauses:**
+The teacher said **//** the detective is French.
+
+The teacher **//** said the detective **//** is French.
+
+**Changing intonation (without pauses):**
+
+The ***teacher*** said the detective is ***French***.
+
+The teacher ***said*** the detective is ***French***.
+
+The teacher ***said*** the ***detective*** is French (i.e. not a third person).
+
+
 
 ## Design your slides
 
@@ -587,9 +763,9 @@ Design changes over history: when you choose a font, implicitly you are also giv
 ![alt-text-here](assets/serif.jpg)
 
 
-
-
 ![alt-text-here](assets/font1.jpg)
+
+
 
 
 
@@ -738,174 +914,6 @@ Either there is a point to them, in making your message clearer or more fun, or 
 Positive
 : **My tip:** keep it simple and functional to your message. 
 
-
-
-## Voice
-
-When **reading**, text gives the main message. When **speaking**, things are much more difficult. Text is only a small part of your message.
-
-Negative
-: People may not remember anything of what you said, but will tend to remember **how** you said it.
-
-
-Sometimes we think we said something but the message we gave was actually different. Many parameters contribute to your message.
-
-**Example:** 
-A: "Yesterday I ate a risotto, how was it?" 
-B: "Good."
-<!-- ok, decent -->
-<!-- gooood, delicious -->
-<!-- niente di che, non lo mangerei>
-<!--- 3 different risotto's -->
-
-
-
-### Prosody 
-Prosody does not refer to the text you pronounce but to **how you say it**.
-
-#### Volume/intensity 
-can be high or low: it is related to how much air you use when you speak. 
-
-Negative
-: The audience has to be able to hear what you are saying.
-
-  ✅ Pick a person who is far away and talk to that person
-
-  ❌ Don't talk to yourself
-
-
-#### Intonation  
-
-You can use a higher or lower pitch. Tone is related to contracting a muscle, the more tense it is, the higher the tone, like for a guitar. 
-
-  ❌avoid speaking always with a flat intonation.
-
-
-#### Speech rate: (syllables/s)
-  - very fast (you don't want too much attention, medicines side effects are 9 syllables/s)
-  - slow (baby-talk, 3 syllables/s)
-  - talking live or remotely requires also a different speech rate
-
-  ❌avoid speaking always at the same rate. 
-
-#### Silences 
-
- Have no fear of silences. 
-
-- They can be used to emphasise something.
-- They can be used to give the audience the time to think.
-- Be aware of them, otherwise they become hesitations. 
- 
-- Silent pauses 
-- Filled pauses: pause in which there is no silence. 
-
-#### Disfluencies
-
-- *filled pauses*, vocalisations (eee, oooo) 
-- nasalisations (mmmm)
-- repetitions (repeat a word), 
-- false starts (start, then adjust sentence while speaking)
-- lengthenings 
-
-Are you aware of which one do you do? **Try to be aware of them, and possibly reduce them**. 
-
-Negative
-: **Note:** despite their name, they are not really a bad thing. They are part of *spontaneous* speech so it is *normal* (and good) to have *some* of them, it shows that **you are thinking and not reading**.
-
-
-Positive
-: **Tip:** Try to vary some prosodic elements during your talk. Do not read your slides word by word. Give it your rhythm.
-
-
-#### Dominant or not?
-
-Your voice will contribute to identify yourself in a role which is somewhere between dominant and sub-dominant. 
-
-**Dominant:**
-slow, many silences, thinking a lot about what you *don't* want to say; it can show confidence but also puts distance with your audience. Not advisable at the start of a talk. It may give the idea that you *think* you are in a *higher* role (and it may look like you put the audience in a lower role).
-
-
- **Sub-dominant:**
-fast, many things to say, few silences.
-
-
-### Body language
-
-- Regard: look at the audience (ex. to all committee panel members)
-- Preferably not sitting (removing body language)
-- Moving is ok. However don't move all the time, it's distracting. 
-- Comfortable position, calm and ready to say things that you believe are important. 
-- Easier to feel comfortable if you manage to arrive rested, after a good sleep. 
-
-
-
-## Exercises
-Here are a few exercises using your voice. 
-
-### Exercise 1.
-
-Read the numbers choosing one intention among the ones
-in brackets:
-
-12 34 23 75 (disgust, enthusiasm, resignation)
-
-4 5 7 9 2 (sadness, fear, satisfaction)
-
-
-### Exercise 2.
-Pronounce 'Good morning' with different intentions and ask someone to guess which intention you sent.
-
-- hasty <!-- frettoloso -->
-- happy
-- sad
-- threatening
-- afraid
-- insincere
-- commanding
-- enthusiastic
-
-
-### Exercise 3.
-
-Try to pronounce the following sentence using one of the intentions listed below.
-
-*We'll talk about that tomorrow*
-
-- sad
-- enthusiastic
-- threatening
-
-
-### Exercise 4.
-
-Read this text
-- First following syntactic silences (, . ;)
-- Re-read with higher tone or emphasis on words in bold
-
-Massive neutrinos influence the background evolution of the Universe as well as the growth of structure. Being able to model this effect and constrain the sum of their masses is one of the key challenges in modern cosmology.
-
-Massive **neutrinos** influence the **background** evolution of the Universe as well as the **growth** of structure. Being able to **model** this effect and constrain the sum of their **masses** is one of the key **challenges** in modern cosmology.
-
-**Massive** neutrinos influence the background evolution of the **Universe** as well as the growth of structure. Being able to model this effect and constrain the **sum** of their masses is one of the key challenges in **modern** cosmology.
-
-### Exercise 5.
-
-The teacher said the detective is French.
-
-**Who is French?** The teacher or the detective?
-
-**Changing pauses:**
-The teacher said **//** the detective is French.
-
-The teacher **//** said the detective **//** is French.
-
-**Changing intonation (without pauses):**
-
-The ***teacher*** said the detective is ***French***.
-
-The teacher ***said*** the detective is ***French***.
-
-The teacher ***said*** the ***detective*** is French (i.e. not a third person).
 
 
 ## Remote talks
