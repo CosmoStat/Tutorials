@@ -36,13 +36,13 @@ Presenting your work (to a committee, to the public, to an audience expert in yo
 
 ### What You'll Learn
 
-- some of the choices you have when preparing your talk (content, design, voice)
+- how to adapt your talk to your goal
 
-- tips to improve your presentation 
+- different parts that make up a talk (story line, design, text, images, voice)
 
-- reconsider some misconceptions
+- tips on how to improve each aspect in a presentation 
 
-- Why, Who, Where, What, How long, How?
+- reconsider some misconception
  
 
 <!--![alt-text-here](assets/space.jpg)-->
