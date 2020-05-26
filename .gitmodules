@@ -6,3 +6,7 @@
 	path = docs/docker
 	url = https://github.com/CosmoStat/Tutorials.git
 	branch = docker
+[submodule "docs/presentation_tips"]
+	path = docs/presentation_tips
+	url = https://github.com/CosmoStat/Tutorials.git
+	branch = presentations
