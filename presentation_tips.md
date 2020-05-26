@@ -23,7 +23,7 @@ Duration: 1
 As scientists you will give talks. 
 Presenting your work:
 
-- helps other scientists to know and use your results
+- helps other scientists to know about and use your results
 - helps to establish new collaborations
 - helps to develop new science objectives
 - helps to get a grant/job
@@ -119,7 +119,7 @@ If you know your audience, and what their expectation is, you can better target 
 
 - Learn about your work
 - Learn about the state of the art
-- Learn about a new application of a tool of which they are expert
+- Learn about how you are using a tool they developed
 - Make an evaluation 
 - Find a new collaboration 
 
@@ -238,7 +238,7 @@ Positive
 ### 40 m scientific seminar to experts in your domain
 
 Negative
-: **Goals**: communicate your research results, make other scientists wanting to read, understand, use, your results; start new collaborations to develop your idea/results further; have them cite your papers.
+: **Goals**: communicate your research results, make other scientists want to read, understand, use, your results; start new collaborations to develop your idea/results further; have them cite your papers.
 
 
 ✅ Pick a specific new paper you wrote or result you obtained
@@ -347,13 +347,13 @@ A standard outline would typically include: introduction, build-up and conclusio
 This is the part where you have to first capture attention.
 
 - Explain in one sentence what your talk is about and what you are aiming at
-- What is the problematic you want to address?
+- What is the problem you want to address?
 - What is the state of the art?
 - Introduce characters (main keywords, topic)
 
 ❌Try to avoid very long sentences: you need to capture the attention now, not at the end of 100 words. 
 
-❌Avoid unnecessary citations (usually it's more interesting to know what *you* think that what someone else said, who knows when and who knows in which context).
+❌Avoid unnecessary citations (usually it's more interesting to know what *you* think than what someone else said, who knows when and who knows in which context).
 
 #### Development and build-up
 
@@ -366,7 +366,7 @@ This is the part where you have to first capture attention.
 
 
 #### Conclusions
-  - Give again your key message
+  - Give your key message again
   - Highlight **contrast**: in which way the ending of this story differs from the beginning? 
 	  - what did you learn along the way? 
 	  - are there new open questions?
@@ -374,9 +374,8 @@ This is the part where you have to first capture attention.
 	  - did you acquire new skills?
 	  - did you release a new code?
 - new proposals
-- possibly thank
 
-❌Don't conclude just because time is up.
+❌Take the time to give your conclusions. Don't conclude just because time is up.
 
 
 Positive
@@ -391,7 +390,7 @@ Awkward situations you'd want to avoid:
 
 ❌As a speaker: you say a joke and laugh by yourself.
 
-❌As audience: laugh to a joke you recognise as bad, just to please the speaker. 
+❌As an audience: laugh at a joke you recognise as bad, just to please the speaker. 
 
 Jokes can be:
 
@@ -413,7 +412,7 @@ How long can your talk be? How much time do you have to prep?
 
 It will be a **compromise**: 
 - maybe you won’t have time to check everything
-- maybe there is no need to check everything (you may be instructed  not to prepare for long, because your goal may also include *working on your PhD project first*) 
+- maybe there is no need to check everything (you may be instructed  not to spend too much time preparing) 
 - maybe you have to (job interview). 
 
 The more you get confident with choices you have, the more efficient you will become in reaching your goal without wasting time. 
@@ -611,13 +610,15 @@ It has to be **readable**.
 
 🔥**Warm vs cool** ❄️
 
-Colors can have a general meaning, besides the one given by context.
+Colours can have a general meaning, besides the one given by context.
 
 ![alt-text-here](assets/warm_cool.jpg)
-
+*Reference:* [https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html) 
+ 
 ![alt-text-here](assets/space.jpg)
 
 ![alt-text-here](assets/color_meaning.jpg)
+*Reference:* [https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/). 
 
 Complementary colours are not necessarily a good choice: 
 
@@ -657,6 +658,7 @@ Negative
 *Further reading:* 
 [https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html)
 [https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/)
+
 
 ## Images
 
@@ -742,15 +744,15 @@ Positive
 
 When **reading**, text gives the main message. When **speaking**, things are much more difficult. Text is only a small part of your message.
 
-According to Mehrabian: 7% text, 38% voice, 55% body language.
-
 Negative
-: People may not remember anything of what you said, but will tend to remember how you said it.
+: People may not remember anything of what you said, but will tend to remember **how** you said it.
 
 
 Sometimes we think we said something but the message we gave was actually different. Many parameters contribute to your message.
 
-**Example:** Yesterday I ate a risotto, how was it? Good.
+**Example:** 
+A: "Yesterday I ate a risotto, how was it?" 
+B: "Good."
 <!-- ok, decent -->
 <!-- gooood, delicious -->
 <!-- niente di che, non lo mangerei>
@@ -776,12 +778,12 @@ Negative
 
 You can use a higher or lower pitch. Tone is related to contracting a muscle, the more tense it is, the higher the tone, like for a guitar. 
 
-  ❌avoid speaking always with the same intonation.
+  ❌avoid speaking always with the flat intonation.
 
 
 #### Speech rate: (syllables/s)
   - very fast (you don't want too much attention, medicines side effects are 9 syllables/s)
-  - slow (baby-talk, 3-4 syllables/s)
+  - slow (baby-talk, 3 syllables/s)
   - talking live or remotely requires also a different speech rate
 
   ❌avoid speaking always at the same rate. 
@@ -797,13 +799,13 @@ You can use a higher or lower pitch. Tone is related to contracting a muscle, th
 - Silent pauses 
 - Filled pauses: pause in which there is no silence. 
 
-#### Disfluences
+#### Disfluencies
 
 - *filled pauses*, vocalisations (eee, oooo) 
-- nasalitasion (mmmm)
+- nasalisations (mmmm)
 - repetitions (repeat a word), 
-- false start (start, then adjust sentence while speaking)
-- prolongations
+- false starts (start, then adjust sentence while speaking)
+- lengthenings 
 
 Are you aware of which one do you do? **Try to be aware of them, and possibly reduce them**. 
 
@@ -841,6 +843,16 @@ fast, many things to say, few silences.
 Here are a few exercises using your voice. 
 
 ### Exercise 1.
+
+Read the numbers choosing one intention among the ones
+in brackets:
+
+12 34 23 75 (disgust, enthusiasm, resignation)
+
+4 5 7 9 2 (sadness, fear, satisfaction)
+
+
+### Exercise 2.
 Pronounce 'Good morning' with different intentions and ask someone to guess which intention you sent.
 
 - hasty <!-- frettoloso -->
@@ -851,15 +863,6 @@ Pronounce 'Good morning' with different intentions and ask someone to guess whic
 - insincere
 - commanding
 - enthusiastic
-
-### Exercise 2.
-
-Read the numbers choosing one intention among the ones
-in brackets:
-
-12 34 23 75 (disgust, enthusiasm, resignation)
-
-4 5 7 9 2 (sadness, fear, satisfaction)
 
 
 ### Exercise 3.
@@ -922,7 +925,7 @@ How are they different?
 
 Much more difficult for both speaker and audience to manage and keep the attention. If you give a talk online as you would give it live, there is a high chance it won't be effective. 
 
-
+Should we just record the talk, send it in advance, and then have only the interactive part live? Ex. Q&A on the recorded talk.
 
 ## What we've covered
 
