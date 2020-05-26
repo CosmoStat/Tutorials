@@ -778,7 +778,7 @@ Negative
 
 You can use a higher or lower pitch. Tone is related to contracting a muscle, the more tense it is, the higher the tone, like for a guitar. 
 
-  ❌avoid speaking always with the flat intonation.
+  ❌avoid speaking always with a flat intonation.
 
 
 #### Speech rate: (syllables/s)
