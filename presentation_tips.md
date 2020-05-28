@@ -4,7 +4,7 @@ categories: Sample
 tags: medium
 status: Published
 authors: Valeria Pettorino
-Feedback Link:
+Feedback Link: https://github.com/CosmoStat/Tutorials/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D
 
 <!-- CODELAB: Add iOS meta tags and icons -->
 <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,7 +16,7 @@ Feedback Link:
 <!-- ------------------------ -->
 
 ## Overview
-Duration: 1
+
 
 ### Why is it useful to give good talks?
 
@@ -66,9 +66,13 @@ Material contained here is based on:
 
 This tutorial is mainly meant for scientists, but several tips can be useful for other types of talks. 
 
+### About the author
+
+I am a physicist at [Cosmostat](http://www.cosmostat.org/), CEA Paris-Saclay. 
+That's me: [https://www.valeriapettorino.com/](https://www.valeriapettorino.com/)
 <!-- ------------------------ -->
 ## Why are you giving a talk?
-Duration: 2
+
 
 ### Set your goals
 
@@ -637,7 +641,7 @@ The teacher ***said*** the ***detective*** is French (i.e. not a third person).
 ## Design your slides
 
 Negative
-: **Goal comes first:** design can help you in reaching your goal; it is not just about making something look nice per sé. 
+: **Goal comes first:** design can help you in reaching your goal; it is not just about making something look pretty per sé. 
 
 
 Positive
@@ -735,9 +739,8 @@ Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
 - Main point is **obscured** by irrelevant details 
 - Main point is obscured by **irrelevant details** 
 - **Main point is obscured by irrelevant details** 
-- Too much information to retain before the next slide
 
-![alt-text-here](assets/expertise.jpg)
+Typically you will have more text for an audience with high expertise or in small locations; less text for an audience with low expertise or in a large auditorium. 
 
 ### Font
 
@@ -749,7 +752,7 @@ Negative
 ![alt-text-here](assets/font_readable.jpg)
 
 
-Design changes over history: when you choose a font, implicitly you are also giving a message about yourself.
+Design changes over history: when you choose a font, implicitly you are also giving a message.
 
 ![alt-text-here](assets/font_contemporary.jpg)
 
@@ -763,76 +766,6 @@ Design changes over history: when you choose a font, implicitly you are also giv
 
 
 ![alt-text-here](assets/font1.jpg)
-
-
-
-
-
-## Colours
-
-There is no need to use all available colours just because they exist. 
-
-![alt-text-here](assets/too_many_colors.jpg)
-
-It has to be **readable**.
-
-✅   dark background with light foreground
-
-✅   light background with dark foreground
-
-
-![alt-text-here](assets/space.jpg)
-
-🔥**Warm vs cool** ❄️
-
-Colours can have a general meaning, besides the one given by context.
-
-![alt-text-here](assets/warm_cool.jpg)
-*Reference:* [https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html) 
- 
-![alt-text-here](assets/space.jpg)
-
-![alt-text-here](assets/color_meaning.jpg)
-*Reference:* [https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/). 
-
-Complementary colours are not necessarily a good choice: 
-
-![alt-text-here](assets/bad_contrast.jpg)
-
-![alt-text-here](assets/space.jpg)
-
-
-If you don't have a style guide provided by your institution, and you are not an experienced designer: 
-
-Positive
-: **Tip:** pick your favourite **primary colour**. Then select the others using a **colour matching website**. Avoid using more than 3-5 colours. 
-
-- [Color explorer](http://www.colorexplorer.com/colormatch.aspx): color matching generator. 
-
-![alt-text-here](assets/color_explorer.jpg)
-
-![alt-text-here](assets/space.jpg)
-
-- [Online palette generator: [https://coolors.co/](https://coolors.co/)]
-
-![alt-text-here](assets/palette_generator.jpg)
-
-![alt-text-here](assets/space.jpg)
-
-![alt-text-here](assets/simple.jpg)
-
-![alt-text-here](assets/space.jpg)
-
-
-Negative
-: Templates often add unnecessary elements, heavy background or headers, logo which is too big, wrong colours, poor typeface, ...) 
-
-![alt-text-here](assets/template1.jpg)
-![alt-text-here](assets/template2.jpg)
-
-*Further reading:* 
-[https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html)
-[https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/)
 
 
 ## Images
@@ -915,6 +848,77 @@ Positive
 
 
 
+
+
+
+## Colours
+
+There is no need to use all available colours just because they exist. 
+
+![alt-text-here](assets/too_many_colors.jpg)
+
+It has to be **readable**.
+
+✅   dark background with light foreground
+
+✅   light background with dark foreground
+
+
+![alt-text-here](assets/space.jpg)
+
+🔥**Warm vs cool** ❄️
+
+Colours can have a general meaning, besides the one given by context.
+
+![alt-text-here](assets/warm_cool.jpg)
+*Reference:* [https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html) 
+ 
+![alt-text-here](assets/space.jpg)
+
+![alt-text-here](assets/color_meaning.jpg)
+*Reference:* [https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/). 
+
+Complementary colours are not necessarily a good choice: 
+
+![alt-text-here](assets/bad_contrast.jpg)
+
+![alt-text-here](assets/space.jpg)
+
+
+If you don't have a style guide provided by your institution, and you are not an experienced designer: 
+
+Positive
+: **Tip:** pick your favourite **primary colour**. Then select the others using a **colour matching website**. Avoid using more than 3-5 colours. 
+
+- [Color explorer](http://www.colorexplorer.com/colormatch.aspx): color matching generator. 
+
+![alt-text-here](assets/color_explorer.jpg)
+
+![alt-text-here](assets/space.jpg)
+
+- [Online palette generator: [https://coolors.co/](https://coolors.co/)]
+
+![alt-text-here](assets/palette_generator.jpg)
+
+![alt-text-here](assets/space.jpg)
+
+![alt-text-here](assets/simple.jpg)
+
+![alt-text-here](assets/space.jpg)
+
+
+Negative
+: Templates often add unnecessary elements, heavy background or headers, logo which is too big, wrong colours, poor typeface, ...) 
+
+![alt-text-here](assets/template1.jpg)
+![alt-text-here](assets/template2.jpg)
+
+*Further reading:* 
+[https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html)
+[https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/)
+
+
+
 ## Remote talks
 
 How are they different?
@@ -942,14 +946,14 @@ Negative
 - Why: adapt your talk to your goal
 - Who: help your audience to listen
 - Where: location
-- What: **what is your key message**? 
+
+![alt-text-here](assets/message.jpg)
+
 - How:
-  - **hierarchy** and **contrast**
   - slides (text, font, images)
   - story line
   - voice (prosody and intent beyond the text)
-  - unless you really know what you are doing, keep it simple (excessive decorations, animations, transitions, content, plots, etc): can be very distracting and if you over-do, you can obscure your main message.
-  - While preparing your talk, you are **making choices** that contribute to your message. Be at least **aware of them** or you may end giving a message **that doesn't correspond to your intention**. 
+  - unless you really know what you are doing, **keep it simple** (excessive decorations, animations, transitions, content, plots, etc): can be very distracting and if you over-do, you can obscure your main message.
 
 
 Negative

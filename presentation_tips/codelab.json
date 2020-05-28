@@ -3,9 +3,9 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2020-05-28T17:41:16+02:00",
+  "updated": "2020-05-28T20:56:17+02:00",
   "id": "presentation_tips",
-  "duration": 3,
+  "duration": 0,
   "title": "Tips on preparing a talk",
   "authors": "Valeria Pettorino",
   "summary": "",
@@ -20,5 +20,6 @@
   "tags": [
     "medium"
   ],
+  "feedback": "https://github.com/CosmoStat/Tutorials/issues/new?assignees=\u0026labels=bug\u0026template=bug_report.md\u0026title=%5BBUG%5D",
   "url": "presentation_tips"
 }
