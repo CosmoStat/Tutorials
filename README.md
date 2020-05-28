@@ -22,8 +22,8 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### Career Development
 
-1. **[Presentation Tips](https://cosmostat.github.io/Tutorials/presentation_tips/presentation_tips/index.html) | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/presentations)
-   *Authors:* [@pettorin](https://github.com/pettorin)  
+1. **[Presentation Tips](https://cosmostat.github.io/Tutorials/presentation_tips/presentation_tips/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/presentations)  
+   *Authors:* [@pettorin](https://github.com/pettorin)   
    This tutorial provides tips on how to adapt presentations for different goals. The tutorial is mainly meant for scientists, but several tips can be useful for other types of talks.
 
 ### Data Science
