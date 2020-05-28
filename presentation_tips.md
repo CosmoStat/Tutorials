@@ -23,7 +23,8 @@ Duration: 1
 As scientists you will give talks. 
 Presenting your work:
 
-- helps other scientists to know about and use your results
+- helps other scientists to know about, use and cite your results
+- helps other scientists to remember you and trust your work
 - helps to establish new collaborations
 - helps to develop new science objectives
 - helps to get a grant/job
@@ -38,7 +39,7 @@ Presenting your work:
 
 - different parts that make up a talk (story line, design, text, images, voice)
 
-- tips on how to improve each aspect in a presentation 
+- tips on how to improve each of these aspects in a presentation 
 
 - reconsider some misconception
  
@@ -53,14 +54,6 @@ Negative
 : ⚠️ I am not a professional communicator, I am a scientist. This tutorial is based on what I learned as scientist, after giving and listening to talks, studying tutorials, talking to professional communicators. 
 Some choices can be personal. This tutorial cannot teach you how to make a great presentation. However it can help you to  avoid making a very bad one.
 
-  ❌ professional advice
-
-  ❌ how to make a brilliant talk
-
-  ❌ how to become a professional communicator
-
-![alt-text-here](assets/space.jpg)
-
 
 ### Acknowledgments
 
@@ -69,7 +62,7 @@ Material contained here is based on:
 - Professional experience
 - Feedback I got from people over the years
 - [Coursera Presentation Skills Specialization](https://www.coursera.org/specializations/presentation-skills?) by Alexei Kapterev that I attended
-- Lectures on spoken communication by my father (Prof. Massimo Pettorino) 
+- Lectures on spoken communication by Prof. Massimo Pettorino 
 
 This tutorial is mainly meant for scientists, but several tips can be useful for other types of talks. 
 
@@ -134,7 +127,7 @@ In most cases, people in the audience:
 - may have been asked to attend your talk
 
 Negative
-: When you start, the audience is thinking to many different things. 
+: When you start, the audience is thinking about many different things. 
 **They all have to start thinking about the same thing.**
 They have to start thinking about what *you* are thinking. It's strange if you think about it. Not easy.
 
@@ -224,8 +217,8 @@ Convince them that you can:
 
 ⏰ Very **efficient**, it has to fit 20m:
 
-- 5m introduce yourself and the timely challenge that *needs you*
-- 10m your highlights and how you fit and complete the expertise of the group. Demonstrate how you and the group, together, will reach your common timely goal. 
+- 5m introduce yourself and the timely challenge in your field that *needs you* to be solved;
+- 10m your highlights and how you fit and complete the expertise of the group. Demonstrate how you and the group, together, will reach your common timely goal; 
 - 5m propose a joint project, give your vision of the future, on a short/long term timeline.  
 
 Positive
@@ -254,7 +247,7 @@ Negative
 ⏰ Take the time to explain the idea, main results, describe a scientific plot in detail.
 
 Positive
-: **My Tip**: think of enhancing contrast. How does your method and result differ from what other people have done? How did you advance the state of the art? Show that you are aware of work that in particular *your audience* may have already done in that field.
+: **My Tip**: think of enhancing contrast. How does your method and result differ from what other people have done? How did you advance the state of the art? Show that you are aware of other people work, cite them. Be aware in particular of whether *your audience* may have already worked in that field.
 
 ![alt-text-here](assets/space.jpg)
 
@@ -306,7 +299,7 @@ Negative
 ❌Baby-talking
 
 Positive
-: **My Tip:** don't underestimate your audience. They may not be expert in your field, but each of them will have a talent, and their own expertise, about which you will typically know very little. It's good to explain complex concepts clearly but it's not necessary to rely on over-simplified wrong analogies: ultimately they typically only call for more questions that you won't be able to answer. While simplifying, give also a hint of the complexity of the field you are discussing. Science can be clear, but it's not easy. 
+: **My Tip:** don't underestimate your audience. They may not be expert in your field, but each of them will have a talent, and their own expertise, about which you will typically know very little. Show that you can explain complex concepts clearly; try to avoid over-simplified wrong analogies: ultimately they typically only call for more questions that you won't be able to answer. While simplifying, give also a hint of the complexity of the field you are discussing. Science can be clear, but it's not easy. 
 
 <!-- ------------------------ -->
 
@@ -335,8 +328,8 @@ How long can your talk be? How much time do you have to prep?
 
 It will be a **compromise**: 
 - maybe you won’t have time to check everything
-- maybe there is no need to check everything (you may be instructed  not to spend too much time preparing) 
-- maybe you have to (job interview). 
+- maybe you have been instructed  not to spend too much time preparing 
+- maybe you have a job interview and you want to give the best talk. 
 
 The more you get confident with choices you have, the more efficient you will become in reaching your goal without wasting time. 
 
@@ -365,6 +358,8 @@ Development / Conclusions.
 
 ❌Chair tells me time is up but I'll continue anyway. 
 
+Positive
+: My tip: define at the start how much time each part of your talk should last and how many slides per topic you can have. Share your time across slides. You want to avoid having the first 5 slides which are brilliant, and the quality going drastically down afterwards. 
 
 ## What?
 
@@ -388,6 +383,7 @@ This is the part where you have to first capture attention.
 - What is the problem you want to address?
 - What is the state of the art?
 - Introduce characters (main keywords, topic)
+- Cite other people work: it's good and fair to give credit 
 
 ❌Try to avoid very long sentences: you need to capture the attention now, not at the end of 100 words. 
 
@@ -411,13 +407,13 @@ This is the part where you have to first capture attention.
 	  - what works now that didn't work when you started?
 	  - did you acquire new skills?
 	  - did you release a new code?
-- new proposals
 
-❌Take the time to give your conclusions. Don't conclude just because time is up.
+
+❌Don't conclude just because time is up. Enjoy your conclusions! 
 
 
 Positive
-: **My tip:** create empty slides and main separator slides first: specify keywords on what that group of slides should contain and how much time that part should last. 
+: **Tip:** transfer your enthusiasm! 
 
 
 ### Jokes
@@ -459,7 +455,7 @@ Audience will be mixed: some will hear what you are saying, some will prefer to 
 Let's look at some tips to use your voice and design your slides. 
 
 Positive
-: **Priority:** Functionality. However you need to think about fun, cost-effectiveness and professional look. 
+: **Priority:** is functionality. Plus fun, cost-effectiveness and professional look. 
 
 
 ## Voice
@@ -511,7 +507,7 @@ You can use a higher or lower pitch. Tone is related to contracting a muscle, th
   - slow (baby-talk, 3 syllables/s)
   - talking live or remotely requires also a different speech rate
 
-  ❌avoid speaking always at the same rate. 
+  ❌avoid speaking always at the same rate: enhance contrast between what is more important and what is less important.
 
 #### Silences 
 
@@ -540,6 +536,9 @@ Negative
 
 Positive
 : **Tip:** Try to vary some prosodic elements during your talk. Do not read your slides word by word. Give it your rhythm.
+
+Positive
+: **Tip:** prepare your talk in advance, loud voice. If possible register yourself and review it afterwards to help you improve. 
 
 
 #### Dominant or not?
@@ -644,7 +643,7 @@ Negative
 Positive
 : **Design is planning** 
 
-### Focus
+### Hierarchy
 
 *What's the most important thing you want that slide to say?*
 
@@ -725,7 +724,7 @@ Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
 
 ## Text 
 
-### How much text? No simple rule. 
+### How much text? 
 
  **Not enough**  
 - Slides don't work without the speaker
@@ -863,7 +862,7 @@ Take the time to **describe and explain your plot**.
 ❌A plot is not a photo or an icon. It's not there to make your slides nicer, it's a visualisation of your results. 
 
 Positive
-: Make them large enough to actually be seen. 
+: Make the plot large enough to actually be seen in all its parts. Complex plots require time for them to be explained. If you don't have the time, remove the plot. 
 
 
 ![alt-text-here](assets/space.jpg)
@@ -887,7 +886,7 @@ Photos can be used to highlight the **title** and main topic of the slide.
 
 **The larger, the better**. 
 
-❌Avoid photos at the bottom right of the slides.
+❌Avoid images at the bottom right of the slides: we tend to look from left to right and top to bottom. It looks like a patch on a slide which was already made.
 
 ❌Avoid illustrations that *mimic* a situation: hard to have the audience feel empathy for such a situation. 
 
@@ -925,7 +924,6 @@ How are they different?
 - Very little feedback
 - More difficult to adapt to your audience 
 - More difficult to manage attention
-- More difficult to play with voice intensity
 - Need to talk more slowly (delays, overlap, can be hard to hear) 
 - If you just talk, you end up talking to yourself (which spoils the whole essence of giving a talk!)
 - Slides format is different (small screen, low resolution, delay, no pointer)
@@ -933,7 +931,11 @@ How are they different?
 
 Much more difficult for both speaker and audience to manage and keep the attention. If you give a talk online as you would give it live, there is a high chance it won't be effective. 
 
-Should we just record the talk, send it in advance, and then have only the interactive part live? Ex. Q&A on the recorded talk.
+Positive
+: Tip: given that body language is absent, try to concentrate at least more on the voice, on silences, intonation, speed rate.
+
+Negative
+: Should we just record the talk, send it in advance, and then have only the interactive part live? Ex. Q&A on the recorded talk.
 
 ## What we've covered
 
@@ -956,7 +958,7 @@ Negative
 
 Positive
 : The best way to improve your talks is to **give talks**! 
-Accept invitations to give a public speech.
+Accept invitations to give a public speech and listen: pay attention to what you liked in other people talks and why you liked it. Then try it yourself!
 
 
 
