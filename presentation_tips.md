@@ -87,8 +87,9 @@ Positive
 
 - **transfer knowledge**: share with you what I have learned so far
 - learn how to prepare a **codelab** tutorial
-- contribute to **Lab** activity
+- contribute to **Lab** activity 
 - prepare this tutorial in **one week**
+- make it suitable to share, also without me explaining it 
 
 
 ## To Whom?
@@ -674,7 +675,7 @@ Positive
 
 ## Exercise
 
-What's wrong with the slide below?
+What doesn't work with the slide below?
 
 ![alt-text-here](assets/space.jpg)
 ![alt-text-here](assets/sport1.jpg)
