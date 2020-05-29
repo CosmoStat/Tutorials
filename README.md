@@ -16,6 +16,16 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ## Contents
 
+1. [Career Development](#Career-Development)
+1. [Data Science](#Data-Science)
+1. [Software Carpentries](#Software-Carpentries)
+
+### Career Development
+
+1. **[Presentation Tips](https://cosmostat.github.io/Tutorials/presentation_tips/presentation_tips/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/presentations)  
+   *Authors:* [@pettorin](https://github.com/pettorin)   
+   This tutorial provides tips on how to adapt presentations for different goals. The tutorial is mainly meant for scientists, but several tips can be useful for other types of talks.
+
 ### Data Science
 
 1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=cbekcGxm70Q&list=PLquvp9RIoLGBFfsz8dqzPtLeaEngHYybM)  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)  
@@ -44,7 +54,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
    * *MRI reconstruction with TensorFlow*: [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=HqNm5fowdTU) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/MRIReconstructionWithTensorflow.ipynb)  
    An illustration of how to use TensorFlow to solve a toy MRI reconstruction problem using classical iterative reconstructions, and a deep learning approach.
 
-### Software carpentries
+### Software Carpentries
 
 1. **[Git Tutorial](https://github.com/zaccharieramzi/git-tuto)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/zaccharieramzi/git-tuto)  [![slides](https://img.shields.io/badge/slides-google-yellow)](https://docs.google.com/presentation/d/1vfsG__2-T7xJYGKFs9HfPKmaoMN1Je0V0h7gLyiY1AU/edit?usp=sharing) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=S1A2qSA0TWo)  
   *Authors:* [@zaccharieramzi](https://github.com/zaccharieramzi)    
