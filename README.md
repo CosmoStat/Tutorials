@@ -1,6 +1,6 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CosmoStat Tutorials
@@ -86,6 +86,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.cosmostat.org/people/zaccharie-ramzi"><img src="https://avatars1.githubusercontent.com/u/6387497?v=4" width="100px;" alt=""/><br /><sub><b>Zaccharie Ramzi</b></sub></a><br /><a href="#content-zaccharieramzi" title="Content">🖋</a> <a href="#ideas-zaccharieramzi" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="http://flanusse.net"><img src="https://avatars0.githubusercontent.com/u/861591?v=4" width="100px;" alt=""/><br /><sub><b>Francois Lanusse</b></sub></a><br /><a href="#ideas-EiffL" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-EiffL" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/kansal9"><img src="https://avatars2.githubusercontent.com/u/35466803?v=4" width="100px;" alt=""/><br /><sub><b>Vanshika Kansal</b></sub></a><br /><a href="#content-kansal9" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/pettorin"><img src="https://avatars1.githubusercontent.com/u/8088350?v=4" width="100px;" alt=""/><br /><sub><b>pettorin</b></sub></a><br /><a href="#ideas-pettorin" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-pettorin" title="Content">🖋</a></td>
   </tr>
 </table>
 
