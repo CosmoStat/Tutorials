@@ -1,5 +1,0 @@
-Name Age Colour Weapon
-Leonardo 15 blue Katana
-Raphael 15 Red Sai
-Donatello 14 Purple Bo-staff
-Michelangelo 13 Orange Nunchucks
