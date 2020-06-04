@@ -1,14 +1,11 @@
-name: cstutorials
+name: cosmotutorials
 channels:
   - conda-forge
   - defaults
 dependencies:
   - python>=3.5
-  - astropy>=3.0
   - jupyter
   - matplotlib
   - numpy
   - pandas
-  - scikit-learn
   - scipy
-  - seaborn

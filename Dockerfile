@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook
+FROM jupyter/scipy-notebook:76402a27fd13
 
 LABEL Description="Scipy Jupyter for Cosmo"
 
@@ -29,5 +29,8 @@ RUN git clone https://github.com/lesgourg/class_public.git class && \
 RUN python -c "import classy" && \
     echo "CLASS python wrapper correctly installed"
 
+RUN pip install einsteinpy && \
+    echo "EinsteinPy correctly installed"
 
+ENTRYPOINT []
 CMD [ "/bin/bash" ]
