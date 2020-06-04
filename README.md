@@ -1,58 +1,85 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/python)
+> (not working yet)
+> [![Binder](https://mybinder.org/badge_logo.svg)]()
 
-## Introduction to Python
+## Cosmology with Python wrappers for Einstein-Boltzmann Codes:
+### CAMB and CLASS
 ---
 
-> Authors: <font color='#f78c40'>[Samuel Farrens](http://www.cosmostat.org/people/sfarrens)</font>, <font color='#f78c40'>[Santiago Casas](http://www.cosmostat.org/people/santiago-casas)</font>  
-> Year: 2019  
-> Email: [samuel.farrens@cea.fr](mailto:samuel.farrens@cea.fr), [santiago.casas@cea.fr](mailto:santiago.casas@cea.fr)
+> Authors: <font color='#f78c40'>[Santiago Casas](http://www.cosmostat.org/people/santiago-casas)</font>  
+> Year: 2020  
+> Email: [santiago.casas@cea.fr](mailto:santiago.casas@cea.fr)
+
+This tutorial is comprised of a series of <a href="https://jupyter-notebook.readthedocs.io/en/stable/" target_="blanck">Jupyter notebooks</a> with simple demonstrations and exercises on how to use `CAMB` and `CLASS` using python wrappers.
+The code is designed for non-experts in the field, therefore it includes relatively
+simple explanations of cosmological concepts.
+It intends to show a general overview of the things that are possible with Einstein-Boltzmann codes and python.
+
+### Notebooks
+
+1. [Background Cosmology](./Einstein-Boltzmann-Codes/Cosmology-Background.ipynb)
+1. [Perturbations and the CMB](./Einstein-Boltzmann-Codes/Cosmology-Perturbations-CMB.ipynb)
+1. [Galaxy Clustering and the Fisher Matrix](./Einstein-Boltzmann-Codes/Cosmology-GalaxyClustering.ipynb)
+1. [Test Notebook for CAMB and CLASS](./Einstein-Boltzmann-Codes/test_CAMB_CLASS.ipynb)
+
+#### Background Cosmology
+In this [notebook](./Einstein-Boltzmann-Codes/Cosmology-Background.ipynb), we will cover the following concepts:
+1. What is (precision) Cosmology?
+2. General Relativity in 5 minutes using `EinsteinPy`
+3. The Hubble equation (self-made)
+3. The Hubble equation with `CAMB` and `CLASS`
+4. Cosmological Distances
+
+#### Perturbations and the CMB
+In this [notebook](./Einstein-Boltzmann-Codes/Cosmology-Perturbations-CMB.ipynb), we will cover the following concepts:
+1. Quick introduction to the Cosmic Microwave Background.
+2. Computing the angular power spectra from `CAMB` and `CLASS`.
+3. Interactive comparison of cosmological parameters with Planck data.
+3. Transfer functions, growth and growth rate.
+
+#### Galaxy Clustering and the Fisher Matrix
+In this [notebook](./Einstein-Boltzmann-Codes/Cosmology-GalaxyClustering.ipynb), we will cover the following concepts:
+1. Quick introduction to Galaxy Clustering with spectroscopic redshifts.
+2. Building and plotting the GC model with `CAMB` and `CLASS`.
+3. Quick introduction to Fisher Matrix forecasts.
+3. An example of a 2-dimensional GC Fisher Matrix.
+
+### How to install
+
+In order to run the tutorial notebooks and to have the Boltzmann codes installed, without problems, we will use Docker containers.
+If you haven't installed [Docker](www.docker.com), check their website or our CosmoStat tutorial on [Docker for Data Scientists](https://cosmostat.github.io/Tutorials/docker/docker-introduction/#0).
+
+1. Pull the docker image that can be found [here](https://hub.docker.com/repository/docker/santiagocasas/einstein-boltzmann-codes)
+
+   `docker pull santiagocasas/einstein-boltzmann-codes`
+
+2. Clone this repository and checkout into the `boltzmann` branch.
+
+    `git clone https://github.com/santiagocasas/Tutorials/tree/boltzmann`
+
+3. Change directory to `Tutorials/Einstein-Boltzmann-Codes`.
+
+4. Enter the container by doing:
+
+    `docker run -p 8888:8888 -v ${PWD}:/home/jovyan/work/:rw -it santiagocasas/einstein-boltzmann-codes`
+
+5. Check that you see the `class` and `work` folders by typing `ls` inside the docker terminal.
+
+6.  Start a jupyter notebook instance by typing `jupyter notebook` on the terminal.
+    If a browser window does not open, copy and paste the link that appears on the terminal prompt into your favorite browser.
 
 
+### Installing manually and locally
+#### Download and install all requirements
 
-This tutorial is comprised of a series of <a href="https://jupyter-notebook.readthedocs.io/en/stable/" target_="blanck">Jupyter notebooks</a> with simple demonstrations and exercises.
-
-All code blocks are provided in Python (support for >=3.5) and the number of external packages required to run the examples has be kept to a minimum. All of the code has been clearly presented inside the notebook at least once to avoid the use of any "black boxes" for solving the problems presented.
-
-### Requirements
-
-In order to run the tutorial notebooks tutees will need to have the following installed:
-
-* <a href="https://www.python.org/" target_="blank">Python</a> (require >=3.5)
-* <a href="https://www.astropy.org/" target_="blank">Astropy</a> (recommend >=3.1.2)
+*  Recommended: `gcc` and `gfortran` compilers. [Binaries](https://gcc.gnu.org/wiki/GFortranBinaries) for all platforms.
+* <a href="https://camb.readthedocs.io/en/latest/" target_="blank"> CAMB Python installation </a>
+* <a href="https://github.com/lesgourg/class_public" target_="blank"> CLASS manual installation </a>
+* <a href="https://www.python.org/" target_="blank">Python</a> (require >=3.6)
+* <a href="https://www.cython.org/" target_="blank"> Cython</a> (require >=3.6)
 * <a href="http://jupyter.org/" target_="blank">Jupyter</a> (recommend >=1.0.0)
 * <a href="https://matplotlib.org/" target_="blank">Matplotlib</a> (recommend >=3.0.3)
 * <a href="http://www.numpy.org/" target_="blank">NumPy</a> (recommend >=1.16.2)
 * <a href="https://pandas.pydata.org/" target_="blank">Pandas</a> (recommend >= 0.24.0)
-* <a href="https://scikit-learn.org/stable/" target_="blank">scikit-learn</a> (recommend >= 0.21.0)
 * <a href="https://www.scipy.org/" target_="blank">SciPy</a> (recommend >=1.2.1)
-* <a href="https://seaborn.pydata.org/" target_="blank">Seaborn</a> (recommend >= 0.9.0)
-
-### Notebooks
-
-#### Tutorial 1: Beginner Topics
-
-The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
-
-1. [Table of Contents](./Tutorial_1/Intro.ipynb)
-1. [Native Python](./Tutorial_1/Native.ipynb)
-1. [Basic Numpy](./Tutorial_1/Numpy.ipynb)
-1. [Matplotlib](./Tutorial_1/Matplotlib.ipynb)
-1. [Other Packages](./Tutorial_1/Other-Packages.ipynb)
-1. [Answers to Exercises](./Tutorial_1/Answers-to-exercises.ipynb)
-
-#### Tutorial 2: Intermediate and Advanced Topics
-
-The objective of this tutorial is to provide a more in-depth look at object-oriented
-and pythonic coding. The level is aimed at individuals with some experience with
-Python and good knowledge of basic object types. This tutorial will likely benefit all except the most advanced users.
-
-1. [Table of Contents](./Tutorial_2/Intro-2.ipynb)
-1. [Pythonic Thinking](./Tutorial_2/Pythonic.ipynb)
-1. [Numpy](./Tutorial_2/Numpy-Advanced.ipynb)
-1. [Pandas](./Tutorial_2/Pandas.ipynb)
-1. [Scipy and Matplotlib with Cosmology](./Tutorial_2/Scipy-Matplotlib-Cosmo.ipynb)
-1. [The Anatomy of a Python Class: Part I](./Tutorial_2/Classes_I.ipynb)
-1. [The Anatomy of a Python Class: Part II](./Tutorial_2/Classes_II.ipynb)
-1. [Answers to Exercises](./Tutorial_2/Answers-to-exercises-2.ipynb)
