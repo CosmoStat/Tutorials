@@ -69,6 +69,8 @@ If you are interested in more details about Docker, check our CosmoStat tutorial
 
 6.  Start a jupyter notebook instance by typing `jupyter notebook` on the terminal.
     If a browser window does not open, copy and paste the link that appears on the terminal prompt into your favorite browser.
+    
+7.  To test if the installation worked, run all the cells in the `test_CAMB_CLASS.ipynb` notebook, which you will find in the repo under the `work/`  directory. 
 
 
 ### Installing manually and locally
