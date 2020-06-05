@@ -22,9 +22,15 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### Career Development
 
-1. **[Presentation Tips](https://cosmostat.github.io/Tutorials/presentation_tips/presentation_tips/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/presentations)  
+1. **[Presentation Tips](https://cosmostat.github.io/Tutorials/presentation_tips/presentation_tips/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/presentations) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/playlist?list=PLquvp9RIoLGCmfAZTOKJz7qDO0NqCnMAV)    
    *Authors:* [@pettorin](https://github.com/pettorin)   
    This tutorial provides tips on how to adapt presentations for different goals. The tutorial is mainly meant for scientists, but several tips can be useful for other types of talks.
+
+### Cosmology
+
+1. **[Cosmology with Python wrappers for Einstein-Boltzmann Codes](https://github.com/CosmoStat/Tutorials/tree/boltzmann)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/boltzmann)  
+    *Authors:* [@santiagocasas](https://github.com/santiagocasas)  
+    This tutorial is comprised of a series of Jupyter notebooks with simple demonstrations and exercises on how to use `CAMB` and `CLASS` using python wrappers. The code is designed for non-experts in the field, therefore it includes relatively simple explanations of cosmological concepts. It intends to show a general overview of the things that are possible with Einstein-Boltzmann codes and python.
 
 ### Data Science
 
