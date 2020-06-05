@@ -17,6 +17,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 ## Contents
 
 1. [Career Development](#Career-Development)
+1. [Cosmology](#Cosmology)
 1. [Data Science](#Data-Science)
 1. [Software Carpentries](#Software-Carpentries)
 
