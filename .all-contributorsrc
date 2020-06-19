@@ -74,6 +74,15 @@
         "ideas",
         "content"
       ]
+    },
+    {
+      "login": "JulienNGirard",
+      "name": "Julien N Girard",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10849756?v=4",
+      "profile": "http://www.cosmostat.org/people/jgirard/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,

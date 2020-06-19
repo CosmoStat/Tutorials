@@ -1,6 +1,6 @@
 <a href="http://www.cosmostat.org/" target_="blank"><img src="http://www.cosmostat.org/wp-content/uploads/2017/07/CosmoStat-Logo_WhiteBK.jpg" width="400"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CosmoStat Tutorials
@@ -99,6 +99,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/kansal9"><img src="https://avatars2.githubusercontent.com/u/35466803?v=4" width="100px;" alt=""/><br /><sub><b>Vanshika Kansal</b></sub></a><br /><a href="#content-kansal9" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/pettorin"><img src="https://avatars1.githubusercontent.com/u/8088350?v=4" width="100px;" alt=""/><br /><sub><b>pettorin</b></sub></a><br /><a href="#ideas-pettorin" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-pettorin" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/fadinammour"><img src="https://avatars2.githubusercontent.com/u/39698793?v=4" width="100px;" alt=""/><br /><sub><b>fadinammour</b></sub></a><br /><a href="#ideas-fadinammour" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-fadinammour" title="Content">🖋</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.cosmostat.org/people/jgirard/"><img src="https://avatars1.githubusercontent.com/u/10849756?v=4" width="100px;" alt=""/><br /><sub><b>Julien N Girard</b></sub></a><br /><a href="#content-JulienNGirard" title="Content">🖋</a></td>
   </tr>
 </table>
 
