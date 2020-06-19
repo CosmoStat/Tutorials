@@ -98,8 +98,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://flanusse.net"><img src="https://avatars0.githubusercontent.com/u/861591?v=4" width="100px;" alt=""/><br /><sub><b>Francois Lanusse</b></sub></a><br /><a href="#ideas-EiffL" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-EiffL" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/kansal9"><img src="https://avatars2.githubusercontent.com/u/35466803?v=4" width="100px;" alt=""/><br /><sub><b>Vanshika Kansal</b></sub></a><br /><a href="#content-kansal9" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/pettorin"><img src="https://avatars1.githubusercontent.com/u/8088350?v=4" width="100px;" alt=""/><br /><sub><b>pettorin</b></sub></a><br /><a href="#ideas-pettorin" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-pettorin" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.cosmostat.org/people/fadi-nammour"><img src="https://www.cosmostat.org/wp-content/uploads/2018/03/fadi-2000x2000.jpg" width="100px;" alt=""/><br /><sub><b>Fadi Nammour</b></sub></a><br /><a href="#content-fadinammour" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.cosmostat.org/people/julien-girard"><img src="https://www.cosmostat.org/wp-content/uploads/2014/12/jgirard.jpg" width="100px;" alt=""/><br /><sub><b>Julien N. Girard</b></sub></a><br /><a href="#content-JulienNGirard" title="Content">🖋</a></td>
   </tr>
 </table>
 
