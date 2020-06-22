@@ -23,7 +23,7 @@ The goal of this tutorial is to introduce researchers to bash and scripting. It 
 To start this tutorial, it is possible to launch it online using Binder with no installation required, or install it and start it locally using Docker as follow:
 
 ### Binder
-Click on the following icon to launch the tutorial [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fadinammour/bash_intro/master?filepath=intro.ipynb).
+Click on the following icon to launch the tutorial [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fadinammour/Tutorials/bash_tutorial?filepath=intro.ipynb).
 
 ### Docker
 0. Install [Docker](https://www.docker.com/products/docker-desktop) 
