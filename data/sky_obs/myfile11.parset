@@ -1,0 +1,13 @@
+Anabeam[0].target="CYGNUS X-3_TRACKING"
+Anabeam[0].simbadSearch=CYGNUS X-3
+Anabeam[0].trackingType=tracking
+Anabeam[0].transitDate=2020-06-16
+Anabeam[0].startTime=2020-06-16T03:54:30Z
+Anabeam[0].duration=600s
+Anabeam[0].optFrq=70
+ 
+Output.sst_userfile=true
+Output.xst_userfile=true
+Output.xst_sbList=[351,375,376,377,378,380,382,383,384,385,386,387,388,389,390,406]
+Output.nri_receivers=true
+ 
