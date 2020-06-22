@@ -60,6 +60,7 @@ Here is a list of functions and concepts that were not covered by this tutorial:
 
 For curious readers, these notions are explained in the links of the Resources section.
 
+
 ## Acknowledgements
 This work has been made easier thanks to the valuable help and assistance of [Samuel Farren](https://sfarrens.github.io/) and [François Lanusse](http://www.flanusse.net/).
 
