@@ -79,7 +79,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
   *Authors:* [@EiffL](https://github.com/EiffL)   
   This tutorial demonstrates how to create a Docker container to distribute a complete Jupyter notebook environment.
 
-5. **[Bash and Scripting Tutorial for Researchers](https://github.com/fadinammour/bash_intro/blob/master/README.md)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial)  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/bash_tutorial?filepath=intro.ipynb)  
+5. **[Bash and Scripting Tutorial for Researchers](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial/README.md)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial)  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/bash_tutorial?filepath=intro.ipynb)  
     *Authors:* [@fadinammour](https://github.com/fadinammour), [@JulienNGirard](https://github.com/JulienNGirard)(screen segment)
     This tutorial gives the key concepts of bash and its scripts to help researchers manage and process their data with more ease.
 
