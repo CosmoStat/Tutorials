@@ -9,6 +9,7 @@
 1. [Deterministic Profiling](#Deterministic-Profiling)
 1. [Optimisation](#Optimisation)
 1. [Memory Management](#Memory-Management)
+1. [Further reading](#Further-Reading)
 
 ## Deterministic Profiling
 
@@ -164,3 +165,6 @@ $ pyinstrument -r html complicated.py
 ## Optimisation
 
 ## Memory Management
+
+## Further Reading
+- [Python Profiling](https://medium.com/@antoniomdk1/hpc-with-python-part-1-profiling-1dda4d172cdf)
