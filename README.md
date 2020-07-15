@@ -7,8 +7,8 @@
 ## Contents
 
 1. [Deterministic Profiling](#Deterministic-Profiling)
+1. [Memory Profiling](#Memory-Profiling)
 1. [Optimisation](#Optimisation)
-1. [Memory Management](#Memory-Management)
 1. [Further reading](#Further-Reading)
 
 ## Deterministic Profiling
@@ -122,7 +122,7 @@ Then we can run SnakeViz.
 $ snakeviz sleeper.pstats
 ```
 
-This will open a browser wind where you can navigate and search for function calls.
+This will open a browser window where you can navigate and search for function calls.
 
 This is particularly useful for more complicated scripts such as [`complicated.py`](./complicated.py) that use a lot of built-in functions behind the scenes.
 
@@ -162,9 +162,93 @@ pyinstrument also allows for more interactive profiling by rendering the output 
 $ pyinstrument -r html complicated.py
 ```
 
-## Optimisation
+## Memory Profiling
 
-## Memory Management
+The runtime is not the only consideration you should have when aiming to optimise your code. Inefficient memory management can be even more problematic as you can run into hardware limitations. As before, you should identify the greedy parts of your code before attempting to reduce the memory usage.
+
+### Memory Profiler
+
+[Memory Profiler](https://github.com/pythonprofilers/memory_profiler) is a package for monitoring the memory consumption of a Python process.
+
+Similarly to cProfile, Memory Profiler can be run at the function level or on a whole script. To profile a single function, simply add a `@profile` decorator as done for the `memory_eater` function in the [`memory.py`](./memory.py) script the execute the script as follows.
+
+```bash
+$ python -m memory_profiler memory.py
+```
+
+Which will provide something like the following.
+
+```
+Filename: memory.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    17   12.801 MiB   12.801 MiB   @profile
+    18                             def memory_eater():
+    19
+    20   12.801 MiB    0.000 MiB       bignum_list = []
+    21   12.801 MiB    0.000 MiB       bignum_range = (1e30, 1e31)
+    22
+    23   64.801 MiB    0.004 MiB       for _ in range(int(1e6)):
+    24
+    25   64.801 MiB    1.828 MiB           bignum_list.append(randint(*bignum_range))
+```
+
+Where we can see total memory used and how much memory is added by each python object.
+
+To profile the whole script use `mprof` as follows.
+
+```bash
+$ mprof run memory.py
+```
+
+This will create a temporary file (`mprofile_<YYYYMMDDhhmmss>.dat`). You can visualise the content of this file by running.
+
+```bash
+mprof plot
+```
+
+Which produces the following type of plot.
+
+<img src="./images/memory.png">
+
+Here we can clearly see that `memory_eater` function increases the memory consumption over time.
+
+## Programme Optimisation
+
+Once you have profiled your code and identified the bottlenecks you can start working on ways to make it run more efficiently. Sadly, there is **no magic method** to make everything run faster. You will have to deal with things on a case by case basis and find the most appropriate way to optimise.
+
+In the following subsections I will provide some tips and briefly introduce some tools to help you get started.
+
+### Efficient Implementation
+
+The first thing to look at, before using an special plugins or tricks, is how efficiently you have implemented your code. Look at your code and ask yourself:
+
+- Is each function being called the correct number of times?
+- Can any quantities be pre-computed to save time?
+- Are any calculations being performed unnecessarily?
+
+A very simplistic example of this is presented in [`efficient.py`](./efficient.py). In this script two different approaches are shown for obtaining the same final quantities. In the *inefficient* implementation unnecessary calculations are made, while in the *efficient* implementation only the operations needed at a given time are performed. Try profiling this script to compare the two implementations.
+
+### Pythonic Coding
+
+One of the simplest ways to optimise your code is to take advantage of native Python data structures such as [*list comprehensions* ](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions), [*generators*](https://docs.python.org/3/c-api/gen.html), *etc.*
+
+For example, identifying loops that can be replaced by more efficient list comprehensions can shave valuable seconds off your code. Have a look at the script [`list_comp_vs_loop.py`](./list_comp_vs_loop.py). The objective is to produce a list of cubed values from zero to `n`, however in one function this is accomplished using a standard loop, while the other implements a list comprehension. Try profiling both of this script to identify which implementation is faster.
+
+> See [Pythonic Thinking](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-2-intermediate-and-advanced-topics) tutorial for more examples.
+
+### Numba
+
+There are various packages specifically designed to speed up calculations in Python. [Numba](http://numba.pydata.org/) is one such package that works particularly well in conjunction with Numpy.
+
+> Numba is a compiler for Python array and numerical functions that gives you the power to speed up your applications with high performance functions written directly in Python. - [source](https://numba.pydata.org/numba-doc/latest/user/overview.html#overview)
+
+Numba works by compiling the first call to a given function meaning that subsequent calls do not require interpretation and are thus executed much faster.
+
+In the script `numba_vs_numpy.py` we compare two functions to calculate `tanh` of the diagonal elements of a matrix, one implemented with Numba and the other without. Try profiling this script to compare the performance of the two implementations. What happens if you reduce the number of calls to each function?
+
+### Memory Mapping
 
 ## Further Reading
 - [Python Profiling](https://medium.com/@antoniomdk1/hpc-with-python-part-1-profiling-1dda4d172cdf)
