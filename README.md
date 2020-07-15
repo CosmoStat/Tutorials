@@ -214,7 +214,7 @@ Which produces the following type of plot.
 
 Here we can clearly see that `memory_eater` function increases the memory consumption over time.
 
-## Programme Optimisation
+## Optimisation
 
 Once you have profiled your code and identified the bottlenecks you can start working on ways to make it run more efficiently. Sadly, there is **no magic method** to make everything run faster. You will have to deal with things on a case by case basis and find the most appropriate way to optimise.
 
