@@ -1,0 +1,14 @@
+name: profiling
+channels:
+  - defaults
+dependencies:
+  - graphviz
+  - pip
+  - pip:
+    - gprof2dot
+    - matplotlib
+    - memory-profiler
+    - numba
+    - numpy
+    - pyinstrument
+    - snakeviz

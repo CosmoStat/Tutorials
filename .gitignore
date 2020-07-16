@@ -109,3 +109,6 @@ yarn.lock
 # profiling
 *.pstats
 mprofile_*
+
+# binaries
+*.npy

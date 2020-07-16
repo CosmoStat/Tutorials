@@ -1,3 +1,18 @@
+"""Sleeper Example
+
+:Author: Samuel Farrens <samuel.farrens@cea.fr>
+
+This script makes multiple calls to the built-in sleep method to monitor
+the time spent on each function call.
+
+To run script profiling:
+$ python -m cProfile sleeper.py
+
+To run script profiling with sorted by number of calls:
+$ python -m cProfile -s calls sleeper.py
+
+"""
+
 from time import sleep
 
 

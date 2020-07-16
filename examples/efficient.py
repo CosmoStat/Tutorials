@@ -46,7 +46,7 @@ def calculate_inefficient(val_range):
     return res
 
 
-def top_five_inefficient(values):
+def top_vals_inefficient(values, n):
     """Top 5 Inefficient Values
 
     Take the first 5 value pairs from the list.
@@ -55,6 +55,8 @@ def top_five_inefficient(values):
     ----------
     values : list
         Values obtained from calculate_inefficient
+    n : int
+        Number of values to return
 
     Returns
     -------
@@ -63,7 +65,7 @@ def top_five_inefficient(values):
 
     """
 
-    return values[:5]
+    return values[:n]
 
 
 def calculate_efficient(val_range):
@@ -97,7 +99,7 @@ def calculate_efficient(val_range):
     return res
 
 
-def top_five_efficient(values):
+def top_vals_efficient(values, n):
     """Top 5 Efficient Values
 
     Take the first 5 values and calculate the corresponding squares.
@@ -106,6 +108,8 @@ def top_five_efficient(values):
     ----------
     values : list
         Values obtained from calculate_efficient
+    n : int
+        Number of values to return
 
     Returns
     -------
@@ -114,7 +118,7 @@ def top_five_efficient(values):
 
     """
 
-    return [(val, val ** 2) for val in values[:5]]
+    return [(val, val ** 2) for val in values[:n]]
 
 
 def main():
@@ -123,10 +127,10 @@ def main():
     val_range = [i * (1. / n_values) for i in range(n_values)]
 
     res_ineff = calculate_inefficient(val_range)
-    t5_ineff = top_five_inefficient(res_ineff)
+    t5_ineff = top_vals_inefficient(res_ineff, 5)
 
     res_eff = calculate_efficient(val_range)
-    t5_eff = top_five_efficient(res_eff)
+    t5_eff = top_vals_efficient(res_eff, 5)
 
 
 if __name__ == '__main__':

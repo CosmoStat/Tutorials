@@ -1,0 +1,7 @@
+gprof2dot
+matplotlib
+memory-profiler
+numba
+numpy
+pyinstrument
+snakeviz

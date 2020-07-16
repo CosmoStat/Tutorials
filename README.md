@@ -6,10 +6,28 @@
 
 ## Contents
 
+1. [Set Up](#Set-Up)
 1. [Deterministic Profiling](#Deterministic-Profiling)
 1. [Memory Profiling](#Memory-Profiling)
 1. [Optimisation](#Optimisation)
 1. [Further reading](#Further-Reading)
+
+## Set Up
+
+The easiest way to run all of the examples provided in this tutorial is to build the Conda environment.
+
+```bash
+$ conda env create -f environment.yml
+```
+
+Alternatively, you can simply install the requirements.
+
+```bash
+$ pip install -r requirements.txt
+```
+
+If you choose the latter, you will also need to install [Graphviz](https://graphviz.org/), which can done with `conda`, `apt` or `brew`.
+
 
 ## Deterministic Profiling
 
@@ -21,19 +39,19 @@ Before attempting to optimise your code (*i.e.* make it run faster) it is essent
 
 [cProfile](https://docs.python.org/3/library/profile.html) is a built-in Python profiler. The commands can be written directly into modules/scripts to track the number of calls to functions and the time spent on each call. Alternatively, cProfile can be passed as an option to the `python` command when executing a script. For this tutorial, we will use the latter option.
 
-We will start by looking at the [`sleeper.py`](./sleeper.py) script. This script contains a function (`sleep_for_1s`) that calls Python's built-in [`sleep`](https://docs.python.org/3/library/time.html#time.sleep) method for one second. This will make it easy for us to assess the time spent on each call to this function. The other two functions in the script (`function1`, `function2`) simply make calls to the `sleep_for_1s` function.
+We will start by looking at the [`sleeper.py`](./examples/examples/sleeper.py) script. This script contains a function (`sleep_for_1s`) that calls Python's built-in [`sleep`](https://docs.python.org/3/library/time.html#time.sleep) method for one second. This will make it easy for us to assess the time spent on each call to this function. The other two functions in the script (`function1`, `function2`) simply make calls to the `sleep_for_1s` function.
 
 Running the script on its own produces no output, however if we time the process we can see that it takes six seconds in total.
 
 ```bash
-$ time python sleeper.py
+$ time python examples/sleeper.py
 python sleeper.py  0.02s user 0.01s system 0% cpu 6.045 total
 ```
 
 cProfile will allow us to see how many calls were made to each function in the script and how long each call took.
 
 ```bash
-$ python -m cProfile sleeper.py
+$ python -m cProfile examples/sleeper.py
 ```
 
 The output should look something like this.
@@ -59,7 +77,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 We can also sort this output by *e.g.* the number of calls to a given function.
 
 ```bash
-$ python -m cProfile -s calls sleeper.py
+$ python -m cProfile -s calls examples/sleeper.py
 ```
 
 Which gives.
@@ -89,7 +107,7 @@ Where we can see that `sleep_for_1s` was called a total of six times for a cumul
 First we tell cProfile to output to a file (*e.g.* `sleeper.pstats`).
 
 ```bash
-$ python -m cProfile -o sleeper.pstats sleeper.py
+$ python -m cProfile -o sleeper.pstats examples/sleeper.py
 ```
 
 Then we can run `gprof2dot` on this output.
@@ -97,8 +115,6 @@ Then we can run `gprof2dot` on this output.
 ```bash
 $ gprof2dot -f pstats sleeper.pstats | dot -Tpng -o sleeper.png
 ```
-
-> Note that the `dot` command requires that [Graphviz](https://graphviz.org/) be installed (possible with `apt` and `brew`).
 
 Which produces the following image.
 
@@ -113,7 +129,7 @@ Here we can more easily see the hierarchy and the number of calls to each functi
 As before we need a cProfile output file.
 
 ```bash
-$ python -m cProfile -o sleeper.pstats sleeper.py
+$ python -m cProfile -o sleeper.pstats examples/sleeper.py
 ```
 
 Then we can run SnakeViz.
@@ -124,10 +140,10 @@ $ snakeviz sleeper.pstats
 
 This will open a browser window where you can navigate and search for function calls.
 
-This is particularly useful for more complicated scripts such as [`complicated.py`](./complicated.py) that use a lot of built-in functions behind the scenes.
+This is particularly useful for more complicated scripts such as [`complicated.py`](./examples/complicated.py) that use a lot of built-in functions behind the scenes.
 
 ```bash
-$ python -m cProfile -o complicated.pstats complicated.py
+$ python -m cProfile -o complicated.pstats examples/complicated.py
 $ snakeviz complicated.pstats
 ```
 
@@ -138,28 +154,26 @@ Finally, if you prefer an alternative to cProfile, various other tools also exis
 To run simply replace calls to `python` with `pyinstrument`.
 
 ```bash
-$ pyinstrument complicated.py
+$ pyinstrument examples/sleeper.py
 ```
 
 Which will produce something like the following.
 
 ```
-Program: complicated.py
+Program: examples/sleeper.py
 
-5.434 <module>  complicated.py:1
-├─ 5.270 main  complicated.py:53
-│  └─ 5.270 myfunc  complicated.py:40
-│     └─ 5.270 mymethod  complicated.py:22
-│        ├─ 4.986 prep_y  complicated.py:18
-│        └─ 0.284 [self]
-└─ 0.163 <module>  numpy/__init__.py:1
-      [100 frames hidden]  numpy, pickle, struct, pathlib, ntpat...
+6.011 <module>  sleeper.py:1
+└─ 6.011 main  sleeper.py:52
+   ├─ 5.009 function1  sleeper.py:26
+   │  └─ 5.009 sleep_for_1s  sleeper.py:19
+   └─ 1.001 function2  sleeper.py:42
+      └─ 1.001 sleep_for_1s  sleeper.py:19
 ```
 
 pyinstrument also allows for more interactive profiling by rendering the output as HTML.
 
 ```bash
-$ pyinstrument -r html complicated.py
+$ pyinstrument -r html examples/sleeper.py
 ```
 
 ## Memory Profiling
@@ -170,28 +184,39 @@ The runtime is not the only consideration you should have when aiming to optimis
 
 [Memory Profiler](https://github.com/pythonprofilers/memory_profiler) is a package for monitoring the memory consumption of a Python process.
 
-Similarly to cProfile, Memory Profiler can be run at the function level or on a whole script. To profile a single function, simply add a `@profile` decorator as done for the `memory_eater` function in the [`memory.py`](./memory.py) script the execute the script as follows.
+Similarly to cProfile, Memory Profiler can be run at the function level or on a whole script. To profile a single function, simply add a `@profile` decorator as done for the `memory_eater` function in the [`memory.py`](./examples/memory.py) script the execute the script as follows.
 
 ```bash
-$ python -m memory_profiler memory.py
+$ python -m memory_profiler examples/memory.py
 ```
 
 Which will provide something like the following.
 
 ```
-Filename: memory.py
-
 Line #    Mem usage    Increment   Line Contents
 ================================================
-    17   12.801 MiB   12.801 MiB   @profile
-    18                             def memory_eater():
-    19
-    20   12.801 MiB    0.000 MiB       bignum_list = []
-    21   12.801 MiB    0.000 MiB       bignum_range = (1e30, 1e31)
-    22
-    23   64.801 MiB    0.004 MiB       for _ in range(int(1e6)):
+    21   11.879 MiB   11.879 MiB   @profile
+    22                             def memory_eater():
+    23                                 """Memory Eater
     24
-    25   64.801 MiB    1.828 MiB           bignum_list.append(randint(*bignum_range))
+    25                                 This function creates a list and increases the memory consumption several
+    26                                 times before deleting the object.
+    27
+    28                                 """
+    29
+    30   11.879 MiB    0.000 MiB       big_list = [2]
+    31   11.879 MiB    0.000 MiB       sleep(1)
+    32
+    33   88.176 MiB   76.297 MiB       big_list *= (10 ** 7)
+    34   88.176 MiB    0.000 MiB       sleep(1)
+    35
+    36  164.469 MiB   76.293 MiB       big_list *= 2
+    37  164.469 MiB    0.000 MiB       sleep(1)
+    38
+    39  317.055 MiB  152.586 MiB       big_list *= 2
+    40  317.055 MiB    0.000 MiB       sleep(1)
+    41
+    42   11.879 MiB    0.000 MiB       del big_list
 ```
 
 Where we can see total memory used and how much memory is added by each python object.
@@ -199,7 +224,7 @@ Where we can see total memory used and how much memory is added by each python o
 To profile the whole script use `mprof` as follows.
 
 ```bash
-$ mprof run memory.py
+$ mprof run examples/memory.py
 ```
 
 This will create a temporary file (`mprofile_<YYYYMMDDhhmmss>.dat`). You can visualise the content of this file by running.
@@ -228,13 +253,13 @@ The first thing to look at, before using an special plugins or tricks, is how ef
 - Can any quantities be pre-computed to save time?
 - Are any calculations being performed unnecessarily?
 
-A very simplistic example of this is presented in [`efficient.py`](./efficient.py). In this script two different approaches are shown for obtaining the same final quantities. In the *inefficient* implementation unnecessary calculations are made, while in the *efficient* implementation only the operations needed at a given time are performed. Try profiling this script to compare the two implementations.
+A very simplistic example of this is presented in [`efficient.py`](./examples/efficient.py). In this script two different approaches are shown for obtaining the same final quantities. In the *inefficient* implementation unnecessary calculations are made, while in the *efficient* implementation only the operations needed at a given time are performed. Try profiling this script to compare the two implementations.
 
 ### Pythonic Coding
 
 One of the simplest ways to optimise your code is to take advantage of native Python data structures such as [*list comprehensions* ](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions), [*generators*](https://docs.python.org/3/c-api/gen.html), *etc.*
 
-For example, identifying loops that can be replaced by more efficient list comprehensions can shave valuable seconds off your code. Have a look at the script [`list_comp_vs_loop.py`](./list_comp_vs_loop.py). The objective is to produce a list of cubed values from zero to `n`, however in one function this is accomplished using a standard loop, while the other implements a list comprehension. Try profiling both of this script to identify which implementation is faster.
+For example, identifying loops that can be replaced by more efficient list comprehensions can shave valuable seconds off your code. Have a look at the script [`list_comp_vs_loop.py`](./examples/list_comp_vs_loop.py). The objective is to produce a list of cubed values from zero to `n`, however in one function this is accomplished using a standard loop, while the other implements a list comprehension. Try profiling both of this script to identify which implementation is faster.
 
 > See [Pythonic Thinking](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-2-intermediate-and-advanced-topics) tutorial for more examples.
 
@@ -246,9 +271,13 @@ There are various packages specifically designed to speed up calculations in Pyt
 
 Numba works by compiling the first call to a given function meaning that subsequent calls do not require interpretation and are thus executed much faster.
 
-In the script `numba_vs_numpy.py` we compare two functions to calculate `tanh` of the diagonal elements of a matrix, one implemented with Numba and the other without. Try profiling this script to compare the performance of the two implementations. What happens if you reduce the number of calls to each function?
+In the script [`numba_vs_numpy.py`](./examples/numba_vs_numpy.py) we compare two functions to calculate `tanh` of the diagonal elements of a matrix, one implemented with Numba and the other without. Try profiling this script to compare the performance of the two implementations. What happens if you reduce the number of calls to each function?
 
 ### Memory Mapping
+
+Reducing the memory consumption of your code can be a challenging problem. There are, however, some tricks such as memory mapping that can have a big impact.
+
+The [`memory_map.py`](./examples/memory_map.py) script demonstrates how loading a Numpy binary file as a memory map can significantly reduce the amount memory used. Try profiling this script to see how much of an impact this makes.
 
 ## Further Reading
 - [Python Profiling](https://medium.com/@antoniomdk1/hpc-with-python-part-1-profiling-1dda4d172cdf)
