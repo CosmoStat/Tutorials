@@ -35,7 +35,7 @@ def cubes_loop(n):
     new_list = []
 
     for i in range(n):
-        new_list.append(n ** 3)
+        new_list.append(i ** 3)
 
     return new_list
 
