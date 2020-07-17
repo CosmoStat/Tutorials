@@ -39,7 +39,7 @@ Before attempting to optimise your code (*i.e.* make it run faster) it is essent
 
 [cProfile](https://docs.python.org/3/library/profile.html) is a built-in Python profiler. The commands can be written directly into modules/scripts to track the number of calls to functions and the time spent on each call. Alternatively, cProfile can be passed as an option to the `python` command when executing a script. For this tutorial, we will use the latter option.
 
-We will start by looking at the [`sleeper.py`](./examples/examples/sleeper.py) script. This script contains a function (`sleep_for_1s`) that calls Python's built-in [`sleep`](https://docs.python.org/3/library/time.html#time.sleep) method for one second. This will make it easy for us to assess the time spent on each call to this function. The other two functions in the script (`function1`, `function2`) simply make calls to the `sleep_for_1s` function.
+We will start by looking at the [`sleeper.py`](./examples/sleeper.py) script. This script contains a function (`sleep_for_1s`) that calls Python's built-in [`sleep`](https://docs.python.org/3/library/time.html#time.sleep) method for one second. This will make it easy for us to assess the time spent on each call to this function. The other two functions in the script (`function1`, `function2`) simply make calls to the `sleep_for_1s` function.
 
 Running the script on its own produces no output, however if we time the process we can see that it takes six seconds in total.
 
