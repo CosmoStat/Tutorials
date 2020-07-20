@@ -35,7 +35,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### Data Science
 
-1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=cbekcGxm70Q&list=PLquvp9RIoLGBFfsz8dqzPtLeaEngHYybM)  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/tree/python)  
+1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=cbekcGxm70Q&list=PLquvp9RIoLGBFfsz8dqzPtLeaEngHYybM) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/python)  
     *Authors:* [@sfarrens](https://github.com/sfarrens),  [@santiagocasas](https://github.com/santiagocasas)  
   * [Tutorial 1: Beginner Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-1-beginner-topics)
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
