@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - graphviz
+  - pyqt
   - pip
   - pip:
     - gprof2dot
