@@ -65,7 +65,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
    * *MRI reconstruction with TensorFlow*: [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=HqNm5fowdTU) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/MRIReconstructionWithTensorflow.ipynb)  
    An illustration of how to use TensorFlow to solve a toy MRI reconstruction problem using classical iterative reconstructions, and a deep learning approach.
 
-7. **[Introduction to MCMC and Bayesian inference](https://github.com/zaccharieramzi/git-tuto)** |   [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EfWEGBHeA3k) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)  
+7. **[Introduction to MCMC and Bayesian inference](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)** |   [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EfWEGBHeA3k) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)  
   *Authors:* [@EiffL](https://github.com/EiffL)  
  This tutorial is a practical introduction to Bayesian inference using emcee and
  touching on questions related to measurement errors and covariance.
