@@ -41,7 +41,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
     The objective of this tutorial is to provide a first look at Python for beginners. The level is aimed at individuals with little or no experience whatsoever with Python. Experienced users are unlikely to benefit from this tutorial.
   * [Tutorial 2: Intermediate and Advanced Topics](https://github.com/CosmoStat/Tutorials/tree/python#tutorial-2-intermediate-and-advanced-topics)
     The objective of this tutorial is to provide a more in-depth look at object-oriented and pythonic coding. The level is aimed at individuals with some experience with Python and good knowledge of basic object types. This tutorial will likely benefit all except the most advanced users.
-    
+
 2. **[Python Optimisation and Memory Management](https://github.com/CosmoStat/Tutorials/tree/profiling)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/profiling)  
   *Authors:* [@sfarrens](https://github.com/sfarrens)  
   This tutorial introduces some techniques for determinisitic and memory profiling of Python scripts, followed by some tips on how to implement some basic optimisation.
@@ -64,6 +64,11 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
    A short introduction to the basic concepts underpinning TensorFlow, in particular automatic differentation.
    * *MRI reconstruction with TensorFlow*: [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=HqNm5fowdTU) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/tensorflow-tutorial/MRIReconstructionWithTensorflow.ipynb)  
    An illustration of how to use TensorFlow to solve a toy MRI reconstruction problem using classical iterative reconstructions, and a deep learning approach.
+
+7. **[Introduction to MCMC and Bayesian inference](https://github.com/zaccharieramzi/git-tuto)** |   [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EfWEGBHeA3k) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)  
+  *Authors:* [@EiffL](https://github.com/EiffL)  
+ This tutorial is a practical introduction to Bayesian inference using emcee and
+ touching on questions related to measurement errors and covariance.
 
 ### Software Carpentries
 
