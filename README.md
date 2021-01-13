@@ -69,6 +69,11 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
    *Authors:* [@RCarloniGertosio](https://github.com/RCarloniGertosio)  
    The goal of this tutorial is to present Blind Source Separation (BSS) problems and the main methods to solve them. This tutorial does not provide in-depth mathematical explanations for every methods; the emphasis is rather on illustrations and intuition.
 
+7. **[Introduction to MCMC and Bayesian inference](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)** |   [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EfWEGBHeA3k) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)  
+  *Authors:* [@EiffL](https://github.com/EiffL)  
+ This tutorial is a practical introduction to Bayesian inference using emcee and
+ touching on questions related to measurement errors and covariance.
+
 ### Software Carpentries
 
 1. **[Git Tutorial](https://github.com/zaccharieramzi/git-tuto)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/zaccharieramzi/git-tuto)  [![slides](https://img.shields.io/badge/slides-google-yellow)](https://docs.google.com/presentation/d/1vfsG__2-T7xJYGKFs9HfPKmaoMN1Je0V0h7gLyiY1AU/edit?usp=sharing) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=S1A2qSA0TWo)  
