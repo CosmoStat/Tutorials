@@ -106,22 +106,23 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://sfarrens.github.io"><img src="https://avatars1.githubusercontent.com/u/6851839?v=4" width="100px;" alt=""/><br /><sub><b>Samuel Farrens</b></sub></a><br /><a href="#content-sfarrens" title="Content">🖋</a> <a href="#ideas-sfarrens" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-sfarrens" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="http://www.cosmostat.org/people/santiago-casas"><img src="https://avatars0.githubusercontent.com/u/6987716?v=4" width="100px;" alt=""/><br /><sub><b>Santiago Casas</b></sub></a><br /><a href="#content-santiagocasas" title="Content">🖋</a> <a href="#ideas-santiagocasas" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="http://www.cosmostat.org/people/zaccharie-ramzi"><img src="https://avatars1.githubusercontent.com/u/6387497?v=4" width="100px;" alt=""/><br /><sub><b>Zaccharie Ramzi</b></sub></a><br /><a href="#content-zaccharieramzi" title="Content">🖋</a> <a href="#ideas-zaccharieramzi" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="http://flanusse.net"><img src="https://avatars0.githubusercontent.com/u/861591?v=4" width="100px;" alt=""/><br /><sub><b>Francois Lanusse</b></sub></a><br /><a href="#ideas-EiffL" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-EiffL" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/kansal9"><img src="https://avatars2.githubusercontent.com/u/35466803?v=4" width="100px;" alt=""/><br /><sub><b>Vanshika Kansal</b></sub></a><br /><a href="#content-kansal9" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/pettorin"><img src="https://avatars1.githubusercontent.com/u/8088350?v=4" width="100px;" alt=""/><br /><sub><b>pettorin</b></sub></a><br /><a href="#ideas-pettorin" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-pettorin" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/fadinammour"><img src="https://avatars2.githubusercontent.com/u/39698793?v=4" width="100px;" alt=""/><br /><sub><b>fadinammour</b></sub></a><br /><a href="#ideas-fadinammour" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-fadinammour" title="Content">🖋</a></td>
+    <td align="center"><a href="http://sfarrens.github.io"><img src="https://avatars1.githubusercontent.com/u/6851839?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Samuel Farrens</b></sub></a><br /><a href="#content-sfarrens" title="Content">🖋</a> <a href="#ideas-sfarrens" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-sfarrens" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="http://www.cosmostat.org/people/santiago-casas"><img src="https://avatars0.githubusercontent.com/u/6987716?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Santiago Casas</b></sub></a><br /><a href="#content-santiagocasas" title="Content">🖋</a> <a href="#ideas-santiagocasas" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="http://www.cosmostat.org/people/zaccharie-ramzi"><img src="https://avatars1.githubusercontent.com/u/6387497?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zaccharie Ramzi</b></sub></a><br /><a href="#content-zaccharieramzi" title="Content">🖋</a> <a href="#ideas-zaccharieramzi" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="http://flanusse.net"><img src="https://avatars0.githubusercontent.com/u/861591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Francois Lanusse</b></sub></a><br /><a href="#ideas-EiffL" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-EiffL" title="Maintenance">🚧</a> <a href="#content-EiffL" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/kansal9"><img src="https://avatars2.githubusercontent.com/u/35466803?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vanshika Kansal</b></sub></a><br /><a href="#content-kansal9" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/pettorin"><img src="https://avatars1.githubusercontent.com/u/8088350?v=4?s=100" width="100px;" alt=""/><br /><sub><b>pettorin</b></sub></a><br /><a href="#ideas-pettorin" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-pettorin" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/fadinammour"><img src="https://avatars2.githubusercontent.com/u/39698793?v=4?s=100" width="100px;" alt=""/><br /><sub><b>fadinammour</b></sub></a><br /><a href="#ideas-fadinammour" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-fadinammour" title="Content">🖋</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="http://www.cosmostat.org/people/jgirard/"><img src="https://avatars1.githubusercontent.com/u/10849756?v=4" width="100px;" alt=""/><br /><sub><b>Julien N Girard</b></sub></a><br /><a href="#content-JulienNGirard" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/RCarloniGertosio"><img src="https://avatars0.githubusercontent.com/u/49195242?v=4" width="100px;" alt=""/><br /><sub><b>RCarloniGertosio</b></sub></a><br /><a href="#content-RCarloniGertosio" title="Content">🖋</a></td>
+    <td align="center"><a href="http://www.cosmostat.org/people/jgirard/"><img src="https://avatars1.githubusercontent.com/u/10849756?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Julien N Girard</b></sub></a><br /><a href="#content-JulienNGirard" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/RCarloniGertosio"><img src="https://avatars0.githubusercontent.com/u/49195242?v=4?s=100" width="100px;" alt=""/><br /><sub><b>RCarloniGertosio</b></sub></a><br /><a href="#content-RCarloniGertosio" title="Content">🖋</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
