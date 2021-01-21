@@ -1,0 +1,6 @@
+matplotlib
+numpy
+jax
+jaxlib
+jax-cosmo
+scikit-image
