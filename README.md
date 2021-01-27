@@ -31,8 +31,12 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 1. **[Cosmology with Python wrappers for Einstein-Boltzmann Codes](https://github.com/CosmoStat/Tutorials/tree/boltzmann)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/boltzmann) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EMpCxUvF3lc)    
     *Authors:* [@santiagocasas](https://github.com/santiagocasas)  
-    This tutorial is comprised of a series of Jupyter notebooks with simple demonstrations and exercises on how to use `CAMB` and `CLASS` using python wrappers. The code is designed for non-experts in the field, therefore it includes relatively simple explanations of cosmological concepts. It intends to show a general overview of the things that are possible with Einstein-Boltzmann codes and python.
+    This tutorial is comprised of a series of Jupyter notebooks with simple demonstrations and exercises on how to use `CAMB` and `CLASS` using python wrappers. The code is designed for non-experts in the field, therefore it includes relatively simple explanations of cosmological concepts. It intends to show a general overview of the things that are possible with Einstein-Boltzmann codes and python.  
 
+2. **[Power Spectrum](http://github.com/CosmoStat/Tutorials/tree/power-spectrum)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](http://github.com/CosmoStat/Tutorials/tree/power-spectrum) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/power-spectrum/WL_power_spectrum.ipynb)  
+   *Authors:* [@b-remy](https://github.com/b-remy), [@dlanzieri](https://github.com/dlanzieri), [@EiffL](https://github.com/EiffL)  
+   This tutorial presents how to compute a power spectrum from a lensing map (in the flat sky approximation) and how to compute the corresponding theory spectrum using a cosmology code.
+   
 ### Data Science
 
 1. **[Introduction to Python](https://github.com/CosmoStat/Tutorials/tree/python)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/python) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=cbekcGxm70Q&list=PLquvp9RIoLGBFfsz8dqzPtLeaEngHYybM) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/python)  
