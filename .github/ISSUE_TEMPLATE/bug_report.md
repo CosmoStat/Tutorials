@@ -1,7 +1,7 @@
 ---
 name: Bug report
-about: If you discover a bug while running one of the tutorials please provide the following information
-  to help us resolve the issue.
+about: If you discover a bug while running one of the tutorials please provide the
+  following information to help us resolve the issue.
 title: "[BUG]"
 labels: bug
 assignees: ''
