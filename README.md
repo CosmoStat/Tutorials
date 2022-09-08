@@ -78,7 +78,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
  This tutorial is a practical introduction to Bayesian inference using emcee and
  touching on questions related to measurement errors and covariance.
 
-9. **[Brief tutorial on importance sampling](https://github.com/CosmoStat/Tutorials/tree/is)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/is) 
+9. **[Brief tutorial on importance sampling](https://github.com/CosmoStat/Tutorials/tree/is)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/is)  
   *Authors:* [@martinkilbinger](https://github.com/martinkilbinger)  
  One-page tutorial to show how a sample of points can be importance sampled to obtain a new sampled under a combined posterior distribution.
 
