@@ -73,10 +73,16 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
    *Authors:* [@RCarloniGertosio](https://github.com/RCarloniGertosio)  
    The goal of this tutorial is to present Blind Source Separation (BSS) problems and the main methods to solve them. This tutorial does not provide in-depth mathematical explanations for every methods; the emphasis is rather on illustrations and intuition.
 
-7. **[Introduction to MCMC and Bayesian inference](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)** |   [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EfWEGBHeA3k) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)  
+8. **[Introduction to MCMC and Bayesian inference](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)** |   [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=EfWEGBHeA3k) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EUF7-CwamhAT6wedntStdb4x3dDbihoo?usp=sharing)  
   *Authors:* [@EiffL](https://github.com/EiffL)  
  This tutorial is a practical introduction to Bayesian inference using emcee and
  touching on questions related to measurement errors and covariance.
+
+9. **[Brief tutorial on importance sampling](https://github.com/CosmoStat/Tutorials/tree/is)** |  [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/is) 
+  *Authors:* [@martinkilbinger](https://github.com/martinkilbinger)  
+ One-page tutorial to show how a sample of points can be importance sampled to obtain a new sampled under a combined posterior distribution.
+
+ https://github.com/CosmoStat/Tutorials/tree/is
 
 ### Software Carpentries
 
