@@ -1,11 +1,29 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import pylab
 
 
-def regression_plot(x1, y1, x2, y2):
+# Set the default size of figures.
+pylab.rcParams['figure.figsize'] = (10.0, 8.0)
 
-    plt.plot(x1, y1, 'o', color="#19C3F5", label='Data')
-    plt.plot(x2, y2, '--', color='#FF4F5B', label='Model')
+
+def regression_plot(data, model):
+    """Regression Plot.
+
+    This function plots the data points (in blue) and a the corresponding
+    model line (in red).
+
+    Parameters
+    ----------
+    data : tuple
+        Data points in (x, y)
+    model : tuple
+        Model points in (x, y)
+
+    """
+
+    plt.plot(*data, 'o', color="#19C3F5", label='Data')
+    plt.plot(*model, '--', color='#FF4F5B', label='Model')
     plt.title('Best Fit Line', fontsize=20)
     plt.xlabel('x', fontsize=18)
     plt.ylabel('y', fontsize=18)
@@ -13,12 +31,32 @@ def regression_plot(x1, y1, x2, y2):
     plt.show()
 
 
-def grad_plot(x, y1, y2, dy, point):
+def grad_plot(x, x_norm, x_norm2, grad, point):
+    """Gradient Plot.
 
-    plt.plot(x, y1, 'b-', label='$||x||_2$')
-    plt.plot(x, y2, 'g-', label='$||x||_2^2$')
-    plt.plot(x[point], y2[point], 'ro')
-    plt.plot(x, dy, 'r--', label='Grad $||x_i||_2^2$')
+    This function plots the values of x against the corresponding l2-norm
+    (in blue) and squared l2-norm (in green). The gradient of the squared
+    l2-norm is shown at a specified point (in red).
+
+    Parameters
+    ----------
+    x : numpy.ndarray
+        Array of data values in the x-axis
+    x_norm : numpy.ndarray
+        Array of l2-norm values
+    x_norm2 : numpy.ndarray
+        Array of squared l2-norm values
+    grad : float
+        Gradient at the specified point
+    point : int
+        Position to show the gradient
+
+    """
+
+    plt.plot(x, x_norm, 'b-', label='$||x||_2$')
+    plt.plot(x, x_norm2, 'g-', label='$||x||_2^2$')
+    plt.plot(x[point], x_norm2[point], 'ro')
+    plt.plot(x, grad, 'r--', label='Grad $||x_i||_2^2$')
     plt.ylim(-0.1, 1.0)
     plt.title('Convex L2-Norm')
     plt.xlabel('$x$', fontsize=24)
@@ -77,9 +115,19 @@ def line_plot(data, title=None, ylim=None, xlab=None):
     plt.show()
 
 
-def cost_plot(data):
+def cost_plot(cost):
+    """Cost Plot.
 
-    plt.plot(data, linestyle='-', color='#FF4F5B')
+    This function plots the cost for a set of iterations.
+
+    Parameters
+    ----------
+    cost : list
+        List of cost values
+
+    """
+
+    plt.plot(cost, linestyle='-', color='#FF4F5B')
     plt.xlabel('Iteration', fontsize=18)
     plt.ylabel('Cost', fontsize=18)
     plt.title('Cost Function', fontsize=20)
@@ -149,9 +197,9 @@ def filter_plot(n, Fn, g, Fg, Fg_fft):
     ax[1].plot(n, g, '-', color='#0764DB')
     ax[1].set_title('$g[n-m]$', fontsize=24)
     ax[2].plot(n, Fg, '-', color='#0764DB')
-    ax[2].set_title('$F \cdot g$', fontsize=24)
+    ax[2].set_title(r'$F \cdot g$', fontsize=24)
     ax[3].plot(n, Fg_fft, '-', color='#0764DB')
-    ax[3].set_title('$\mathcal{F}(F \cdot g)$', fontsize=24)
+    ax[3].set_title(r'$\mathcal{F}(F \cdot g)$', fontsize=24)
     for ax_i in ax:
         ax_i.set_xticks([])
         ax_i.set_yticks([])
