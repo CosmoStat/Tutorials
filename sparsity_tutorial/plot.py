@@ -31,7 +31,7 @@ def regression_plot(data, model):
     plt.show()
 
 
-def grad_plot(x, x_norm, x_norm2, grad, point):
+def grad_plot(x, x_norm, x_norm2, grad, tangent, index):
     """Gradient Plot.
 
     This function plots the values of x against the corresponding l2-norm
@@ -48,19 +48,72 @@ def grad_plot(x, x_norm, x_norm2, grad, point):
         Array of squared l2-norm values
     grad : float
         Gradient at the specified point
-    point : int
-        Position to show the gradient
+    tangent : numpy.ndarray
+        Array of tangent line y-axis values
+    index : int
+        Index of currently selected point
 
     """
 
     plt.plot(x, x_norm, 'b-', label='$||x||_2$')
     plt.plot(x, x_norm2, 'g-', label='$||x||_2^2$')
-    plt.plot(x[point], x_norm2[point], 'ro')
-    plt.plot(x, grad, 'r--', label='Grad $||x_i||_2^2$')
+    plt.plot(x[index], x_norm2[index], 'ro')
+    plt.plot(x, tangent, 'r--', label=rf'$\nabla ||x_i||_2^2={grad}$')
     plt.ylim(-0.1, 1.0)
     plt.title('Convex L2-Norm')
     plt.xlabel('$x$', fontsize=24)
     plt.legend(loc='upper center', fontsize=20)
+    plt.show()
+
+
+def regression_plot_cost(data, model, cost):
+    """Regression Plot.
+
+    This function plots the data points (in blue) and a the corresponding
+    model line (in red).
+
+    Parameters
+    ----------
+    data : tuple
+        Data points in (x, y)
+    model : tuple
+        Model points in (x, y)
+
+    """
+
+    _, ax = plt.subplots(nrows=1, ncols=2, figsize=(16, 6))
+
+    ax[0].plot(*data, 'o', color="#19C3F5", label='Data')
+    ax[0].plot(*model, '--', color='#FF4F5B', label='Model')
+    ax[0].set_title('Best Fit Line', fontsize=20)
+    ax[0].set_xlabel('x', fontsize=18)
+    ax[0].set_ylabel('y', fontsize=18)
+    ax[0].legend()
+
+    ax[1].plot(cost, linestyle='-', color='#FF4F5B')
+    ax[1].set_xlabel('Iteration', fontsize=18)
+    ax[1].set_ylabel('Cost', fontsize=18)
+    ax[1].set_title('Cost Function', fontsize=20)
+
+    plt.show()
+
+
+def cost_plot(cost):
+    """Cost Plot.
+
+    This function plots the cost for a set of iterations.
+
+    Parameters
+    ----------
+    cost : list
+        List of cost values
+
+    """
+
+    plt.plot(cost, linestyle='-', color='#FF4F5B')
+    plt.xlabel('Iteration', fontsize=18)
+    plt.ylabel('Cost', fontsize=18)
+    plt.title('Cost Function', fontsize=20)
     plt.show()
 
 
@@ -112,25 +165,6 @@ def line_plot(data, title=None, ylim=None, xlab=None):
     plt.ylim(ylim)
     if not isinstance(xlab, type(None)):
         plt.xlabel(xlab, fontsize=18)
-    plt.show()
-
-
-def cost_plot(cost):
-    """Cost Plot.
-
-    This function plots the cost for a set of iterations.
-
-    Parameters
-    ----------
-    cost : list
-        List of cost values
-
-    """
-
-    plt.plot(cost, linestyle='-', color='#FF4F5B')
-    plt.xlabel('Iteration', fontsize=18)
-    plt.ylabel('Cost', fontsize=18)
-    plt.title('Cost Function', fontsize=20)
     plt.show()
 
 
