@@ -4,7 +4,7 @@ from matplotlib import pylab
 
 
 # Set the default size of figures.
-pylab.rcParams['figure.figsize'] = (10.0, 8.0)
+pylab.rcParams['figure.figsize'] = (8.0, 6.0)
 
 
 def regression_plot(data, model):
@@ -55,8 +55,8 @@ def grad_plot(x, x_norm, x_norm2, grad, tangent, index):
 
     """
 
-    plt.plot(x, x_norm, 'b-', label='$||x||_2$')
-    plt.plot(x, x_norm2, 'g-', label='$||x||_2^2$')
+    plt.plot(x, x_norm, 'b-', label='$||x_i||_2$')
+    plt.plot(x, x_norm2, 'g-', label='$||x_i||_2^2$')
     plt.plot(x[index], x_norm2[index], 'ro')
     plt.plot(x, tangent, 'r--', label=rf'$\nabla ||x_i||_2^2={grad}$')
     plt.ylim(-0.1, 1.0)
