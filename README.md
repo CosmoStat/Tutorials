@@ -2,7 +2,7 @@
 ---
 
 > Author: <font color='#f78c40'>[Samuel Farrens](http://www.cosmostat.org/people/sfarrens)</font>    
-> Year: 2018  
+> Year: 2018 (updated in 2023)
 > Email: [samuel.farrens@cea.fr](mailto:samuel.farrens@cea.fr)  
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)
@@ -13,23 +13,19 @@ in 2018. The objective is to provide a beginner level introduction to the concep
 
 This tutorial is comprised of a series of <a href="https://jupyter-notebook.readthedocs.io/en/stable/" target_="blanck">Jupyter notebooks</a> that demonstrate how the tools implemented in sparsity work as well as showing the applicability of these tools to various simple problems.
 
-All code blocks are provided in Python (support for both 2.7 and 3.6+) and the number of external packages required to run the examples has be kept to a minimum. With the exception of plotting routines, all of the code has been clearly presented inside the notebooks at least once to avoid the use of any "black boxes" for solving the problems presented.
+All code blocks are provided in Python and the number of external packages required to run the examples has be kept to a minimum. With the exception of plotting routines, all of the code has been clearly presented inside the notebooks at least once to avoid the use of any "black boxes" for solving the problems presented.
 
 ### Requirements
 
 In order to run the tutorial notebooks tutees will need to have the following installed:
 
-* <a href="https://www.python.org/" target_="blank">Python</a> (2.7 or 3.6+, users are recommended to use Python 3.6)
-* <a href="http://www.numpy.org/" target_="blank">NumPy</a> (recommend v1.14.1+)
-* <a href="https://www.scipy.org/" target_="blank">SciPy</a> (recommend v1.0.0+)
-* <a href="https://matplotlib.org/" target_="blank">Matplotlib</a> (recommend v2.1.0+)
-* <a href="http://jupyter.org/" target_="blank">Jupyter</a> (recommend v1.0.0+)
+* <a href="https://www.python.org/" target_="blank">Python</a>
+* <a href="http://www.numpy.org/" target_="blank">NumPy</a> (recommend v1.24+)
+* <a href="https://www.scipy.org/" target_="blank">SciPy</a> (recommend v1.10+)
+* <a href="https://matplotlib.org/" target_="blank">Matplotlib</a> (recommend v3.6+)
+* <a href="http://jupyter.org/" target_="blank">Jupyter</a> (recommend v1.0+)
 
-Python 2.7 users should additonally install:
-
-* <a href="https://pypi.org/project/future/" target_="blank">Future</a> (recommend v0.16.0+)
-
-All of the packages listed above can easily be installed using either `pip` or <a href="https://www.anaconda.com/" target_="blank">Anaconda</a>.
+All of the packages listed above can easily be installed using either `pip` or <a href="https://docs.conda.io/" target_="blank">Conda</a>.
 
 *e.g.*
 
