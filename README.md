@@ -5,7 +5,7 @@
 > Year: 2018 (updated in 2023)
 > Email: [samuel.farrens@cea.fr](mailto:samuel.farrens@cea.fr)  
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CosmoStat/Tutorials/blob/ada/])[![Open In Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/ada)
 
 This tutorial was originally presented at the ninth edition of the
 [Astronomical Data Analysis (ADAIX)](http://ada.cosmostat.org/) summer school held in Valencia
@@ -41,12 +41,12 @@ $ conda install numpy scipy matplotlib jupyter
 
 ### Notebooks
 
-1. [Introduction to Inverse Problems](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fada%2Finverse_problems_1.ipynb)
-1. [Introduction to Sparsity I](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fada%2Fsparsity_1.ipynb)
-1. [Introduction to Sparsity II: Compressed Sensing](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fada%2Fsparsity_2_compressed_sensing.ipynb)
-1. [Introduction to Sparsity III: Deconvolution](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fada%2Fsparsity_3_deconvolution.ipynb)
-1. [Introduction to Wavelets](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fada%2Fwavelets_1.ipynb)
-1. [Exercise Solutions](https://mybinder.org/v2/gh/CosmoStat/Tutorials/master?filepath=%2Fada%2Fexercise_solutions.ipynb)
+1. [Introduction to Inverse Problems](inverse_problems_1.ipynb)
+1. [Introduction to Sparsity I](sparsity_1.ipynb)
+1. [Introduction to Sparsity II: Compressed Sensing](sparsity_2_compressed_sensing.ipynb)
+1. [Introduction to Sparsity III: Deconvolution](sparsity_3_deconvolution.ipynb)
+1. [Introduction to Wavelets](wavelets_1.ipynb)
+1. [Exercise Solutions](exercise_solutions.ipynb)
 
 ### Acknowledgements
 
