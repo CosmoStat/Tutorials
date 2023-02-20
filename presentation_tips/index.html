@@ -1,658 +1,788 @@
-
 <!doctype html>
 
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
   <title>Tips on preparing a talk</title>
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../elements/codelab.html">
+  <link rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <!-- <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css"> -->
   <style>
     .success {
       color: #1e8e3e;
     }
+
     .error {
       color: red;
     }
   </style>
 </head>
+
 <body>
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
-  <google-codelab codelab-gaid=""
-                  id="presentation_tips"
-                  title="Tips on preparing a talk"
-                  environment="web"
-                  feedback-link="https://github.com/CosmoStat/Tutorials/issues/new?assignees=&amp;labels=bug&amp;template=bug_report.md&amp;title=%5BBUG%5D">
-    
-      <google-codelab-step label="Overview" duration="0">
-        <h2 is-upgraded>Why is it useful to give good talks?</h2>
-<p>As scientists you will give talks. Presenting your work:</p>
-<ul>
-<li>helps other scientists to know about, use and cite your results</li>
-<li>helps other scientists to remember you and trust your work</li>
-<li>helps to establish new collaborations</li>
-<li>helps to develop new science objectives</li>
-<li>helps to get a grant/job</li>
-<li>helps to tell <em>your</em> story and your vision</li>
-</ul>
-<h2 class="checklist" is-upgraded>What You&#39;ll Learn</h2>
-<ul class="checklist">
-<li>how to adapt your talk to your goal</li>
-<li>different parts that make up a talk (story line, design, text, images, voice)</li>
-<li>tips on how to improve each of these aspects in a presentation</li>
-<li>reconsider some misconception</li>
-</ul>
-<h2 is-upgraded>What You&#39;ll <em>not</em> Learn</h2>
-<p>Negative : ⚠️ I am not a professional communicator, I am a scientist. This tutorial is based on what I learned as scientist, after giving and listening to talks, studying tutorials, talking to professional communicators. Some choices can be personal. This tutorial cannot teach you how to make a great presentation. However it can help you to  avoid making a very bad one.</p>
-<h2 is-upgraded>Acknowledgments</h2>
-<p>Material contained here is based on:</p>
-<ul>
-<li>Professional experience</li>
-<li>Feedback I got from people over the years</li>
-<li><a href="https://www.coursera.org/specializations/presentation-skills?" target="_blank">Coursera Presentation Skills Specialization</a> by Alexei Kapterev that I attended</li>
-<li>Lectures on spoken communication by Prof. Massimo Pettorino</li>
-</ul>
-<p>This tutorial is mainly meant for scientists, but several tips can be useful for other types of talks.</p>
-<h2 is-upgraded>About the author</h2>
-<p>I am a physicist at <a href="http://www.cosmostat.org/" target="_blank">Cosmostat</a>, CEA Paris-Saclay. That&#39;s me: <a href="https://www.valeriapettorino.com/" target="_blank">https://www.valeriapettorino.com/</a></p>
+  <google-codelab codelab-gaid="" id="presentation_tips" title="Tips on preparing a talk" environment="web"
+    feedback-link="https://github.com/CosmoStat/Tutorials/issues/new?assignees=&amp;labels=bug&amp;template=bug_report.md&amp;title=%5BBUG%5D">
+
+    <google-codelab-step label="Overview" duration="0">
+      <h2 is-upgraded>Why is it useful to give good talks?</h2>
+      <p>As scientists you will give talks. Presenting your work:</p>
+      <ul>
+        <li>helps other scientists to know about, use and cite your results</li>
+        <li>helps other scientists to remember you and trust your work</li>
+        <li>helps to establish new collaborations</li>
+        <li>helps to develop new science objectives</li>
+        <li>helps to get a grant/job</li>
+        <li>helps to tell <em>your</em> story and your vision</li>
+      </ul>
+      <h2 class="checklist" is-upgraded>What You&#39;ll Learn</h2>
+      <ul class="checklist">
+        <li>how to adapt your talk to your goal</li>
+        <li>different parts that make up a talk (story line, design, text, images, voice)</li>
+        <li>tips on how to improve each of these aspects in a presentation</li>
+        <li>reconsider some misconception</li>
+      </ul>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>What You&#39;ll <em>not</em> Learn</h2>
+      <p>Negative : ⚠️ I am not a professional communicator, I am a scientist. This tutorial is based on what I learned
+        as scientist, after giving and listening to talks, studying tutorials, talking to professional communicators.
+        Some choices can be personal. This tutorial cannot teach you how to make a great presentation. However it can
+        help you to avoid making a very bad one.</p>
+      <h2 is-upgraded>Acknowledgments</h2>
+      <p>Material contained here is based on:</p>
+      <ul>
+        <li>Professional experience</li>
+        <li>Feedback I got from people over the years</li>
+        <li><a href="https://www.coursera.org/specializations/presentation-skills?" target="_blank">Coursera
+            Presentation Skills Specialization</a> by Alexei Kapterev that I attended</li>
+        <li>Lectures on spoken communication by Prof. Massimo Pettorino</li>
+      </ul>
+      <p>This tutorial is mainly meant for scientists, but several tips can be useful for other types of talks.</p>
+      <h2 is-upgraded>About the author</h2>
+      <p>I am a physicist at <a href="http://www.cosmostat.org/" target="_blank">Cosmostat</a>, CEA Paris-Saclay.
+        That&#39;s me: <a href="https://www.valeriapettorino.com/" target="_blank">https://www.valeriapettorino.com/</a>
+      </p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Why are you giving a talk?" duration="0">
-        <h2 is-upgraded>Set your goals</h2>
-<p>The first step into preparing your talk is identifying what are your objectives: are you applying for a job, looking for a new expert collaboration, giving an outreach talk to the public, are you teaching, do you want to learn something yourself?</p>
-<p>Positive : <strong>My tip:</strong> set a goal first, then adapt your slides/tools to that goal.</p>
-<h2 is-upgraded>My personal goals for this tutorial:</h2>
-<ul>
-<li><strong>transfer knowledge</strong>: share with you what I have learned so far</li>
-<li>learn how to prepare a <strong>codelab</strong> tutorial</li>
-<li>contribute to <strong>Lab</strong> activity</li>
-<li>prepare this tutorial in <strong>one week</strong></li>
-<li>make it suitable to share, also without me explaining it</li>
-</ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Why are you giving a talk?" duration="0">
+      <h2 is-upgraded>Set your goals</h2>
+      <p>The first step into preparing your talk is identifying what are your objectives: are you applying for a job,
+        looking for a new expert collaboration, giving an outreach talk to the public, are you teaching, do you want to
+        learn something yourself?</p>
+      <p>Positive : <strong>My tip:</strong> set a goal first, then adapt your slides/tools to that goal.</p>
+      <h2 is-upgraded>My personal goals for this tutorial:</h2>
+      <ul>
+        <li><strong>transfer knowledge</strong>: share with you what I have learned so far</li>
+        <li>learn how to prepare a <strong>codelab</strong> tutorial</li>
+        <li>contribute to <strong>Lab</strong> activity</li>
+        <li>prepare this tutorial in <strong>one week</strong></li>
+        <li>make it suitable to share, also without me explaining it</li>
+      </ul>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="To Whom?" duration="0">
-        <p>What you are saying is not important ‘per sé&#39;: it becomes important if someone listens. It&#39;s in your interest to help your audience! If you know your audience, and what their expectation is, you can better target your talk and manage attention.</p>
-<p><strong>Who are you talking to?</strong></p>
-<ul>
-<li>One person  💁</li>
-<li>Panel  👤👤👤👤👤</li>
-<li>Large audience  👤👤👤👤👤👤👤👤👤👤👤👤👤👤👤👤</li>
-<li>Expert in your field  🎓</li>
-<li>Expert in another field  🎓</li>
-<li>Students  📚</li>
-<li>General public  🐼🐯🐑🐥🐬🐙 🐡🐶⛄</li>
-</ul>
-<p><strong>What is their expectation?</strong></p>
-<ul>
-<li>Learn about your work</li>
-<li>Learn about the state of the art</li>
-<li>Learn about how you are using a tool they developed</li>
-<li>Make an evaluation</li>
-<li>Find a new collaboration</li>
-</ul>
-<p>Depending on the situation, you may have to compromise between your goal and your audience expectation.</p>
-<p><strong>Value your audience effort</strong></p>
-<p>In most cases, people in the audience:</p>
-<ul>
-<li>walked to a seminar room or connected to a link</li>
-<li>had to interrupt their work</li>
-<li>are spending their time to listen to you rather than doing something else</li>
-<li>may have been asked to attend your talk</li>
-</ul>
-<p>Negative : When you start, the audience is thinking about many different things. <strong>They all have to start thinking about the same thing.</strong> They have to start thinking about what <em>you</em> are thinking. It&#39;s strange if you think about it. Not easy.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="To Whom?" duration="0">
+      <p>What you are saying is not important ‘per sé&#39;: it becomes important if someone listens. It&#39;s in your
+        interest to help your audience! If you know your audience, and what their expectation is, you can better target
+        your talk and manage attention.</p>
+      <p><strong>Who are you talking to?</strong></p>
+      <ul>
+        <li>One person 💁</li>
+        <li>Panel 👤👤👤👤👤</li>
+        <li>Large audience 👤👤👤👤👤👤👤👤👤👤👤👤👤👤👤👤</li>
+        <li>Expert in your field 🎓</li>
+        <li>Expert in another field 🎓</li>
+        <li>Students 📚</li>
+        <li>General public 🐼🐯🐑🐥🐬🐙 🐡🐶⛄</li>
+      </ul>
+      <p><strong>What is their expectation?</strong></p>
+      <ul>
+        <li>Learn about your work</li>
+        <li>Learn about the state of the art</li>
+        <li>Learn about how you are using a tool they developed</li>
+        <li>Make an evaluation</li>
+        <li>Find a new collaboration</li>
+      </ul>
+      <p>Depending on the situation, you may have to compromise between your goal and your audience expectation.</p>
+      <p><strong>Value your audience effort</strong></p>
+      <p>In most cases, people in the audience:</p>
+      <ul>
+        <li>walked to a seminar room or connected to a link</li>
+        <li>had to interrupt their work</li>
+        <li>are spending their time to listen to you rather than doing something else</li>
+        <li>may have been asked to attend your talk</li>
+      </ul>
+      <p>Negative : When you start, the audience is thinking about many different things. <strong>They all have to start
+          thinking about the same thing.</strong> They have to start thinking about what <em>you</em> are thinking.
+        It&#39;s strange if you think about it. Not easy.</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Exercise" duration="0">
-        <p>In the next section you will find examples of talks aiming at different goals and audiences. Before reading further, can you think of how would you adapt your talk to the following use cases? How are they similar and how the following talks will differ? What should you focus on? What would you rather <em>not</em> do?</p>
-<ul>
-<li>1h Lecture</li>
-<li>20 m presentation to a committee panel</li>
-<li>40 m scientific seminar to experts in your domain</li>
-<li>1h colloquium</li>
-<li>Public outreach talk (ex. <em>TED</em>)</li>
-</ul>
-<p><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"> ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ <strong>WAIT BEFORE READING FURTHER</strong> ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ <img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Exercise" duration="0">
+      <p>In the next section you will find examples of talks aiming at different goals and audiences. Before reading
+        further, can you think of how would you adapt your talk to the following use cases? How are they similar and how
+        the following talks will differ? What should you focus on? What would you rather <em>not</em> do?</p>
+      <ul>
+        <li>1h Lecture</li>
+        <li>20 m presentation to a committee panel</li>
+        <li>40 m scientific seminar to experts in your domain</li>
+        <li>1h colloquium</li>
+        <li>Public outreach talk (ex. <em>TED</em>)</li>
+      </ul>
+      <p><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"> ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ <strong>WAIT BEFORE READING
+          FURTHER</strong> ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ <img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Examples" duration="0">
-        <p>Below you find a possible description of each of the following use cases:</p>
-<ul>
-<li>1h Lecture</li>
-<li>20 m presentation to a committee panel</li>
-<li>40 m scientific seminar to experts in your domain</li>
-<li>1h colloquium</li>
-<li>Public outreach talk (ex. <em>TED</em>)</li>
-</ul>
-<h2 is-upgraded>1h Lecture</h2>
-<p>Negative : <strong>Goal</strong>: teaching</p>
-<p>✅ Define everything and start from basic concepts</p>
-<p>✅ Simplify communication as much as possible</p>
-<ul>
-<li>talk slowly</li>
-<li>go step by step</li>
-<li>make your design very readable</li>
-<li>maybe use images</li>
-<li>examples</li>
-<li>repeat the same concept several times✅ Adapt to feedback<ul>
-<li>Ask questions to your students</li>
-<li>Ask for questions from your students</li>
-<li>May decide to explore less/more topics</li>
-</ul>
-</li>
-</ul>
-<p>✅ Consider interactive tools, live exercises, video.</p>
-<p>✅ You may include some <strong>historical note</strong> on past attempts/developments</p>
-<p>❌ You won&#39;t typically focus on your specific research</p>
-<p>⏰<strong>Time:</strong> Density of topics will be flexible, not really important to cover all topics within the 1h lecture.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>20 m presentation to a committee panel</h2>
-<p>Negative : <strong>Goal:</strong> get a job. Your aim is to convince the panel that you are the best person for that position.</p>
-<p>The committee will be asked to compare the <em>story</em> of each candidate. The talk is your chance to give <em>your</em> version of <em>your</em> story*</p>
-<p>✅ why you are a good fit</p>
-<p>✅ what is your specific contribution to science to far</p>
-<p>✅ your responsibilities</p>
-<p>Convince them that you can:</p>
-<p>✅ explain clearly what <em>you</em> know</p>
-<p>✅ value what <em>they</em> know</p>
-<p>✅ be useful by providing something <em>they don&#39;t know</em></p>
-<p>❌ You are <strong>not</strong> teaching</p>
-<p>⏰ Very <strong>efficient</strong>, it has to fit 20m:</p>
-<ul>
-<li>5m introduce yourself and the timely challenge in your field that <em>needs you</em> to be solved;</li>
-<li>10m your highlights and how you fit and complete the expertise of the group. Demonstrate how you and the group, together, will reach your common timely goal;</li>
-<li>5m propose a joint project, give your vision of the future, on a short/long term timeline.</li>
-</ul>
-<p>Positive : <strong>My Tip:</strong> make sure you check the website of the group, understand what they do, and how you can fit in. Read the application opening, it may contain hints and keywords that you may want to recall.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>40 m scientific seminar to experts in your domain</h2>
-<p>Negative : <strong>Goals</strong>: communicate your research results, make other scientists want to read, understand, use, your results; start new collaborations to develop your idea/results further; have them cite your papers.</p>
-<p>✅ Pick a specific new paper you wrote or result you obtained</p>
-<p>✅ Give the context / motivation for your paper to exist</p>
-<p>✅ Illustrate your new idea / implementation / result</p>
-<p>✅ Clearly add the arxiv number of your paper to the slides</p>
-<p>✅ Mention potential developments, targeted at the audience expertise</p>
-<p>⏰ Take the time to explain the idea, main results, describe a scientific plot in detail.</p>
-<p>Positive : <strong>My Tip</strong>: think of enhancing contrast. How does your method and result differ from what other people have done? How did you advance the state of the art? Show that you are aware of other people work, cite them. Be aware in particular of whether <em>your audience</em> may have already worked in that field.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>1h colloquium</h2>
-<p>Negative : <strong>Goals</strong>: explain main challenges in your research field to a varied audience, including experts in other fields and maybe a few experts in your field. Demonstrate that you can explain your field in a simple and comprehensible way, but also that you can contribute to that field as an expert. Show that you have a vision of where this field is going and what it requires to be further developed.</p>
-<p>✅Give the context, with a very general introduction that everyone can understand (~15 m)</p>
-<p>✅Describe main challenges in the field, not necessarily related to your work only (~10 m)</p>
-<p>✅Describe how your work fits into addressing these challenges (~10 m)</p>
-<p>✅Describe one result you got (~ 10 m) (for the experts in your field, otherwise they will be bored)</p>
-<p>✅Describe potential developments in this field (~10 m) (for everyone)</p>
-<p>✅Conclusions with your short and long term vision of this field (~5 m)</p>
-<p>❌Not focused on a specific paper you wrote.</p>
-<p>Positive : <strong>My Tip:</strong> slightly increase the difficulty as you proceed. Not everyone has to understand everything at all times: take a few minutes to talk to experts as well or they will get bored if the level is too low for the entire 1h; however at least the first half and the last part have to be again entirely comprehensible for everyone.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>Public outreach talk (ex. TED)</h2>
-<p>Negative : <strong>Goal</strong>: inspire</p>
-<p>✅ Adapt design to a large and non expert audience</p>
-<p>✅Very little text</p>
-<p>✅ Story telling may involve more twists</p>
-<p>✅ Voice</p>
-<p>✅ Body language</p>
-<p>✅ Larger images</p>
-<p>✅ Videos</p>
-<p>❌Equations</p>
-<p>❌Baby-talking</p>
-<p>Positive : <strong>My Tip:</strong> don&#39;t underestimate your audience. They may not be expert in your field, but each of them will have a talent, and their own expertise, about which you will typically know very little. Show that you can explain complex concepts clearly; try to avoid over-simplified wrong analogies: ultimately they typically only call for more questions that you won&#39;t be able to answer. While simplifying, give also a hint of the complexity of the field you are discussing. Science can be clear, but it&#39;s not easy.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Examples" duration="0">
+      <p>Below you find a possible description of each of the following use cases:</p>
+      <ul>
+        <li>1h Lecture</li>
+        <li>20 m presentation to a committee panel</li>
+        <li>40 m scientific seminar to experts in your domain</li>
+        <li>1h colloquium</li>
+        <li>Public outreach talk (ex. <em>TED</em>)</li>
+      </ul>
+      <h2 is-upgraded>1h Lecture</h2>
+      <p>Negative : <strong>Goal</strong>: teaching</p>
+      <p>✅ Define everything and start from basic concepts</p>
+      <p>✅ Simplify communication as much as possible</p>
+      <ul>
+        <li>talk slowly</li>
+        <li>go step by step</li>
+        <li>make your design very readable</li>
+        <li>maybe use images</li>
+        <li>examples</li>
+        <li>repeat the same concept several times✅ Adapt to feedback<ul>
+            <li>Ask questions to your students</li>
+            <li>Ask for questions from your students</li>
+            <li>May decide to explore less/more topics</li>
+          </ul>
+        </li>
+      </ul>
+      <p>✅ Consider interactive tools, live exercises, video.</p>
+      <p>✅ You may include some <strong>historical note</strong> on past attempts/developments</p>
+      <p>❌ You won&#39;t typically focus on your specific research</p>
+      <p>⏰<strong>Time:</strong> Density of topics will be flexible, not really important to cover all topics within the
+        1h lecture.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>20 m presentation to a committee panel</h2>
+      <p>Negative : <strong>Goal:</strong> get a job. Your aim is to convince the panel that you are the best person for
+        that position.</p>
+      <p>The committee will be asked to compare the <em>story</em> of each candidate. The talk is your chance to give
+        <em>your</em> version of <em>your</em> story*
+      </p>
+      <p>✅ why you are a good fit</p>
+      <p>✅ what is your specific contribution to science to far</p>
+      <p>✅ your responsibilities</p>
+      <p>Convince them that you can:</p>
+      <p>✅ explain clearly what <em>you</em> know</p>
+      <p>✅ value what <em>they</em> know</p>
+      <p>✅ be useful by providing something <em>they don&#39;t know</em></p>
+      <p>❌ You are <strong>not</strong> teaching</p>
+      <p>⏰ Very <strong>efficient</strong>, it has to fit 20m:</p>
+      <ul>
+        <li>5m introduce yourself and the timely challenge in your field that <em>needs you</em> to be solved;</li>
+        <li>10m your highlights and how you fit and complete the expertise of the group. Demonstrate how you and the
+          group, together, will reach your common timely goal;</li>
+        <li>5m propose a joint project, give your vision of the future, on a short/long term timeline.</li>
+      </ul>
+      <p>Positive : <strong>My Tip:</strong> make sure you check the website of the group, understand what they do, and
+        how you can fit in. Read the application opening, it may contain hints and keywords that you may want to recall.
+      </p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>40 m scientific seminar to experts in your domain</h2>
+      <p>Negative : <strong>Goals</strong>: communicate your research results, make other scientists want to read,
+        understand, use, your results; start new collaborations to develop your idea/results further; have them cite
+        your papers.</p>
+      <p>✅ Pick a specific new paper you wrote or result you obtained</p>
+      <p>✅ Give the context / motivation for your paper to exist</p>
+      <p>✅ Illustrate your new idea / implementation / result</p>
+      <p>✅ Clearly add the arxiv number of your paper to the slides</p>
+      <p>✅ Mention potential developments, targeted at the audience expertise</p>
+      <p>⏰ Take the time to explain the idea, main results, describe a scientific plot in detail.</p>
+      <p>Positive : <strong>My Tip</strong>: think of enhancing contrast. How does your method and result differ from
+        what other people have done? How did you advance the state of the art? Show that you are aware of other people
+        work, cite them. Be aware in particular of whether <em>your audience</em> may have already worked in that field.
+      </p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>1h colloquium</h2>
+      <p>Negative : <strong>Goals</strong>: explain main challenges in your research field to a varied audience,
+        including experts in other fields and maybe a few experts in your field. Demonstrate that you can explain your
+        field in a simple and comprehensible way, but also that you can contribute to that field as an expert. Show that
+        you have a vision of where this field is going and what it requires to be further developed.</p>
+      <p>✅Give the context, with a very general introduction that everyone can understand (~15 m)</p>
+      <p>✅Describe main challenges in the field, not necessarily related to your work only (~10 m)</p>
+      <p>✅Describe how your work fits into addressing these challenges (~10 m)</p>
+      <p>✅Describe one result you got (~ 10 m) (for the experts in your field, otherwise they will be bored)</p>
+      <p>✅Describe potential developments in this field (~10 m) (for everyone)</p>
+      <p>✅Conclusions with your short and long term vision of this field (~5 m)</p>
+      <p>❌Not focused on a specific paper you wrote.</p>
+      <p>Positive : <strong>My Tip:</strong> slightly increase the difficulty as you proceed. Not everyone has to
+        understand everything at all times: take a few minutes to talk to experts as well or they will get bored if the
+        level is too low for the entire 1h; however at least the first half and the last part have to be again entirely
+        comprehensible for everyone.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>Public outreach talk (ex. TED)</h2>
+      <p>Negative : <strong>Goal</strong>: inspire</p>
+      <p>✅ Adapt design to a large and non expert audience</p>
+      <p>✅Very little text</p>
+      <p>✅ Story telling may involve more twists</p>
+      <p>✅ Voice</p>
+      <p>✅ Body language</p>
+      <p>✅ Larger images</p>
+      <p>✅ Videos</p>
+      <p>❌Equations</p>
+      <p>❌Baby-talking</p>
+      <p>Positive : <strong>My Tip:</strong> don&#39;t underestimate your audience. They may not be expert in your
+        field, but each of them will have a talent, and their own expertise, about which you will typically know very
+        little. Show that you can explain complex concepts clearly; try to avoid over-simplified wrong analogies:
+        ultimately they typically only call for more questions that you won&#39;t be able to answer. While simplifying,
+        give also a hint of the complexity of the field you are discussing. Science can be clear, but it&#39;s not easy.
+      </p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Where?" duration="0">
-        <p>Identify the location and which tools you have available</p>
-<ul>
-<li>Small room</li>
-<li>Large auditorium</li>
-<li>Remotely</li>
-<li>Laptop screen</li>
-<li>Large screen</li>
-<li>Without a screen</li>
-<li>Can you show images, videos?</li>
-<li>Do you have internet connection?</li>
-<li>Do you have a microphone?</li>
-</ul>
-<p>Positive : <strong>My tip:</strong> if you can, it is advisable to enquire with the organisers before your talk.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Where?" duration="0">
+      <p>Identify the location and which tools you have available</p>
+      <ul>
+        <li>Small room</li>
+        <li>Large auditorium</li>
+        <li>Remotely</li>
+        <li>Laptop screen</li>
+        <li>Large screen</li>
+        <li>Without a screen</li>
+        <li>Can you show images, videos?</li>
+        <li>Do you have internet connection?</li>
+        <li>Do you have a microphone?</li>
+      </ul>
+      <p>Positive : <strong>My tip:</strong> if you can, it is advisable to enquire with the organisers before your
+        talk.</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="How long?" duration="0">
-        <p>How long can your talk be? How much time do you have to prep?</p>
-<p>It will be a <strong>compromise</strong>:</p>
-<ul>
-<li>maybe you won&#39;t have time to check everything</li>
-<li>maybe you have been instructed  not to spend too much time preparing</li>
-<li>maybe you have a job interview and you want to give the best talk.</li>
-</ul>
-<p>The more you get confident with choices you have, the more efficient you will become in reaching your goal without wasting time.</p>
-<p>Negative : <strong>Important:</strong> if you are given X minutes, you have to reach your conclusion in X minutes.</p>
-<p>✅Ask in advance.</p>
-<p>✅Decide in advance how long you can spend on Introduction / Development / Conclusions.</p>
-<p>✅Check the time during your talk to make sure you can adapt.</p>
-<p>✅May ask for a warning 5 minutes before.</p>
-<p>✅Give up on saying everything.</p>
-<p>❌Complain about lack of time.</p>
-<p>❌You are still in your Introduction after &gt; X/3 minutes.</p>
-<p>❌<em>Time is up so I&#39;ll talk faster.</em></p>
-<p>❌<em>Time is up so I&#39;ll go fast on all the remaining 20 slides.</em>  If you are 5 minutes from the end and you still have several slides,  going fast through plots/slides/caveats won&#39;t help, it just makes the audience more aware that you screwed up your talk. It shouldn&#39;t happen, but if it does, keep control, <strong>skip slides entirely and just say your final message</strong>. Make sure the audience understands at least that.</p>
-<p>❌Chair tells me time is up but I&#39;ll continue anyway.</p>
-<p>Positive : My tip: define at the start how much time each part of your talk should last and how many slides per topic you can have. Share your time across slides. You want to avoid having the first 5 slides which are brilliant, and the quality going drastically down afterwards.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="How long?" duration="0">
+      <p>How long can your talk be? How much time do you have to prep?</p>
+      <p>It will be a <strong>compromise</strong>:</p>
+      <ul>
+        <li>maybe you won&#39;t have time to check everything</li>
+        <li>maybe you have been instructed not to spend too much time preparing</li>
+        <li>maybe you have a job interview and you want to give the best talk.</li>
+      </ul>
+      <p>The more you get confident with choices you have, the more efficient you will become in reaching your goal
+        without wasting time.</p>
+      <p>Negative : <strong>Important:</strong> if you are given X minutes, you have to reach your conclusion in X
+        minutes.</p>
+      <p>✅Ask in advance.</p>
+      <p>✅Decide in advance how long you can spend on Introduction / Development / Conclusions.</p>
+      <p>✅Check the time during your talk to make sure you can adapt.</p>
+      <p>✅May ask for a warning 5 minutes before.</p>
+      <p>✅Give up on saying everything.</p>
+      <p>❌Complain about lack of time.</p>
+      <p>❌You are still in your Introduction after &gt; X/3 minutes.</p>
+      <p>❌<em>Time is up so I&#39;ll talk faster.</em></p>
+      <p>❌<em>Time is up so I&#39;ll go fast on all the remaining 20 slides.</em> If you are 5 minutes from the end and
+        you still have several slides, going fast through plots/slides/caveats won&#39;t help, it just makes the
+        audience more aware that you screwed up your talk. It shouldn&#39;t happen, but if it does, keep control,
+        <strong>skip slides entirely and just say your final message</strong>. Make sure the audience understands at
+        least that.
+      </p>
+      <p>❌Chair tells me time is up but I&#39;ll continue anyway.</p>
+      <p>Positive : My tip: define at the start how much time each part of your talk should last and how many slides per
+        topic you can have. Share your time across slides. You want to avoid having the first 5 slides which are
+        brilliant, and the quality going drastically down afterwards.</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="What?" duration="0">
-        <p>What do you want people to retain from your talk?</p>
-<p>What are your keywords? Identify:</p>
-<ul>
-<li>what you want to <strong>say</strong></li>
-<li>what you <strong>don&#39;t want to say</strong></li>
-</ul>
-<p>and make sure you explicitly give your message at the start, at the end, and whenever possible also within your talk.</p>
-<h2 is-upgraded>Story telling</h2>
-<p>A standard outline would typically include: introduction, build-up and conclusions.</p>
-<h3 is-upgraded>Introduction</h3>
-<p>This is the part where you have to first capture attention.</p>
-<ul>
-<li>Explain in one sentence what your talk is about and what you are aiming at</li>
-<li>What is the problem you want to address?</li>
-<li>What is the state of the art?</li>
-<li>Introduce characters (main keywords, topic)</li>
-<li>Cite other people work: it&#39;s good and fair to give credit</li>
-</ul>
-<p>❌Try to avoid very long sentences: you need to capture the attention now, not at the end of 100 words.</p>
-<p>❌Avoid unnecessary citations (usually it&#39;s more interesting to know what <em>you</em> think than what someone else said, who knows when and who knows in which context).</p>
-<h3 is-upgraded>Development and build-up</h3>
-<ul>
-<li>Characters evolution: new idea, a new approach</li>
-<li>Describe your results (examples, data, plot(s))</li>
-<li>Make it interesting <ul>
-<li>Did you encounter new problems along the way, you didn&#39;t expect?</li>
-<li>Was there a twist?  ex. after your first attempt, you discussed this with someone and found out that in neuroscience a similar problem is present.</li>
-</ul>
-</li>
-<li>Test attention and adapt to your audience: from time to time, recall what happened until that point, before moving to the next part</li>
-</ul>
-<h3 is-upgraded>Conclusions</h3>
-<ul>
-<li>Give your key message again</li>
-<li>Highlight <strong>contrast</strong>: in which way the ending of this story differs from the beginning? <ul>
-<li>what did you learn along the way?</li>
-<li>are there new open questions?</li>
-<li>what works now that didn&#39;t work when you started?</li>
-<li>did you acquire new skills?</li>
-<li>did you release a new code?</li>
-</ul>
-</li>
-</ul>
-<p>❌Don&#39;t conclude just because time is up. Enjoy your conclusions!</p>
-<p>Positive : <strong>Tip:</strong> transfer your enthusiasm!</p>
-<h2 is-upgraded>Jokes</h2>
-<p>Fun can be good but <em>is it funny?</em></p>
-<p>Awkward situations you&#39;d want to avoid:</p>
-<p>❌As a speaker: you say a joke and laugh by yourself.</p>
-<p>❌As an audience: laugh at a joke you recognise as bad, just to please the speaker.</p>
-<p>Jokes can be:</p>
-<ul>
-<li>very culture dependent.</li>
-<li>high risk for little gain.</li>
-</ul>
-<p>Negative : <strong>Bad jokes:</strong> in a professional context, anything that may involve sexuality, gender, race, ethnicity, nationality, ability/disability, alcohol/drugs, violence, and in general humiliating colleagues, students, groups of people, topics for which entire communities are highly affected.</p>
-<p><strong>Potentially good jokes:</strong> maybe some physics jokes / witty puns if it doesn&#39;t fall in the bad category (?) If you try, and someone gives you negative feedback, <strong>listen to them</strong>, apologise and try something else in the future.</p>
-<p>Positive : <strong>My Tip:</strong> remember that you are <strong>not giving the talk to yourself</strong>. You are talking to people, with their professional and personal histories, culture, beliefs, difficulties, of which you typically know very little. If in doubt, just avoid it. There are <em>other ways</em> to make your talk more <em>fun</em>: <strong>consider instead playing with design, voice and your story telling</strong>.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="What?" duration="0">
+      <p>What do you want people to retain from your talk?</p>
+      <p>What are your keywords? Identify:</p>
+      <ul>
+        <li>what you want to <strong>say</strong></li>
+        <li>what you <strong>don&#39;t want to say</strong></li>
+      </ul>
+      <p>and make sure you explicitly give your message at the start, at the end, and whenever possible also within your
+        talk.</p>
+      <h2 is-upgraded>Story telling</h2>
+      <p>A standard outline would typically include: introduction, build-up and conclusions.</p>
+      <h3 is-upgraded>Introduction</h3>
+      <p>This is the part where you have to first capture attention.</p>
+      <ul>
+        <li>Explain in one sentence what your talk is about and what you are aiming at</li>
+        <li>What is the problem you want to address?</li>
+        <li>What is the state of the art?</li>
+        <li>Introduce characters (main keywords, topic)</li>
+        <li>Cite other people work: it&#39;s good and fair to give credit</li>
+      </ul>
+      <p>❌Try to avoid very long sentences: you need to capture the attention now, not at the end of 100 words.</p>
+      <p>❌Avoid unnecessary citations (usually it&#39;s more interesting to know what <em>you</em> think than what
+        someone else said, who knows when and who knows in which context).</p>
+      <h3 is-upgraded>Development and build-up</h3>
+      <ul>
+        <li>Characters evolution: new idea, a new approach</li>
+        <li>Describe your results (examples, data, plot(s))</li>
+        <li>Make it interesting <ul>
+            <li>Did you encounter new problems along the way, you didn&#39;t expect?</li>
+            <li>Was there a twist? ex. after your first attempt, you discussed this with someone and found out that in
+              neuroscience a similar problem is present.</li>
+          </ul>
+        </li>
+        <li>Test attention and adapt to your audience: from time to time, recall what happened until that point, before
+          moving to the next part</li>
+      </ul>
+      <h3 is-upgraded>Conclusions</h3>
+      <ul>
+        <li>Give your key message again</li>
+        <li>Highlight <strong>contrast</strong>: in which way the ending of this story differs from the beginning? <ul>
+            <li>what did you learn along the way?</li>
+            <li>are there new open questions?</li>
+            <li>what works now that didn&#39;t work when you started?</li>
+            <li>did you acquire new skills?</li>
+            <li>did you release a new code?</li>
+          </ul>
+        </li>
+      </ul>
+      <p>❌Don&#39;t conclude just because time is up. Enjoy your conclusions!</p>
+      <p>Positive : <strong>Tip:</strong> transfer your enthusiasm!</p>
+      <h2 is-upgraded>Jokes</h2>
+      <p>Fun can be good but <em>is it funny?</em></p>
+      <p>Awkward situations you&#39;d want to avoid:</p>
+      <p>❌As a speaker: you say a joke and laugh by yourself.</p>
+      <p>❌As an audience: laugh at a joke you recognise as bad, just to please the speaker.</p>
+      <p>Jokes can be:</p>
+      <ul>
+        <li>very culture dependent.</li>
+        <li>high risk for little gain.</li>
+      </ul>
+      <p>Negative : <strong>Bad jokes:</strong> in a professional context, anything that may involve sexuality, gender,
+        race, ethnicity, nationality, ability/disability, alcohol/drugs, violence, and in general humiliating
+        colleagues, students, groups of people, topics for which entire communities are highly affected.</p>
+      <p><strong>Potentially good jokes:</strong> maybe some physics jokes / witty puns if it doesn&#39;t fall in the
+        bad category (?) If you try, and someone gives you negative feedback, <strong>listen to them</strong>, apologise
+        and try something else in the future.</p>
+      <p>Positive : <strong>My Tip:</strong> remember that you are <strong>not giving the talk to yourself</strong>. You
+        are talking to people, with their professional and personal histories, culture, beliefs, difficulties, of which
+        you typically know very little. If in doubt, just avoid it. There are <em>other ways</em> to make your talk more
+        <em>fun</em>: <strong>consider instead playing with design, voice and your story telling</strong>.
+      </p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="How?" duration="0">
-        <p>How do you make your talk functional and interesting? How do you capture attention?</p>
-<p>✏️ Text 📈 Images 💬 Speech</p>
-<p>Audience will be mixed: some will hear what you are saying, some will prefer to read, some will concentrate on plots and visualisations. To reach everyone, you&#39;ll <strong>typically include all three of these elements</strong>. You will use your voice, you will leave the time to read some text, you will use a plot to illustrate your results.</p>
-<p>Let&#39;s look at some tips to use your voice and design your slides.</p>
-<p>Positive : <strong>Priority:</strong> is functionality. Plus fun, cost-effectiveness and professional look.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="How?" duration="0">
+      <p>How do you make your talk functional and interesting? How do you capture attention?</p>
+      <p>✏️ Text 📈 Images 💬 Speech</p>
+      <p>Audience will be mixed: some will hear what you are saying, some will prefer to read, some will concentrate on
+        plots and visualisations. To reach everyone, you&#39;ll <strong>typically include all three of these
+          elements</strong>. You will use your voice, you will leave the time to read some text, you will use a plot to
+        illustrate your results.</p>
+      <p>Let&#39;s look at some tips to use your voice and design your slides.</p>
+      <p>Positive : <strong>Priority:</strong> is functionality. Plus fun, cost-effectiveness and professional look.</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Voice" duration="0">
-        <p>When <strong>reading</strong>, text gives the main message. When <strong>speaking</strong>, things are much more difficult. Text is only a small part of your message.</p>
-<p>Negative : People may not remember anything of what you said, but will tend to remember <strong>how</strong> you said it.</p>
-<p>Sometimes we think we said something but the message we gave was actually different. Many parameters contribute to your message.</p>
-<p><strong>Example:</strong> A: &#34;Yesterday I ate a risotto&#34;</p>
-<p>B: &#34;Oh, How was it?&#34;</p>
-<p>A: &#34;Good.&#34;</p>
-<h2 is-upgraded>Prosody</h2>
-<p>Prosody does not refer to the text you pronounce but to <strong>how you say it</strong>.</p>
-<h3 is-upgraded>Volume/intensity</h3>
-<p>can be high or low: it is related to how much air you use when you speak.</p>
-<p>Negative : The audience has to be able to hear what you are saying.</p>
-<p>✅ Pick a person who is far away and talk to that person</p>
-<p>❌ Don&#39;t talk to yourself</p>
-<h3 is-upgraded>Intonation</h3>
-<p>You can use a higher or lower pitch. Tone is related to contracting a muscle, the more tense it is, the higher the tone, like for a guitar.</p>
-<p>❌avoid speaking always with a flat intonation.</p>
-<h3 is-upgraded>Speech rate: (syllables/s)</h3>
-<ul>
-<li>very fast (you don&#39;t want too much attention, medicines side effects are 9 syllables/s)</li>
-<li>slow (baby-talk, 3 syllables/s)</li>
-<li>talking live or remotely requires also a different speech rate</li>
-</ul>
-<p>❌avoid speaking always at the same rate: enhance contrast between what is more important and what is less important.</p>
-<h3 is-upgraded>Silences</h3>
-<p>Have no fear of silences.</p>
-<ul>
-<li>They can be used to emphasise something.</li>
-<li>They can be used to give the audience the time to think.</li>
-<li>Be aware of them, otherwise they become hesitations.</li>
-<li>Silent pauses</li>
-<li>Filled pauses: pause in which there is no silence.</li>
-</ul>
-<h3 is-upgraded>Disfluencies</h3>
-<ul>
-<li><em>filled pauses</em>, vocalisations (eee, oooo)</li>
-<li>nasalisations (mmmm)</li>
-<li>repetitions (repeat a word),</li>
-<li>false starts (start, then adjust sentence while speaking)</li>
-<li>lengthenings</li>
-</ul>
-<p>Are you aware of which one do you do? <strong>Try to be aware of them, and possibly reduce them</strong>.</p>
-<p>Negative : <strong>Note:</strong> despite their name, they are not really a bad thing. They are part of <em>spontaneous</em> speech so it is <em>normal</em> (and good) to have <em>some</em> of them, it shows that <strong>you are thinking and not reading</strong>.</p>
-<p>Positive : <strong>Tip:</strong> Try to vary some prosodic elements during your talk. Do not read your slides word by word. Give it your rhythm.</p>
-<p>Positive : <strong>Tip:</strong> prepare your talk in advance, loud voice. If possible register yourself and review it afterwards to help you improve.</p>
-<h3 is-upgraded>Dominant or not?</h3>
-<p>Your voice will contribute to identify yourself in a role which is somewhere between dominant and sub-dominant.</p>
-<p><strong>Dominant:</strong> slow, many silences, thinking a lot about what you <em>don&#39;t</em> want to say; it can show confidence but also puts distance with your audience. Not advisable at the start of a talk. It may give the idea that you <em>think</em> you are in a <em>higher</em> role (and it may look like you put the audience in a lower role).</p>
-<p><strong>Sub-dominant:</strong> fast, many things to say, few silences.</p>
-<h2 is-upgraded>Body language</h2>
-<ul>
-<li>Regard: look at the audience (ex. to all committee panel members)</li>
-<li>Preferably not sitting (removing body language)</li>
-<li>Moving is ok. However don&#39;t move all the time, it&#39;s distracting.</li>
-<li>Comfortable position, calm and ready to say things that you believe are important.</li>
-<li>Easier to feel comfortable if you manage to arrive rested, after a good sleep.</li>
-</ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Voice" duration="0">
+      <p>When <strong>reading</strong>, text gives the main message. When <strong>speaking</strong>, things are much
+        more difficult. Text is only a small part of your message.</p>
+      <p>Negative : People may not remember anything of what you said, but will tend to remember <strong>how</strong>
+        you said it.</p>
+      <p>Sometimes we think we said something but the message we gave was actually different. Many parameters contribute
+        to your message.</p>
+      <p><strong>Example:</strong> A: &#34;Yesterday I ate a risotto&#34;</p>
+      <p>B: &#34;Oh, How was it?&#34;</p>
+      <p>A: &#34;Good.&#34;</p>
+      <h2 is-upgraded>Prosody</h2>
+      <p>Prosody does not refer to the text you pronounce but to <strong>how you say it</strong>.</p>
+      <h3 is-upgraded>Volume/intensity</h3>
+      <p>can be high or low: it is related to how much air you use when you speak.</p>
+      <p>Negative : The audience has to be able to hear what you are saying.</p>
+      <p>✅ Pick a person who is far away and talk to that person</p>
+      <p>❌ Don&#39;t talk to yourself</p>
+      <h3 is-upgraded>Intonation</h3>
+      <p>You can use a higher or lower pitch. Tone is related to contracting a muscle, the more tense it is, the higher
+        the tone, like for a guitar.</p>
+      <p>❌avoid speaking always with a flat intonation.</p>
+      <h3 is-upgraded>Speech rate: (syllables/s)</h3>
+      <ul>
+        <li>very fast (you don&#39;t want too much attention, medicines side effects are 9 syllables/s)</li>
+        <li>slow (baby-talk, 3 syllables/s)</li>
+        <li>talking live or remotely requires also a different speech rate</li>
+      </ul>
+      <p>❌avoid speaking always at the same rate: enhance contrast between what is more important and what is less
+        important.</p>
+      <h3 is-upgraded>Silences</h3>
+      <p>Have no fear of silences.</p>
+      <ul>
+        <li>They can be used to emphasise something.</li>
+        <li>They can be used to give the audience the time to think.</li>
+        <li>Be aware of them, otherwise they become hesitations.</li>
+        <li>Silent pauses</li>
+        <li>Filled pauses: pause in which there is no silence.</li>
+      </ul>
+      <h3 is-upgraded>Disfluencies</h3>
+      <ul>
+        <li><em>filled pauses</em>, vocalisations (eee, oooo)</li>
+        <li>nasalisations (mmmm)</li>
+        <li>repetitions (repeat a word),</li>
+        <li>false starts (start, then adjust sentence while speaking)</li>
+        <li>lengthenings</li>
+      </ul>
+      <p>Are you aware of which one do you do? <strong>Try to be aware of them, and possibly reduce them</strong>.</p>
+      <p>Negative : <strong>Note:</strong> despite their name, they are not really a bad thing. They are part of
+        <em>spontaneous</em> speech so it is <em>normal</em> (and good) to have <em>some</em> of them, it shows that
+        <strong>you are thinking and not reading</strong>.
+      </p>
+      <p>Positive : <strong>Tip:</strong> Try to vary some prosodic elements during your talk. Do not read your slides
+        word by word. Give it your rhythm.</p>
+      <p>Positive : <strong>Tip:</strong> prepare your talk in advance, loud voice. If possible register yourself and
+        review it afterwards to help you improve.</p>
+      <h3 is-upgraded>Dominant or not?</h3>
+      <p>Your voice will contribute to identify yourself in a role which is somewhere between dominant and sub-dominant.
+      </p>
+      <p><strong>Dominant:</strong> slow, many silences, thinking a lot about what you <em>don&#39;t</em> want to say;
+        it can show confidence but also puts distance with your audience. Not advisable at the start of a talk. It may
+        give the idea that you <em>think</em> you are in a <em>higher</em> role (and it may look like you put the
+        audience in a lower role).</p>
+      <p><strong>Sub-dominant:</strong> fast, many things to say, few silences.</p>
+      <h2 is-upgraded>Body language</h2>
+      <ul>
+        <li>Regard: look at the audience (ex. to all committee panel members)</li>
+        <li>Preferably not sitting (removing body language)</li>
+        <li>Moving is ok. However don&#39;t move all the time, it&#39;s distracting.</li>
+        <li>Comfortable position, calm and ready to say things that you believe are important.</li>
+        <li>Easier to feel comfortable if you manage to arrive rested, after a good sleep.</li>
+      </ul>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Exercises" duration="0">
-        <p>Here are a few exercises using your voice.</p>
-<h2 is-upgraded>Exercise 1.</h2>
-<p>Read the numbers choosing one intention among the ones in brackets:</p>
-<p>12 34 23 75 (disgust, enthusiasm, resignation)</p>
-<p>4 5 7 9 2 (sadness, fear, satisfaction)</p>
-<h2 is-upgraded>Exercise 2.</h2>
-<p>Pronounce ‘Good morning&#39; with different intentions and ask someone to guess which intention you sent.</p>
-<ul>
-<li>hasty </li>
-<li>happy</li>
-<li>sad</li>
-<li>threatening</li>
-<li>afraid</li>
-<li>insincere</li>
-<li>commanding</li>
-<li>enthusiastic</li>
-</ul>
-<h2 is-upgraded>Exercise 3.</h2>
-<p>Read this text</p>
-<ul>
-<li>First following syntactic silences (, . ;)</li>
-<li>Re-read with higher tone or emphasis on words in bold</li>
-</ul>
-<p>Massive neutrinos influence the background evolution of the Universe as well as the growth of structure. Being able to model this effect and constrain the sum of their masses is one of the key challenges in modern cosmology.</p>
-<p>Massive <strong>neutrinos</strong> influence the <strong>background</strong> evolution of the Universe as well as the <strong>growth</strong> of structure. Being able to <strong>model</strong> this effect and constrain the sum of their <strong>masses</strong> is one of the key <strong>challenges</strong> in modern cosmology.</p>
-<p><strong>Massive</strong> neutrinos influence the background evolution of the <strong>Universe</strong> as well as the growth of structure. Being able to model this effect and constrain the <strong>sum</strong> of their masses is one of the key challenges in <strong>modern</strong> cosmology.</p>
-<h2 is-upgraded>Exercise 4.</h2>
-<p>Try to pronounce the following sentence using one of the intentions listed below.</p>
-<p><em>We&#39;ll talk about that tomorrow</em></p>
-<ul>
-<li>sad</li>
-<li>enthusiastic</li>
-<li>threatening</li>
-</ul>
-<h2 is-upgraded>Exercise 5.</h2>
-<p>The teacher said the detective is French.</p>
-<p><strong>Who is French?</strong> The teacher or the detective?</p>
-<p><strong>Changing pauses:</strong> The teacher said <strong>//</strong> the detective is French.</p>
-<p>The teacher <strong>//</strong> said the detective <strong>//</strong> is French.</p>
-<p><strong>Changing intonation (without pauses):</strong></p>
-<p>The <strong><em>teacher</em></strong> said the detective is <strong><em>French</em></strong>.</p>
-<p>The teacher <strong><em>said</em></strong> the detective is <strong><em>French</em></strong>.</p>
-<p>The teacher <strong><em>said</em></strong> the <strong><em>detective</em></strong> is French (i.e. not a third person).</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Exercises" duration="0">
+      <p>Here are a few exercises using your voice.</p>
+      <h2 is-upgraded>Exercise 1.</h2>
+      <p>Read the numbers choosing one intention among the ones in brackets:</p>
+      <p>12 34 23 75 (disgust, enthusiasm, resignation)</p>
+      <p>4 5 7 9 2 (sadness, fear, satisfaction)</p>
+      <h2 is-upgraded>Exercise 2.</h2>
+      <p>Pronounce ‘Good morning&#39; with different intentions and ask someone to guess which intention you sent.</p>
+      <ul>
+        <li>hasty </li>
+        <li>happy</li>
+        <li>sad</li>
+        <li>threatening</li>
+        <li>afraid</li>
+        <li>insincere</li>
+        <li>commanding</li>
+        <li>enthusiastic</li>
+      </ul>
+      <h2 is-upgraded>Exercise 3.</h2>
+      <p>Read this text</p>
+      <ul>
+        <li>First following syntactic silences (, . ;)</li>
+        <li>Re-read with higher tone or emphasis on words in bold</li>
+      </ul>
+      <p>Massive neutrinos influence the background evolution of the Universe as well as the growth of structure. Being
+        able to model this effect and constrain the sum of their masses is one of the key challenges in modern
+        cosmology.</p>
+      <p>Massive <strong>neutrinos</strong> influence the <strong>background</strong> evolution of the Universe as well
+        as the <strong>growth</strong> of structure. Being able to <strong>model</strong> this effect and constrain the
+        sum of their <strong>masses</strong> is one of the key <strong>challenges</strong> in modern cosmology.</p>
+      <p><strong>Massive</strong> neutrinos influence the background evolution of the <strong>Universe</strong> as well
+        as the growth of structure. Being able to model this effect and constrain the <strong>sum</strong> of their
+        masses is one of the key challenges in <strong>modern</strong> cosmology.</p>
+      <h2 is-upgraded>Exercise 4.</h2>
+      <p>Try to pronounce the following sentence using one of the intentions listed below.</p>
+      <p><em>We&#39;ll talk about that tomorrow</em></p>
+      <ul>
+        <li>sad</li>
+        <li>enthusiastic</li>
+        <li>threatening</li>
+      </ul>
+      <h2 is-upgraded>Exercise 5.</h2>
+      <p>The teacher said the detective is French.</p>
+      <p><strong>Who is French?</strong> The teacher or the detective?</p>
+      <p><strong>Changing pauses:</strong> The teacher said <strong>//</strong> the detective is French.</p>
+      <p>The teacher <strong>//</strong> said the detective <strong>//</strong> is French.</p>
+      <p><strong>Changing intonation (without pauses):</strong></p>
+      <p>The <strong><em>teacher</em></strong> said the detective is <strong><em>French</em></strong>.</p>
+      <p>The teacher <strong><em>said</em></strong> the detective is <strong><em>French</em></strong>.</p>
+      <p>The teacher <strong><em>said</em></strong> the <strong><em>detective</em></strong> is French (i.e. not a third
+        person).</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Design your slides" duration="0">
-        <p>Negative : <strong>Goal comes first:</strong> design can help you in reaching your goal; it is not just about making something look pretty per sé.</p>
-<p>Positive : <strong>Design is planning</strong></p>
-<h2 is-upgraded>Hierarchy</h2>
-<p><em>What&#39;s the most important thing you want that slide to say?</em></p>
-<p><em>What&#39;s the second most important thing?</em></p>
-<p><em>How much information do I need to say?</em></p>
-<h2 is-upgraded>Contrast</h2>
-<p><em>How are they different?</em></p>
-<p class="image-container"><img alt="alt-text-here" src="img/2a86e16407457ce6.jpg"></p>
-<h2 is-upgraded>What can I delete?</h2>
-<ul>
-<li>Unnecessary words</li>
-<li>Excess decoration</li>
-<li>Elements which are not needed to make a decision</li>
-</ul>
-<p><em>Further reading:</em></p>
-<ul>
-<li>Designing presentation slides <a href="https://www.coursera.org/learn/slides" target="_blank">https://www.coursera.org/learn/slides</a></li>
-<li>Introduction in <em>The Truthful Art: Data, Charts, and Maps for Communication (Voices That Matter)</em>, by Alberto Cairo</li>
-</ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Design your slides" duration="0">
+      <p>Negative : <strong>Goal comes first:</strong> design can help you in reaching your goal; it is not just about
+        making something look pretty per sé.</p>
+      <p>Positive : <strong>Design is planning</strong></p>
+      <h2 is-upgraded>Hierarchy</h2>
+      <p><em>What&#39;s the most important thing you want that slide to say?</em></p>
+      <p><em>What&#39;s the second most important thing?</em></p>
+      <p><em>How much information do I need to say?</em></p>
+      <h2 is-upgraded>Contrast</h2>
+      <p><em>How are they different?</em></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/2a86e16407457ce6.jpg"></p>
+      <h2 is-upgraded>What can I delete?</h2>
+      <ul>
+        <li>Unnecessary words</li>
+        <li>Excess decoration</li>
+        <li>Elements which are not needed to make a decision</li>
+      </ul>
+      <p><em>Further reading:</em></p>
+      <ul>
+        <li>Designing presentation slides <a href="https://www.coursera.org/learn/slides"
+            target="_blank">https://www.coursera.org/learn/slides</a></li>
+        <li>Introduction in <em>The Truthful Art: Data, Charts, and Maps for Communication (Voices That Matter)</em>, by
+          Alberto Cairo</li>
+      </ul>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Exercise" duration="0">
-        <p>What doesn&#39;t work with the slide below?</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"><img alt="alt-text-here" src="img/3766b65d60621fb2.jpg"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<ul>
-<li><em>‘Too much text&#39;</em> is <strong>not</strong> the main problem.</li>
-<li><em>‘Font size is too small&#39;</em> is also <strong>not</strong> the main problem.</li>
-</ul>
-<p>Negative : The main issue is lack of <strong>hierarchy</strong> and <strong>contrast</strong>.</p>
-<p>❌No Margins or white space</p>
-<p>❌All <em>main</em> text</p>
-<p>❌Different fonts</p>
-<p>Let&#39;s see how we can improve it to make it more readable, <strong>even without removing text</strong>.</p>
-<p>I can start by identifying what I want the audience to see first:</p>
-<p class="image-container"><img alt="alt-text-here" src="img/907c9dc585aad882.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p>I can <strong>increase contrast</strong> between what comes first and what comes afterwards:</p>
-<p class="image-container"><img alt="alt-text-here" src="img/43df25638b82b5c9.jpg"></p>
-<ul>
-<li>increased what comes first (now 22 font size, originally 20)</li>
-<li>decreased what comes second (now 14 font size, originally 20)</li>
-<li>organised it in columns rather than in lines across the whole page</li>
-<li>increased white space and margins</li>
-</ul>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p>I can use icons and make it more fun. I can <strong>increase contrast further</strong> within the text, with bold/grey.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/8f60ddf1a0fe8ee1.jpg"></p>
-<p>Positive : It took <strong>very little time</strong> to go from a very bad slide to one which is more readable: I did not change the text, I decided a <strong>hierarchy</strong> and enhanced <strong>contrast</strong> between items in that hierarchy.</p>
-<p>I can further reduce text if I wish, but the main issue <strong>was not ‘too much text&#39;.</strong></p>
-<p>Icons made by <a href="https://www.flaticon.com/authors/freepik" target="_blank">Freepik</a>, <a href="https://www.flaticon.com/authors/nhor-phai" target="_blank">Nhor Phai</a>, <a href="https://www.flaticon.com/authors/icongeek26" target="_blank">Icongeek26</a> from <a href="https://www.flaticon.com/" target="_blank"> www.flaticon.com</a></p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Exercise" duration="0">
+      <p>What doesn&#39;t work with the slide below?</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"><img alt="alt-text-here"
+          src="img/3766b65d60621fb2.jpg"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"><img
+          alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <ul>
+        <li><em>‘Too much text&#39;</em> is <strong>not</strong> the main problem.</li>
+        <li><em>‘Font size is too small&#39;</em> is also <strong>not</strong> the main problem.</li>
+      </ul>
+      <p>Negative : The main issue is lack of <strong>hierarchy</strong> and <strong>contrast</strong>.</p>
+      <p>❌No Margins or white space</p>
+      <p>❌All <em>main</em> text</p>
+      <p>❌Different fonts</p>
+      <p>Let&#39;s see how we can improve it to make it more readable, <strong>even without removing text</strong>.</p>
+      <p>I can start by identifying what I want the audience to see first:</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/907c9dc585aad882.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p>I can <strong>increase contrast</strong> between what comes first and what comes afterwards:</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/43df25638b82b5c9.jpg"></p>
+      <ul>
+        <li>increased what comes first (now 22 font size, originally 20)</li>
+        <li>decreased what comes second (now 14 font size, originally 20)</li>
+        <li>organised it in columns rather than in lines across the whole page</li>
+        <li>increased white space and margins</li>
+      </ul>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p>I can use icons and make it more fun. I can <strong>increase contrast further</strong> within the text, with
+        bold/grey.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/8f60ddf1a0fe8ee1.jpg"></p>
+      <p>Positive : It took <strong>very little time</strong> to go from a very bad slide to one which is more readable:
+        I did not change the text, I decided a <strong>hierarchy</strong> and enhanced <strong>contrast</strong> between
+        items in that hierarchy.</p>
+      <p>I can further reduce text if I wish, but the main issue <strong>was not ‘too much text&#39;.</strong></p>
+      <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" target="_blank">Freepik</a>, <a
+          href="https://www.flaticon.com/authors/nhor-phai" target="_blank">Nhor Phai</a>, <a
+          href="https://www.flaticon.com/authors/icongeek26" target="_blank">Icongeek26</a> from <a
+          href="https://www.flaticon.com/" target="_blank"> www.flaticon.com</a></p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Text" duration="0">
-        <h2 is-upgraded>How much text?</h2>
-<p><strong>Not enough</strong></p>
-<ul>
-<li>Slides don&#39;t work without the speaker</li>
-<li>Speaker forgets what to say</li>
-</ul>
-<p><strong>Too much</strong></p>
-<ul>
-<li><strong>Main point</strong> is obscured by irrelevant details</li>
-<li>Main point is <strong>obscured</strong> by irrelevant details</li>
-<li>Main point is obscured by <strong>irrelevant details</strong></li>
-<li><strong>Main point is obscured by irrelevant details</strong></li>
-</ul>
-<p>Typically you will have more text for an audience with high expertise or in small locations; less text for an audience with low expertise or in a large auditorium.</p>
-<h2 is-upgraded>Font</h2>
-<p>Negative : Pick something readable</p>
-<p class="image-container"><img alt="alt-text-here" src="img/4d8a83e069c2d6e2.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/878f2db7f909c78d.jpg"></p>
-<p>Design changes over history: when you choose a font, implicitly you are also giving a message.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/e16d208b3aa8977.jpg"></p>
-<p><strong>Sans-serif:</strong> less contrast, more contemporary, more geometric, more readable in slides.</p>
-<p><strong>Serif:</strong> more contrast, hints to tradition, history, sophisticated, emotional, closer to hand-writing. Usually less readable in slides with a lot of text.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/681cc1d1482698b5.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/404d05111243ce93.jpg"></p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Text" duration="0">
+      <h2 is-upgraded>How much text?</h2>
+      <p><strong>Not enough</strong></p>
+      <ul>
+        <li>Slides don&#39;t work without the speaker</li>
+        <li>Speaker forgets what to say</li>
+      </ul>
+      <p><strong>Too much</strong></p>
+      <ul>
+        <li><strong>Main point</strong> is obscured by irrelevant details</li>
+        <li>Main point is <strong>obscured</strong> by irrelevant details</li>
+        <li>Main point is obscured by <strong>irrelevant details</strong></li>
+        <li><strong>Main point is obscured by irrelevant details</strong></li>
+      </ul>
+      <p>Typically you will have more text for an audience with high expertise or in small locations; less text for an
+        audience with low expertise or in a large auditorium.</p>
+      <h2 is-upgraded>Font</h2>
+      <p>Negative : Pick something readable</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/4d8a83e069c2d6e2.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/878f2db7f909c78d.jpg"></p>
+      <p>Design changes over history: when you choose a font, implicitly you are also giving a message.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/e16d208b3aa8977.jpg"></p>
+      <p><strong>Sans-serif:</strong> less contrast, more contemporary, more geometric, more readable in slides.</p>
+      <p><strong>Serif:</strong> more contrast, hints to tradition, history, sophisticated, emotional, closer to
+        hand-writing. Usually less readable in slides with a lot of text.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/681cc1d1482698b5.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/404d05111243ce93.jpg"></p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Images" duration="0">
-        <ul>
-<li>Plots</li>
-<li>Icons</li>
-<li>Photos</li>
-<li>Animations</li>
-</ul>
-<h2 is-upgraded>Plots</h2>
-<p>Negative : A plot should be there for a reason, to explain and demonstrate your results. It should come with its interpretation and with your explanation.</p>
-<p>Take the time to <strong>describe and explain your plot</strong>.</p>
-<p>✅<strong>Describe:</strong> guide the eye of the audience through the plot: they have never seen it before! Go from outside to inside. What do you want the audience to look at?</p>
-<p>✅<strong>Explain:</strong> why is it important? What&#39;s the message? If you can&#39;t find one, then you typically don&#39;t need the plot at all.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p>❌Unnecessary items (grids, boxes around legend, background shading...)</p>
-<p>❌ Filling your slide with invisible plots. One visualisation is usually enough.</p>
-<p>❌A plot is not a photo or an icon. It&#39;s not there to make your slides nicer, it&#39;s a visualisation of your results.</p>
-<p>Positive : Make the plot large enough to actually be seen in all its parts. Complex plots require time for them to be explained. If you don&#39;t have the time, remove the plot.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>Icons</h2>
-<p>Icons can be found online: <a href="https://www.flaticon.com/" target="_blank">https://www.flaticon.com/</a></p>
-<p>They are meant to be small and can be nice when used for itemising (instead of bullet points).</p>
-<p>Usually <strong>the smaller the better</strong>, as they don&#39;t have many details.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>Photos</h2>
-<p>Photos can be found online: <a href="https://freerangestock.com/" target="_blank">https://freerangestock.com/</a> or you can use your own and make it more personal.</p>
-<p>Photos can be used to highlight the <strong>title</strong> and main topic of the slide.</p>
-<p><strong>The larger, the better</strong>.</p>
-<p>❌Avoid images at the bottom right of the slides: we tend to look from left to right and top to bottom. It looks like a patch on a slide which was already made.</p>
-<p>❌Avoid illustrations that <em>mimic</em> a situation: hard to have the audience feel empathy for such a situation.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/4fb842239c7b00fd.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/76970b559601bee6.jpg"></p>
-<p>Positive : <strong>Tip:</strong> try to use photos which are dark or light enough for text (if any) to be visible on top. You can add a semi-transparent layer to make your text more visible.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<h2 is-upgraded>Animations</h2>
-<p>Some people like them very much, some other really don&#39;t.</p>
-<p>They can be cool if they are high quality and you know what you are doing. Otherwise, I would avoid them.</p>
-<p>Either there is a point to them, in making your message clearer or more fun, or they can distract the attention, especially in transitions.</p>
-<p>Positive : <strong>My tip:</strong> keep it simple and functional to your message.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Images" duration="0">
+      <ul>
+        <li>Plots</li>
+        <li>Icons</li>
+        <li>Photos</li>
+        <li>Animations</li>
+      </ul>
+      <h2 is-upgraded>Plots</h2>
+      <p>Negative : A plot should be there for a reason, to explain and demonstrate your results. It should come with
+        its interpretation and with your explanation.</p>
+      <p>Take the time to <strong>describe and explain your plot</strong>.</p>
+      <p>✅<strong>Describe:</strong> guide the eye of the audience through the plot: they have never seen it before! Go
+        from outside to inside. What do you want the audience to look at?</p>
+      <p>✅<strong>Explain:</strong> why is it important? What&#39;s the message? If you can&#39;t find one, then you
+        typically don&#39;t need the plot at all.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p>❌Unnecessary items (grids, boxes around legend, background shading...)</p>
+      <p>❌ Filling your slide with invisible plots. One visualisation is usually enough.</p>
+      <p>❌A plot is not a photo or an icon. It&#39;s not there to make your slides nicer, it&#39;s a visualisation of
+        your results.</p>
+      <p>Positive : Make the plot large enough to actually be seen in all its parts. Complex plots require time for them
+        to be explained. If you don&#39;t have the time, remove the plot.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>Icons</h2>
+      <p>Icons can be found online: <a href="https://www.flaticon.com/" target="_blank">https://www.flaticon.com/</a>
+      </p>
+      <p>They are meant to be small and can be nice when used for itemising (instead of bullet points).</p>
+      <p>Usually <strong>the smaller the better</strong>, as they don&#39;t have many details.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>Photos</h2>
+      <p>Photos can be found online: <a href="https://freerangestock.com/"
+          target="_blank">https://freerangestock.com/</a> or you can use your own and make it more personal.</p>
+      <p>Photos can be used to highlight the <strong>title</strong> and main topic of the slide.</p>
+      <p><strong>The larger, the better</strong>.</p>
+      <p>❌Avoid images at the bottom right of the slides: we tend to look from left to right and top to bottom. It looks
+        like a patch on a slide which was already made.</p>
+      <p>❌Avoid illustrations that <em>mimic</em> a situation: hard to have the audience feel empathy for such a
+        situation.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/4fb842239c7b00fd.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/76970b559601bee6.jpg"></p>
+      <p>Positive : <strong>Tip:</strong> try to use photos which are dark or light enough for text (if any) to be
+        visible on top. You can add a semi-transparent layer to make your text more visible.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <h2 is-upgraded>Animations</h2>
+      <p>Some people like them very much, some other really don&#39;t.</p>
+      <p>They can be cool if they are high quality and you know what you are doing. Otherwise, I would avoid them.</p>
+      <p>Either there is a point to them, in making your message clearer or more fun, or they can distract the
+        attention, especially in transitions.</p>
+      <p>Positive : <strong>My tip:</strong> keep it simple and functional to your message.</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Colours" duration="0">
-        <p>There is no need to use all available colours just because they exist.</p>
-<p class="image-container"><img alt="alt-text-here" src="img/a3431aa4afd526e0.jpg"></p>
-<p>It has to be <strong>readable</strong>.</p>
-<p>✅   dark background with light foreground</p>
-<p>✅   light background with dark foreground</p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p>🔥<strong>Warm vs cool</strong> ❄️</p>
-<p>Colours can have a general meaning, besides the one given by context.</p>
-<p><img alt="alt-text-here" src="img/9ac4064dc5c179d6.jpg"><em>Reference: </em><a href="https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html" target="_blank">https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html</a></p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p><img alt="alt-text-here" src="img/8098c608e91a9ea2.jpg"><em>Reference: </em><a href="https://24slides.com/presentbetter/pick-right-colors-presentation/" target="_blank">https://24slides.com/presentbetter/pick-right-colors-presentation/</a>.</p>
-<p>Complementary colours are not necessarily a good choice:</p>
-<p class="image-container"><img alt="alt-text-here" src="img/a87caaae38e5bd01.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p>If you don&#39;t have a style guide provided by your institution, and you are not an experienced designer:</p>
-<p>Positive : <strong>Tip:</strong> pick your favourite <strong>primary colour</strong>. Then select the others using a <strong>colour matching website</strong>. Avoid using more than 3-5 colours.</p>
-<ul>
-<li><a href="http://www.colorexplorer.com/colormatch.aspx" target="_blank">Color explorer</a>: color matching generator.</li>
-</ul>
-<p class="image-container"><img alt="alt-text-here" src="img/e861cbd47646b40d.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<ul>
-<li>[Online palette generator: <a href="https://coolors.co/" target="_blank">https://coolors.co/</a>]</li>
-</ul>
-<p class="image-container"><img alt="alt-text-here" src="img/72fbbfcfc76dda0d.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/73dcdda0920cb1bc.jpg"></p>
-<p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
-<p>Negative : Templates often add unnecessary elements, heavy background or headers, logo which is too big, wrong colours, poor typeface, ...)</p>
-<p class="image-container"><img alt="alt-text-here" src="img/1f49752715ecca2c.jpg"><img alt="alt-text-here" src="img/cdfc904abcddd3a0.jpg"></p>
-<p><em>Further reading:</em><a href="https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html" target="_blank">https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html</a><a href="https://24slides.com/presentbetter/pick-right-colors-presentation/" target="_blank">https://24slides.com/presentbetter/pick-right-colors-presentation/</a></p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Colours" duration="0">
+      <p>There is no need to use all available colours just because they exist.</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/a3431aa4afd526e0.jpg"></p>
+      <p>It has to be <strong>readable</strong>.</p>
+      <p>✅ dark background with light foreground</p>
+      <p>✅ light background with dark foreground</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p>🔥<strong>Warm vs cool</strong> ❄️</p>
+      <p>Colours can have a general meaning, besides the one given by context.</p>
+      <p><img alt="alt-text-here" src="img/9ac4064dc5c179d6.jpg"><em>Reference: </em><a
+          href="https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html"
+          target="_blank">https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html</a></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p><img alt="alt-text-here" src="img/8098c608e91a9ea2.jpg"><em>Reference: </em><a
+          href="https://24slides.com/presentbetter/pick-right-colors-presentation/"
+          target="_blank">https://24slides.com/presentbetter/pick-right-colors-presentation/</a>.</p>
+      <p>Complementary colours are not necessarily a good choice:</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/a87caaae38e5bd01.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p>If you don&#39;t have a style guide provided by your institution, and you are not an experienced designer:</p>
+      <p>Positive : <strong>Tip:</strong> pick your favourite <strong>primary colour</strong>. Then select the others
+        using a <strong>colour matching website</strong>. Avoid using more than 3-5 colours.</p>
+      <ul>
+        <li><a href="http://www.colorexplorer.com/colormatch.aspx" target="_blank">Color explorer</a>: color matching
+          generator.</li>
+      </ul>
+      <p class="image-container"><img alt="alt-text-here" src="img/e861cbd47646b40d.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <ul>
+        <li>[Online palette generator: <a href="https://coolors.co/" target="_blank">https://coolors.co/</a>]</li>
+      </ul>
+      <p class="image-container"><img alt="alt-text-here" src="img/72fbbfcfc76dda0d.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/73dcdda0920cb1bc.jpg"></p>
+      <p class="image-container"><img alt="alt-text-here" src="img/b9a6a250affd152a.jpg"></p>
+      <p>Negative : Templates often add unnecessary elements, heavy background or headers, logo which is too big, wrong
+        colours, poor typeface, ...)</p>
+      <p class="image-container"><img alt="alt-text-here" src="img/1f49752715ecca2c.jpg"><img alt="alt-text-here"
+          src="img/cdfc904abcddd3a0.jpg"></p>
+      <p><em>Further reading:</em><a href="https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html"
+          target="_blank">https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html</a><a
+          href="https://24slides.com/presentbetter/pick-right-colors-presentation/"
+          target="_blank">https://24slides.com/presentbetter/pick-right-colors-presentation/</a></p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Remote talks" duration="0">
-        <p>How are they different?</p>
-<ul>
-<li>No body language</li>
-<li>Hard or impossible to look at your audience</li>
-<li>Very little feedback</li>
-<li>More difficult to adapt to your audience</li>
-<li>More difficult to manage attention</li>
-<li>Need to talk more slowly (delays, overlap, can be hard to hear)</li>
-<li>If you just talk, you end up talking to yourself (which spoils the whole essence of giving a talk!)</li>
-<li>Slides format is different (small screen, low resolution, delay, no pointer)</li>
-<li>Images, videos, plots will always appear small and won&#39;t have the same impact</li>
-</ul>
-<p>Much more difficult for both speaker and audience to manage and keep the attention. If you give a talk online as you would give it live, there is a high chance it won&#39;t be effective.</p>
-<p>Positive : Tip: given that body language is absent, try to concentrate at least more on the voice, on silences, intonation, speed rate.</p>
-<p>Negative : Should we just record the talk, send it in advance, and then have only the interactive part live? Ex. Q&amp;A on the recorded talk.</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="Remote talks" duration="0">
+      <p>How are they different?</p>
+      <ul>
+        <li>No body language</li>
+        <li>Hard or impossible to look at your audience</li>
+        <li>Very little feedback</li>
+        <li>More difficult to adapt to your audience</li>
+        <li>More difficult to manage attention</li>
+        <li>Need to talk more slowly (delays, overlap, can be hard to hear)</li>
+        <li>If you just talk, you end up talking to yourself (which spoils the whole essence of giving a talk!)</li>
+        <li>Slides format is different (small screen, low resolution, delay, no pointer)</li>
+        <li>Images, videos, plots will always appear small and won&#39;t have the same impact</li>
+      </ul>
+      <p>Much more difficult for both speaker and audience to manage and keep the attention. If you give a talk online
+        as you would give it live, there is a high chance it won&#39;t be effective.</p>
+      <p>Positive : Tip: given that body language is absent, try to concentrate at least more on the voice, on silences,
+        intonation, speed rate.</p>
+      <p>Negative : Should we just record the talk, send it in advance, and then have only the interactive part live?
+        Ex. Q&amp;A on the recorded talk.</p>
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="What we&#39;ve covered" duration="0">
-        <ul>
-<li>Why: adapt your talk to your goal</li>
-<li>Who: help your audience to listen</li>
-<li>Where: location</li>
-</ul>
-<p class="image-container"><img alt="alt-text-here" src="img/b5b1670d43c1507e.jpg"></p>
-<ul>
-<li>How: <ul>
-<li>slides (text, font, images)</li>
-<li>story line</li>
-<li>voice (prosody and intent beyond the text)</li>
-<li>unless you really know what you are doing, <strong>keep it simple</strong> (excessive decorations, animations, transitions, content, plots, etc): can be very distracting and if you over-do, you can obscure your main message.</li>
-</ul>
-</li>
-</ul>
-<p>Negative : Talk to your <strong>audience</strong>, <strong>not to yourself</strong>.</p>
-<p>Positive : The best way to improve your talks is to <strong>give talks</strong>! Accept invitations to give a public speech and listen: pay attention to what you liked in other people talks and why you liked it. Then try it yourself!</p>
+    </google-codelab-step>
+
+    <google-codelab-step label="What we&#39;ve covered" duration="0">
+      <ul>
+        <li>Why: adapt your talk to your goal</li>
+        <li>Who: help your audience to listen</li>
+        <li>Where: location</li>
+      </ul>
+      <p class="image-container"><img alt="alt-text-here" src="img/b5b1670d43c1507e.jpg"></p>
+      <ul>
+        <li>How: <ul>
+            <li>slides (text, font, images)</li>
+            <li>story line</li>
+            <li>voice (prosody and intent beyond the text)</li>
+            <li>unless you really know what you are doing, <strong>keep it simple</strong> (excessive decorations,
+              animations, transitions, content, plots, etc): can be very distracting and if you over-do, you can obscure
+              your main message.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>Negative : Talk to your <strong>audience</strong>, <strong>not to yourself</strong>.</p>
+      <p>Positive : The best way to improve your talks is to <strong>give talks</strong>! Accept invitations to give a
+        public speech and listen: pay attention to what you liked in other people talks and why you liked it. Then try
+        it yourself!</p>
 
 
-      </google-codelab-step>
-    
+    </google-codelab-step>
+
   </google-codelab>
 
-  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <!-- <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
   <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
-  <script src="//support.google.com/inapp/api.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script> -->
 
 </body>
+
 </html>
