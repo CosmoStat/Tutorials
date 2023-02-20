@@ -44,7 +44,7 @@ Presenting your work:
 - reconsider some misconception
  
 
-<!--![alt-text-here](assets/space.jpg)-->
+![alt-text-here](elements/assets/space.jpg)
 
 
 
@@ -151,9 +151,9 @@ In the next section you will find examples of talks aiming at different goals an
 - Public outreach talk (ex. *TED*)
 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ **WAIT BEFORE READING FURTHER** ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ## Examples
 
@@ -195,7 +195,7 @@ Negative
 
  ⏰**Time:** Density of topics will be flexible, not really important to cover all topics within the 1h lecture.  
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ### 20 m presentation to a committee panel
 
@@ -230,7 +230,7 @@ Positive
 : **My Tip:** make sure you check the website of the group, understand what they do, and how you can fit in. Read the application opening, it may contain hints and keywords that you may want to recall. 
 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 
 ### 40 m scientific seminar to experts in your domain
@@ -254,7 +254,7 @@ Negative
 Positive
 : **My Tip**: think of enhancing contrast. How does your method and result differ from what other people have done? How did you advance the state of the art? Show that you are aware of other people work, cite them. Be aware in particular of whether *your audience* may have already worked in that field.
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ### 1h colloquium
 Negative
@@ -277,7 +277,7 @@ Negative
 Positive
 : **My Tip:** slightly increase the difficulty as you proceed. Not everyone has to understand everything at all times: take a few minutes to talk to experts as well or they will get bored if the level is too low for the entire 1h; however at least the first half and the last part have to be again entirely comprehensible for everyone.
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ### Public outreach talk (ex. TED)
 
@@ -660,7 +660,7 @@ Positive
 
 *How are they different?*
 
-![alt-text-here](assets/big.jpg)
+![alt-text-here](elements/assets/big.jpg)
 
 ### What can I delete?
 
@@ -677,10 +677,10 @@ Positive
 
 What doesn't work with the slide below?
 
-![alt-text-here](assets/space.jpg)
-![alt-text-here](assets/sport1.jpg)
-![alt-text-here](assets/space.jpg)
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
+![alt-text-here](elements/assets/sport1.jpg)
+![alt-text-here](elements/assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 
 - *'Too much text'* is **not** the main problem. 
@@ -699,24 +699,24 @@ Let's see how we can improve it to make it more readable, **even without removin
 
 I can start by identifying what I want the audience to see first:
 
-![alt-text-here](assets/sport2.jpg)
+![alt-text-here](elements/assets/sport2.jpg)
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 I can **increase contrast** between what comes first and what comes afterwards:
 
-![alt-text-here](assets/sport3.jpg)
+![alt-text-here](elements/assets/sport3.jpg)
 
 - increased what comes first (now 22 font size, originally 20)
 - decreased what comes second (now 14 font size, originally 20)
 - organised it in columns rather than in lines across the whole page
 - increased white space and margins
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 I can use icons and make it more fun. I can **increase contrast further** within the text, with bold/grey.
 
-![alt-text-here](assets/sport4.jpg)
+![alt-text-here](elements/assets/sport4.jpg)
 
 Positive
 : It took **very little time** to go from a very bad slide to one which is more readable: I did not change the text, I decided a **hierarchy** and enhanced **contrast** between items in that hierarchy.  
@@ -748,14 +748,14 @@ Typically you will have more text for an audience with high expertise or in smal
 Negative
 : Pick something readable
 
-![alt-text-here](assets/font_unreadable.jpg)
+![alt-text-here](elements/assets/font_unreadable.jpg)
 
-![alt-text-here](assets/font_readable.jpg)
+![alt-text-here](elements/assets/font_readable.jpg)
 
 
 Design changes over history: when you choose a font, implicitly you are also giving a message.
 
-![alt-text-here](assets/font_contemporary.jpg)
+![alt-text-here](elements/assets/font_contemporary.jpg)
 
 **Sans-serif:** less contrast, more contemporary, more geometric, more readable in slides. 
 
@@ -763,10 +763,10 @@ Design changes over history: when you choose a font, implicitly you are also giv
 
 
 
-![alt-text-here](assets/serif.jpg)
+![alt-text-here](elements/assets/serif.jpg)
 
 
-![alt-text-here](assets/font1.jpg)
+![alt-text-here](elements/assets/font1.jpg)
 
 
 ## Images
@@ -787,7 +787,7 @@ Take the time to **describe and explain your plot**.
 
 ✅**Explain:** why is it important? What's the message? If you can't find one, then you typically don't need the plot at all. 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ❌Unnecessary items (grids, boxes around legend, background shading...) 
 
@@ -799,7 +799,7 @@ Positive
 : Make the plot large enough to actually be seen in all its parts. Complex plots require time for them to be explained. If you don't have the time, remove the plot. 
 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ### Icons
 
@@ -809,7 +809,7 @@ They are meant to be small and can be nice when used for itemising (instead of b
 
 Usually **the smaller the better**, as they don't have many details. 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ### Photos 
 
@@ -824,17 +824,17 @@ Photos can be used to highlight the **title** and main topic of the slide.
 
 ❌Avoid illustrations that *mimic* a situation: hard to have the audience feel empathy for such a situation. 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
-![alt-text-here](assets/achievement.jpg)
+![alt-text-here](elements/assets/achievement.jpg)
 
-![alt-text-here](assets/achievement1.jpg)
+![alt-text-here](elements/assets/achievement1.jpg)
 
 
 Positive
 : **Tip:** try to use photos which are dark or light enough for text (if any) to be visible on top. You can add a semi-transparent layer to make your text more visible. 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 ### Animations
 
@@ -856,7 +856,7 @@ Positive
 
 There is no need to use all available colours just because they exist. 
 
-![alt-text-here](assets/too_many_colors.jpg)
+![alt-text-here](elements/assets/too_many_colors.jpg)
 
 It has to be **readable**.
 
@@ -865,25 +865,25 @@ It has to be **readable**.
 ✅   light background with dark foreground
 
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 🔥**Warm vs cool** ❄️
 
 Colours can have a general meaning, besides the one given by context.
 
-![alt-text-here](assets/warm_cool.jpg)
+![alt-text-here](elements/assets/warm_cool.jpg)
 *Reference:* [https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html) 
  
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
-![alt-text-here](assets/color_meaning.jpg)
+![alt-text-here](elements/assets/color_meaning.jpg)
 *Reference:* [https://24slides.com/presentbetter/pick-right-colors-presentation/](https://24slides.com/presentbetter/pick-right-colors-presentation/). 
 
 Complementary colours are not necessarily a good choice: 
 
-![alt-text-here](assets/bad_contrast.jpg)
+![alt-text-here](elements/assets/bad_contrast.jpg)
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 
 If you don't have a style guide provided by your institution, and you are not an experienced designer: 
@@ -893,26 +893,26 @@ Positive
 
 - [Color explorer](http://www.colorexplorer.com/colormatch.aspx): color matching generator. 
 
-![alt-text-here](assets/color_explorer.jpg)
+![alt-text-here](elements/assets/color_explorer.jpg)
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 - [Online palette generator: [https://coolors.co/](https://coolors.co/)]
 
-![alt-text-here](assets/palette_generator.jpg)
+![alt-text-here](elements/assets/palette_generator.jpg)
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
-![alt-text-here](assets/simple.jpg)
+![alt-text-here](elements/assets/simple.jpg)
 
-![alt-text-here](assets/space.jpg)
+![alt-text-here](elements/assets/space.jpg)
 
 
 Negative
 : Templates often add unnecessary elements, heavy background or headers, logo which is too big, wrong colours, poor typeface, ...) 
 
-![alt-text-here](assets/template1.jpg)
-![alt-text-here](assets/template2.jpg)
+![alt-text-here](elements/assets/template1.jpg)
+![alt-text-here](elements/assets/template2.jpg)
 
 *Further reading:* 
 [https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html](https://blog.indezine.com/2011/10/how-to-avoid-four-biggest-powerpoint.html)
@@ -948,7 +948,7 @@ Negative
 - Who: help your audience to listen
 - Where: location
 
-![alt-text-here](assets/message.jpg)
+![alt-text-here](elements/assets/message.jpg)
 
 - How:
   - slides (text, font, images)
