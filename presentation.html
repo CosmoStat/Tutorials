@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Loops</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title Slide -->
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <h1>Agent Loops</h1>
+        <p class="subtitle">or: software engineering in 2026</p>
+      </section>
+
+      <!-- Section: The Core Concept -->
+      <section id="divider-core" class="section-divider" data-state="is-section-divider">
+        <h1>The Core Concept</h1>
+        <p>What is an agent?</p>
+      </section>
+
+      <!-- The Loop -->
+      <section>
+        <section id="the-loop">
+          <h2>An Agent is a While Loop</h2>
+          <div class="content">
+            <pre><code>context = startup_information + user_prompt
+while True:
+    response = llm(context)
+    if response.has_tool_calls:
+        context += execute(response.tool_calls)
+    else:
+        break</code></pre>
+            <p class="text-xl" style="margin-top: 30px;">Claude Code, Cursor, Codex are fine-tuned versions of this.</p>
+            <i class="fa-solid fa-arrows-rotate loop-icon"></i>
+          </div>
+        </section>
+
+        <section id="what-remains">
+          <h2>What Remains</h2>
+          <div class="content">
+            <p class="text-xl"><strong>Implementation</strong> — turning a specification into code — is increasingly something the loop handles.</p>
+            <div class="separator"></div>
+            <p class="text-xl">What remains is:</p>
+            <ul class="text-xl">
+              <li>Shaping what to build</li>
+              <li>Noticing when it's wrong</li>
+              <li>Deciding what to try next</li>
+              <li>Managing context</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- Section: Watch It Work -->
+      <section id="divider-part1" class="section-divider" data-state="is-section-divider">
+        <h1>Part 1</h1>
+        <p>Watch It Work</p>
+      </section>
+
+      <!-- Part 1 Content -->
+      <section id="part1-content">
+        <h2>Adding a Feature to TreeCorr</h2>
+        <div class="content">
+          <p>TreeCorr computes correlation functions for cosmology — shear-shear, position-position, etc.</p>
+
+          <div class="callout callout-blue" style="margin-top: 25px;">
+            <p><strong>Quick physics context:</strong> Gravitational lensing shear traces mass along the line of sight. Transverse velocities flow toward overdense regions as matter falls into potential wells. Shear and velocity are correlated — both respond to the same underlying density field.</p>
+          </div>
+
+          <p style="margin-top: 25px;">We'll ask the agent to add <strong>shear-velocity correlations</strong> (spin-2 × spin-1). This feature doesn't exist yet.</p>
+
+          <div class="box" style="margin-top: 25px;">
+            <p class="text-muted" style="margin-bottom: 10px;">The prompt:</p>
+            <p class="text-xl"><em>"Please add shear-velocity (spin-2 × spin-1) correlation functions for shear × cosmic velocity fields."</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Context Management -->
+      <section id="divider-part2" class="section-divider" data-state="is-section-divider">
+        <h1>Part 2</h1>
+        <p>Context Management</p>
+      </section>
+
+      <!-- Part 2 Content -->
+      <section id="part2-content">
+        <h2>The Skill You're Developing</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 35px;">
+            <div>
+              <h3 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fa-solid fa-clock"></i> In-Session</h3>
+              <p>What the model sees right now — conversation, files, tool outputs. It fills up. When it does, older content gets compacted or dropped.</p>
+            </div>
+            <div>
+              <h3 style="color: var(--secondary-color); margin-bottom: 15px;"><i class="fa-solid fa-file-code"></i> CLAUDE.md</h3>
+              <p>Persists across sessions. Project-level (<code>./CLAUDE.md</code>) and user-level (<code>~/.claude/CLAUDE.md</code>). This is how you teach the agent your patterns.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 35px;">
+            <div class="box-outlined">
+              <h3 style="font-size: 20pt; margin-bottom: 10px;"><i class="fa-solid fa-terminal"></i> Commands</h3>
+              <p>Extend what the agent can do. <code>/init</code>, <code>/commit</code></p>
+            </div>
+            <div class="box-outlined">
+              <h3 style="font-size: 20pt; margin-bottom: 10px;"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</h3>
+              <p>Reusable capabilities — bundles of instructions the agent can invoke.</p>
+            </div>
+            <div class="box-outlined">
+              <h3 style="font-size: 20pt; margin-bottom: 10px;"><i class="fa-solid fa-plug"></i> Plugins (MCP)</h3>
+              <p>Connect to external services — databases, APIs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Use What You Built -->
+      <section id="divider-part3" class="section-divider" data-state="is-section-divider">
+        <h1>Part 3</h1>
+        <p>Use What You Built</p>
+      </section>
+
+      <!-- Part 3 Content -->
+      <section id="part3-content">
+        <h2>Plotting Correlation Data</h2>
+        <div class="content">
+          <p>Clear your context (<code>/clear</code>) and start fresh. No memory of the implementation — just the codebase as it exists.</p>
+
+          <div class="box" style="margin-top: 20px;">
+            <p class="text-muted" style="margin-bottom: 8px;">The prompt:</p>
+            <p><em>"Using the data-visualization skill, please plot this shear × velocity correlation function."</em></p>
+          </div>
+
+          <div class="callout callout-orange" style="margin-top: 20px;">
+            <p><strong>When you see the plot, ask:</strong> Is the information well conveyed? Does the result make sense physically?</p>
+            <p style="margin-top: 10px;">The agent can read the plot (it's multimodal) and reason about what it sees. <strong>Execution plus judgment.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Verify -->
+      <section id="divider-part4" class="section-divider" data-state="is-section-divider">
+        <h1>Part 4</h1>
+        <p>Verify</p>
+      </section>
+
+      <!-- Part 4 Content -->
+      <section id="part4-content">
+        <h2>Fitting the Model</h2>
+        <div class="content">
+          <p class="text-xl">Fit the correlation function with the model used to generate the synthetic data. Ask for error bar estimation.</p>
+
+          <div class="box" style="margin-top: 30px;">
+            <p class="text-muted" style="margin-bottom: 10px;">The prompt:</p>
+            <p class="text-xl"><em>"Fit this correlation function with [model form]. Estimate uncertainties."</em></p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 35px;">
+            <div class="callout callout-green">
+              <p><strong><i class="fa-solid fa-check"></i> If it matches:</strong></p>
+              <p style="margin-top: 10px;">The feature works. The synthetic data has known truth — the fit recovers input parameters.</p>
+            </div>
+            <div class="callout callout-orange">
+              <p><strong><i class="fa-solid fa-triangle-exclamation"></i> If it doesn't:</strong></p>
+              <p style="margin-top: 10px;">You've found a bug or learned something about the implementation.</p>
+            </div>
+          </div>
+
+          <p class="text-2xl text-center" style="margin-top: 40px;">The question is whether it gives the <strong>right answer</strong>.</p>
+        </div>
+      </section>
+
+      <!-- Section: Backpressure -->
+      <section id="divider-backpressure" class="section-divider" data-state="is-section-divider">
+        <h1>Backpressure</h1>
+        <p>Engineering the feedback loop</p>
+      </section>
+
+      <!-- Backpressure Content -->
+      <section id="backpressure-content">
+        <h2>Your Feedback is the Bottleneck</h2>
+        <div class="content">
+          <p>Every time you manually check output, copy an error, or eyeball a result — you're spending your scarcest resource.</p>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px;">
+            <div class="box-outlined" style="border-left: 4px solid var(--gray); padding: 15px 20px;">
+              <p><strong class="text-muted">Basic:</strong> Paste code → run → hit error → paste error back. You are the loop.</p>
+            </div>
+            <div class="box-outlined" style="border-left: 4px solid var(--orange); padding: 15px 20px;">
+              <p><strong style="color: var(--orange);">Better:</strong> Agent runs code itself. Build errors, test failures — caught without you.</p>
+            </div>
+            <div class="box-outlined" style="border-left: 4px solid var(--green); padding: 15px 20px;">
+              <p><strong style="color: var(--green);">Best:</strong> Higher-level verification. Agent interacts with webpages. Proof assistants check math.</p>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top: 20px; padding: 15px 20px;">
+            <p><strong>Open question:</strong> What does backpressure look like when verifying <em>claims about the world</em>? Tests catch bugs. What catches wrong conclusions?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing Slide -->
+      <section id="closing" class="section-divider" data-state="is-section-divider">
+        <h1>The Work Now</h1>
+        <p style="max-width: 800px; line-height: 1.6;">The agent is a while loop. The code writes itself.<br><br>What doesn't write itself is knowing what to build, noticing when something's wrong, deciding what to try next.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealChart ],
+      chart: {
+        defaults: Object.assign({
+          color: 'rgba(0, 0, 0, 0.8)',
+          borderColor: 'rgba(0, 0, 0, 0.8)',
+          devicePixelRatio: 2
+        }, window.location.search.includes('export') ? { animation: false } : {})
+      }
+    });
+  </script>
+</body>
+</html>
