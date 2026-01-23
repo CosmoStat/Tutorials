@@ -1,0 +1,13 @@
+# data files (added later)
+*.dat
+*.fits
+*.npy
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# os
+.DS_Store
+.osgrep
