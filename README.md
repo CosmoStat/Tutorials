@@ -74,11 +74,11 @@ When I tried this, it took about 15 minutes and ran out of context once. Compact
 
 Clear your context (`/clear`) and start fresh. This simulates a new session — no memory of the implementation, just the codebase as it now exists.
 
-A collaborator sent you synthetic shear × velocity correlation data. Plot it:
+A collaborator sent you synthetic lensing power spectra. The physics: four correlated fields derived from a gravitational potential Φ — convergence (spin-0), deflection derivative (spin-1), and shear (spin-2). See [Calum's slides](calum_spin_fields.pdf) for the theory.
 
-> Using the data-visualization skill, please plot this shear × velocity correlation function.
+Plot the measured power spectra:
 
-*(Data file: TBD — synthetic correlation function from Calum)*
+> Using the data-visualization skill, plot the lensing power spectra from `data/lcdm_fields/power_spectra.npz`. Show C_ℓ^ΦΦ, C_ℓ^δδ, C_ℓ^αα (EE), and C_ℓ^γγ (EE) on a log-log plot.
 
 The agent will use matplotlib/seaborn through the skill. When it shows you the plot, look at it. Ask:
 
@@ -90,15 +90,17 @@ The agent can read the plot (it's multimodal) and reason about what it sees.
 
 ## Part 4: Verify
 
-Fit the correlation function with the model used to generate the synthetic data. Ask for error bar estimation.
+Fit the power spectrum to recover the cosmological parameters. This is a blind test — the data was generated with specific (Ω_m, S8) values that you don't know.
 
-> Fit this correlation function with [model form]. Estimate uncertainties.
+> Fit the lensing potential power spectrum C_ℓ^ΦΦ from `data/lcdm_fields/power_spectra.npz` to recover Ω_m and S8.
+>
+> Use CAMB to compute theory predictions. Fixed parameters: h=0.70, Ω_b=0.05, n_s=0.96, z_source=1.0.
+>
+> Grid search or MCMC over Ω_m ∈ [0.1, 0.5] and S8 ∈ [0.4, 1.0].
 
-*(Model: TBD — will match the form Calum used to generate the synthetic data)*
+Check whether the fit recovers sensible values. The synthetic data has known truth — Planck 2018 gives Ω_m ≈ 0.315, S8 ≈ 0.83. The blind values are intentionally different.
 
-Check whether the fit recovers the input parameters. The synthetic data has known truth — if the fit matches, the feature works. If it doesn't, you've found a bug or learned something about the implementation.
-
-The question is whether it gives the right answer.
+The question is whether the agent gives the right answer.
 
 ---
 
