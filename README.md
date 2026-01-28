@@ -26,15 +26,14 @@ Implementation — turning a specification into code — is increasingly somethi
 
 We're adding a feature to [TreeCorr](https://github.com/rmjarvis/TreeCorr), which computes correlation functions for cosmology — shear-shear, position-position, that sort of thing.
 
-**Quick physics context.** Gravitational lensing shear traces mass along the line of sight — light bends around structure. Transverse velocities on the sky flow toward overdense regions as matter falls into potential wells. So shear and velocity are correlated: both respond to the same underlying density field. The cross-correlation probes structure growth differently than either field alone.
-
-We'll ask the agent to add shear-velocity correlations (spin-2 × spin-1). This feature doesn't exist yet.
-
 ```bash
 git clone https://github.com/rmjarvis/TreeCorr.git
 cd TreeCorr
 pip install -e .
 ```
+**Quick physics context, also TreeCorr context** Gravitational lensing shear traces mass along the line of sight — light bends around structure. Transverse velocities on the sky flow toward overdense regions as matter falls into potential wells. So shear and velocity are correlated: both respond to the same underlying density field. The cross-correlation probes structure growth differently than either field alone.
+
+We'll ask the agent to add shear-velocity correlations (spin-2 × spin-1). This feature doesn't exist yet.
 
 Initialize a project context:
 
@@ -44,9 +43,9 @@ Initialize a project context:
 
 This creates a `CLAUDE.md` file — the agent reads the codebase and writes itself notes on how to work here. Project-level context that persists across sessions.
 
-Now the prompt:
+Now the prompt (in plan mode):
 
-> please add shear-velocity (spin-2 × spin-1) correlation functions for shear × cosmic velocity fields.
+> please add shear-velocity correlation functions for shear × cosmic velocity fields.
 
 Then watch.
 
@@ -62,11 +61,13 @@ When I tried this, it took about 15 minutes and ran out of context once. Compact
 
 **Exercise:** Look at the `CLAUDE.md` the agent created during `/init`. What did it notice about the codebase? What conventions did it pick up?
 
-**Commands** extend what the agent can do. `/init` is a command. So is `/commit`.
+**Commands** extend what the agent can do. `/init` is a command. 
 
 **Skills** are reusable capabilities — bundles of instructions the agent can invoke. This repo includes three in `.claude/skills/`: `data-visualization` for plotting, `revealjs` for slides, `frontend-design` for web interfaces.
 
-**Plugins (MCP)** connect to external services — databases, APIs, whatever. The agent calls them like any other tool.
+**Plugins / MCPS:** connect to external services — databases, APIs, whatever. The agent calls them like any other tool.
+- Don't get too excited..
+- Add official anthropic plugin store and their skills store
 
 ---
 
