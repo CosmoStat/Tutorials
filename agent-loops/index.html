@@ -1,0 +1,492 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Agent Loops: Software Engineering in 2026</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="agent-loops"
+                  title="Agent Loops: Software Engineering in 2026"
+                  environment="web"
+                  feedback-link="https://github.com/CosmoStat/Tutorials/issues">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 class="checklist" is-upgraded>What You&#39;ll Learn</h2>
+<ul class="checklist">
+<li>How AI coding agents work, what a model harness is, and why agents are different from chatbots</li>
+<li>Managing context: in-session vs. persistent memory</li>
+<li>Extending agents with skills and plugins</li>
+<li>Verifying AI-generated scientific code</li>
+<li>Engineering feedback loops to reduce manual intervention</li>
+</ul>
+<h2 is-upgraded>What You&#39;ll Do</h2>
+<p>You&#39;ll use an AI agent to implement a real feature in a cosmology library, then verify the results by building an independent, scientifically motivated check.</p>
+<p class="image-container"><img alt="Claude Code in action" src="img/350c2a4b41d9d0e8.gif"></p>
+<h2 is-upgraded>Prerequisites</h2>
+<ul>
+<li>Python 3.9+ with pip</li>
+<li>Basic familiarity with the command line</li>
+<li>A working Claude Code installation (<code>npm install -g @anthropic-ai/claude-code</code>)</li>
+<li>Optional: familiarity with cosmology concepts (lensing, power spectra)</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What Makes an Agent Different from a Chatbot?" duration="10">
+        <h2 is-upgraded>LLM vs. Agent</h2>
+<p>A <strong>large language model (LLM)</strong> takes text in and produces text out. That&#39;s it. Claude, GPT-4, Gemini — at their core, they&#39;re sophisticated text completion engines.</p>
+<p>An <strong>agent</strong> is an LLM wrapped in a loop with access to tools:</p>
+<pre><code language="language-python" class="language-python">context = startup_information + user_prompt
+while True:
+    response = llm(context)
+    if response.has_tool_calls:
+        context += execute(response.tool_calls)
+    else:
+        break
+</code></pre>
+<p>The difference is fundamental:</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Chatbot</p>
+</td><td colspan="1" rowspan="1"><p>Agent</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Single turn: prompt → response</p>
+</td><td colspan="1" rowspan="1"><p>Multi-turn: prompt → action → observation → action → ...</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>You execute the suggestions</p>
+</td><td colspan="1" rowspan="1"><p>Agent executes its own suggestions</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>No memory of execution results</p>
+</td><td colspan="1" rowspan="1"><p>Sees results, adapts, retries</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>You are the feedback loop</p>
+</td><td colspan="1" rowspan="1"><p>Agent is the feedback loop</p>
+</td></tr>
+</table>
+<p>Every AI coding tool you&#39;ve heard of — Claude Code, Cursor, Codex, Gemini CLI — is built on this same pattern. The model is the engine. The loop + tools is what makes it an agent.</p>
+<h2 is-upgraded>What is a Model Harness?</h2>
+<p>The <strong>harness</strong> is everything except the model itself. Think of the model as an engine; the harness is the car — steering, brakes, dashboard, fuel system.</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│                  MODEL HARNESS                              │
+│  ┌───────────────────────────────────────────┐  │
+│  │  Context Management                                  │  │
+│  │  • What to show the model                            │  │
+│  │  • When to summarize/compact                         │  │
+│  │  • What to persist across sessions                   │  │
+│  └───────────────────────────────────────────┘  │
+│  ┌───────────────────────────────────────────┐  │
+│  │  Tool Orchestration                                  │  │
+│  │  • File read/write                                   │  │
+│  │  • Shell execution                                   │  │
+│  │  • Web search, API calls                             │  │
+│  └───────────────────────────────────────────┘  │
+│  ┌───────────────────────────────────────────┐  │
+│  │  Planning &amp; Verification                             │  │
+│  │  • Task decomposition                                │  │
+│  │  • Output validation                                 │  │
+│  │  • Human approval gates                              │  │
+│  └───────────────────────────────────────────┘  │
+│                                                 │
+│            ┌─────────────────┐                  │
+│            │   LLM (Model)   │                  │
+│            │  Claude, GPT,   │                  │
+│            │  Gemini, etc.   │                  │
+│            └─────────────────┘                  │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<p>Note: The model is increasingly commodity — Claude, GPT-4, Gemini perform similarly on benchmarks. <strong>The harness determines whether agents succeed or fail.</strong> This is why Anthropic, Google, and OpenAI are all investing heavily in harness engineering, not just model training.</p>
+<h2 is-upgraded>The Agent Landscape in 2026</h2>
+<p>All major AI labs now ship agent harnesses for coding:</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Tool</p>
+</td><td colspan="1" rowspan="1"><p>Interface</p>
+</td><td colspan="1" rowspan="1"><p>Approach</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Claude Code</strong></p>
+</td><td colspan="1" rowspan="1"><p>Terminal-first CLI</p>
+</td><td colspan="1" rowspan="1"><p>Autonomous multi-file operations, background agents, context compaction</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Cursor</strong></p>
+</td><td colspan="1" rowspan="1"><p>AI-native IDE</p>
+</td><td colspan="1" rowspan="1"><p>Real-time code completion, inline chat, repository-wide edits</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Codex</strong></p>
+</td><td colspan="1" rowspan="1"><p>CLI + Cloud sandbox</p>
+</td><td colspan="1" rowspan="1"><p>Sandboxed execution, deterministic multi-step tasks, open source</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Gemini CLI</strong></p>
+</td><td colspan="1" rowspan="1"><p>Terminal CLI</p>
+</td><td colspan="1" rowspan="1"><p>Google Search grounding, 1M token context, MCP extensibility</p>
+</td></tr>
+</table>
+<p>These tools are <strong>converging</strong>. Cursor&#39;s agent mode looks like Claude Code&#39;s agents. Codex adopted similar patterns. They all implement the same core loop — the differences are in the harness: how they manage context, which tools they expose, how they handle failures.</p>
+<p>By the end of 2025, roughly 85% of developers regularly used AI tools for coding. The question isn&#39;t whether to use them — it&#39;s understanding how they work so you can use them effectively.</p>
+<h2 is-upgraded>Claude Code: A Closer Look</h2>
+<p>Since we&#39;ll use Claude Code in this tutorial, here&#39;s what it does under the hood:</p>
+<p><strong>Core capabilities:</strong></p>
+<ul>
+<li><strong>File operations</strong>: Read, write, edit files in your codebase</li>
+<li><strong>Shell execution</strong>: Run tests, build commands, git operations</li>
+<li><strong>Web search</strong>: Look up documentation, APIs, error messages</li>
+<li><strong>Sub-agents</strong>: Spawn background workers for parallel tasks</li>
+</ul>
+<p><strong>Context management:</strong></p>
+<ul>
+<li><strong>In-session</strong>: Everything the model sees right now (conversation, file contents, tool outputs)</li>
+<li><strong>Compaction</strong>: When context fills up, older content gets summarized</li>
+<li><strong>Persistent (CLAUDE.md)</strong>: Instructions that survive across sessions</li>
+</ul>
+<p><strong>The workflow:</strong></p>
+<pre><code>You: &#34;add shear-velocity correlations&#34;
+     │
+     ▼
+┌─────────────────────────────────────┐
+│ Claude Code reads codebase          │
+│ → finds existing correlation classes│
+│ → understands patterns              │
+└─────────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────────┐
+│ Claude Code writes new class        │
+│ → runs tests                        │
+│ → sees failure                      │
+│ → reads error, fixes, retries       │
+└─────────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────────┐
+│ Tests pass                          │
+│ → Claude Code reports completion    │
+│ → You verify the result             │
+└─────────────────────────────────────┘
+</code></pre>
+<p>Implementation — turning a specification into code — is increasingly handled by agents. What remains is <strong>shaping what to build</strong>, <strong>noticing when it&#39;s wrong</strong>, and <strong>deciding what to try next</strong>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setup" duration="5">
+        <h2 is-upgraded>Install Claude Code</h2>
+<p><strong>Prerequisites:</strong> A <a href="https://claude.com/pricing" target="_blank">Claude subscription</a> (Pro, Max, Teams, or Enterprise) or a <a href="https://console.anthropic.com/" target="_blank">Claude Console</a> account with API access.</p>
+<p><strong>macOS / Linux / WSL (recommended):</strong></p>
+<pre><code language="language-bash" class="language-bash">curl -fsSL https://claude.ai/install.sh | bash
+</code></pre>
+<h2 is-upgraded>First Run &amp; Authentication</h2>
+<p>Navigate to any project and start Claude Code:</p>
+<pre><code language="language-bash" class="language-bash">cd your-project
+claude
+</code></pre>
+<p>On first run, you&#39;ll be prompted to authenticate:</p>
+<ol type="1">
+<li>A browser window opens to claude.ai</li>
+<li>Log in with your Anthropic account</li>
+<li>Authorize Claude Code</li>
+<li>Return to your terminal — you&#39;re ready to go</li>
+</ol>
+<p><strong>How to verify:</strong> Run <code>claude --version</code> — you should see a version number. Run <code>claude</code> and type <code>/help</code> to see available commands.</p>
+<h2 is-upgraded>Install TreeCorr (for this tutorial)</h2>
+<p>We&#39;ll add a feature to <a href="https://github.com/rmjarvis/TreeCorr" target="_blank">TreeCorr</a>, a library for computing correlation functions in cosmology.</p>
+<pre><code language="language-bash" class="language-bash">git clone https://github.com/rmjarvis/TreeCorr.git
+cd TreeCorr
+pip install -e .
+</code></pre>
+<h2 is-upgraded>Project Structure</h2>
+<p>After setup, your workspace should look like:</p>
+<pre><code>TreeCorr/
+├── treecorr/           # Main library code
+│   ├── corr2.py        # 2-point correlation functions
+│   ├── ggcorrelation.py
+│   └── ...
+├── tests/              # Test suite
+├── CLAUDE.md           # Will be created by /init
+└── .claude/
+    └── skills/         # Custom skills (optional)
+</code></pre>
+<p><strong>How to verify TreeCorr:</strong> Run <code>python -c "import treecorr; print(treecorr.__version__)"</code> — you should see a version number.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Watch It Work" duration="20">
+        <h2 is-upgraded>The Task</h2>
+<p>We&#39;ll ask the agent to add <strong>shear-velocity correlations (spin-2 × spin-1)</strong> to TreeCorr. This feature doesn&#39;t exist yet.</p>
+<p><strong>Physics context:</strong> Gravitational lensing shear traces mass along the line of sight — light bends around structure. Transverse velocities flow toward overdense regions as matter falls into potential wells. The cross-correlation probes structure growth differently than either field alone.</p>
+<h2 is-upgraded>Initialize Project Context</h2>
+<p>First, let the agent learn about the codebase:</p>
+<pre>/init
+</pre>
+<p>This creates a <code>CLAUDE.md</code> file — the agent reads the codebase and writes itself notes on how to work here.</p>
+<p><strong>How to run:</strong> In your terminal, navigate to the TreeCorr directory and run <code>claude</code>. Then type <code>/init</code> and press Enter. Watch as the agent explores the codebase.</p>
+<h2 is-upgraded>Run the Implementation</h2>
+<p>Now give this prompt (use plan mode for complex tasks):</p>
+<pre><code language="language-text" class="language-text">please add shear-velocity correlation functions for shear × cosmic velocity fields.
+</code></pre>
+<p>Then watch.</p>
+<h2 is-upgraded>What to Observe</h2>
+<p>As the agent works, notice:</p>
+<ol type="1">
+<li><strong>File exploration</strong> — it reads existing correlation classes to understand patterns</li>
+<li><strong>Test discovery</strong> — it finds how other correlations are tested</li>
+<li><strong>Iterative fixing</strong> — when tests fail, it reads the error and adjusts</li>
+<li><strong>Context compaction</strong> — if context fills up, older content gets summarized</li>
+</ol>
+<h2 is-upgraded>Before vs. After</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Manual Implementation</p>
+</td><td colspan="1" rowspan="1"><p>Agent Implementation</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Read existing code patterns</p>
+</td><td colspan="1" rowspan="1"><p>Agent reads code patterns</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Write new correlation class</p>
+</td><td colspan="1" rowspan="1"><p>Agent writes class</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Write tests</p>
+</td><td colspan="1" rowspan="1"><p>Agent writes tests</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Run tests, debug, repeat</p>
+</td><td colspan="1" rowspan="1"><p>Agent runs tests, debugs, repeats</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>~1-2 days for a researcher</p>
+</td><td colspan="1" rowspan="1"><p>~15-20 minutes</p>
+</td></tr>
+</table>
+<p><strong>Reality check:</strong> The agent may run out of context and need compaction. It may make mistakes and backtrack. This is normal — the key is that it handles the feedback loop, not you.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Context Management" duration="10">
+        <p>Understanding context is essential for effective agent use.</p>
+<h2 is-upgraded>Two Types of Context</h2>
+<p><strong>In-session context</strong> is what the model sees right now:</p>
+<ul>
+<li>Your conversation</li>
+<li>Files it has read</li>
+<li>Tool outputs and errors</li>
+</ul>
+<p>When it fills up, older content gets compacted or dropped.</p>
+<p><strong>Persistent context (CLAUDE.md)</strong> survives across sessions:</p>
+<pre><code>~/.claude/
+└── CLAUDE.md              # User-level: your preferences everywhere
+
+TreeCorr/
+└── CLAUDE.md              # Project-level: instructions for this codebase
+</code></pre>
+<p>Both load automatically at session start.</p>
+<h2 is-upgraded>Exercise: Inspect the Context</h2>
+<p>Look at the <code>CLAUDE.md</code> the agent created during <code>/init</code>:</p>
+<pre><code language="language-bash" class="language-bash">cat CLAUDE.md
+</code></pre>
+<p><strong>How to run:</strong> Open the CLAUDE.md file and examine it. What conventions did the agent notice? What build commands did it record?</p>
+<p>Ask yourself:</p>
+<ul>
+<li>What did it notice about the codebase structure?</li>
+<li>What testing patterns did it identify?</li>
+<li>What would you add or correct?</li>
+</ul>
+<h2 is-upgraded>Extending Capabilities</h2>
+<p><strong>Skills</strong> are reusable instruction bundles:</p>
+<pre><code>.claude/
+└── skills/
+    ├── data-visualization/
+    │   └── SKILL.md        # Instructions for plotting
+    ├── revealjs/
+    │   └── SKILL.md        # Instructions for slides
+    └── frontend-design/
+        └── SKILL.md        # Instructions for web UIs
+</code></pre>
+<p><strong>Plugins (MCPs)</strong> connect to external services — databases, APIs, issue trackers. The agent calls them like any other tool.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Use What You Built" duration="15">
+        <p>Clear your context and start fresh:</p>
+<pre>/clear
+</pre>
+<p>This simulates a new session — no memory of the implementation, just the codebase as it now exists.</p>
+<h2 is-upgraded>The Data</h2>
+<p>A collaborator sent you synthetic lensing power spectra derived from a gravitational potential Φ:</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Field</p>
+</td><td colspan="1" rowspan="1"><p>Spin</p>
+</td><td colspan="1" rowspan="1"><p>Description</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>κ (convergence)</p>
+</td><td colspan="1" rowspan="1"><p>0</p>
+</td><td colspan="1" rowspan="1"><p>Magnification from lensing</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>δ (deflection derivative)</p>
+</td><td colspan="1" rowspan="1"><p>1</p>
+</td><td colspan="1" rowspan="1"><p>Gradient of deflection angle</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>γ (shear)</p>
+</td><td colspan="1" rowspan="1"><p>2</p>
+</td><td colspan="1" rowspan="1"><p>Shape distortion</p>
+</td></tr>
+</table>
+<h2 is-upgraded>Exercise: Plot the Power Spectra</h2>
+<pre><code language="language-text" class="language-text">Using the data-visualization skill, plot the lensing power spectra from
+`data/lcdm_fields/power_spectra.npz`. Show C_ℓ^ΦΦ, C_ℓ^δδ, C_ℓ^αα (EE),
+and C_ℓ^γγ (EE) on a log-log plot.
+</code></pre>
+<p><strong>How to run:</strong> Start a fresh Claude session in the Tutorials directory. Paste the prompt above. The agent will use matplotlib through the data-visualization skill.</p>
+<h2 is-upgraded>Critical Evaluation</h2>
+<p>When the plot appears, ask:</p>
+<pre><code language="language-text" class="language-text">Is the information well conveyed? Does the result make sense physically?
+</code></pre>
+<p>The agent is multimodal — it can see and reason about the plot it created.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Verify the Results" duration="20">
+        <p>This is a <strong>blind test</strong>. The synthetic data was generated with specific cosmological parameters (Ω_m, S8) that you don&#39;t know.</p>
+<h2 is-upgraded>The Fitting Task</h2>
+<pre><code language="language-text" class="language-text">Fit the lensing potential power spectrum C_ℓ^ΦΦ from
+`data/lcdm_fields/power_spectra.npz` to recover Ω_m and S8.
+
+Use CAMB to compute theory predictions. Fixed parameters:
+h=0.70, Ω_b=0.05, n_s=0.96, z_source=1.0.
+
+Grid search or MCMC over Ω_m ∈ [0.1, 0.5] and S8 ∈ [0.4, 1.0].
+</code></pre>
+<p><strong>How to run:</strong> This may take several minutes. The agent will install CAMB if needed, write fitting code, and iterate until it converges.</p>
+<h2 is-upgraded>Validate Against Physical Expectations</h2>
+<p>Reference values from Planck 2018:</p>
+<ul>
+<li>Ω_m ≈ 0.315</li>
+<li>S8 ≈ 0.83</li>
+</ul>
+<p>The blind test values are intentionally different — but they should be physically reasonable (within the prior range).</p>
+<p><strong>The question is whether the agent gives the right answer.</strong> Don&#39;t blindly trust AI output. Check that the fit converged, the uncertainties are reasonable, and the values make physical sense.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Managing Backpressure" duration="10">
+        <p>Your feedback is the bottleneck. Every manual check is you in the loop.</p>
+<h2 is-upgraded>Levels of Automation</h2>
+<p><strong>Level 1: Manual loop</strong></p>
+<pre><code>You paste code → run it → paste error → repeat
+</code></pre>
+<p>Slow, but it works.</p>
+<p><strong>Level 2: Agent runs code</strong></p>
+<pre><code>Agent writes code → runs it → sees error → fixes → repeats
+You intervene only when judgment is needed
+</code></pre>
+<p><strong>Level 3: Higher-level verification</strong></p>
+<pre><code>Agent builds webpage → views it → adjusts layout
+Proof assistant checks the math
+Numerical benchmarks grade the output
+</code></pre>
+<h2 is-upgraded>The Science Question</h2>
+<p>For science: what does backpressure look like when the thing you&#39;re verifying is a claim about the world? Tests catch bugs. What catches wrong conclusions?</p>
+<p>This is an open problem. Some approaches:</p>
+<ul>
+<li>Cross-validation against independent datasets</li>
+<li>Comparison with published results</li>
+<li>Physical consistency checks (e.g., parameters within expected ranges)</li>
+<li>Human expert review of methodology</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Steering and Intervention" duration="5">
+        <p>Most of the time, let the agent work. But know when to intervene.</p>
+<h2 is-upgraded>When to Step In</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Situation</p>
+</td><td colspan="1" rowspan="1"><p>Action</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Going in circles on the same error</p>
+</td><td colspan="1" rowspan="1"><p>Provide a hint or different approach</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Fundamental misunderstanding</p>
+</td><td colspan="1" rowspan="1"><p>Clarify the requirements</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>You have domain knowledge it lacks</p>
+</td><td colspan="1" rowspan="1"><p>Share the relevant context</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Inefficient approach</p>
+</td><td colspan="1" rowspan="1"><p>Suggest a better path</p>
+</td></tr>
+</table>
+<h2 is-upgraded>When to Stay Out</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Situation</p>
+</td><td colspan="1" rowspan="1"><p>Action</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Making steady progress</p>
+</td><td colspan="1" rowspan="1"><p>Let it continue</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Minor style issues</p>
+</td><td colspan="1" rowspan="1"><p>Fix later or ignore</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Taking longer than expected</p>
+</td><td colspan="1" rowspan="1"><p>Patience — it&#39;s still faster than manual</p>
+</td></tr>
+</table>
+<p>Think of yourself as a senior engineer reviewing a junior&#39;s work in real-time. Guide when needed, but don&#39;t micromanage.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Summary" duration="2">
+        <h2 is-upgraded>What You Learned</h2>
+<ul>
+<li><strong>Agents are while loops</strong> with tool access — they handle the feedback loop so you don&#39;t have to</li>
+<li><strong>Context has two layers</strong>: in-session (ephemeral) and CLAUDE.md (persistent)</li>
+<li><strong>Skills and plugins</strong> extend what agents can do</li>
+<li><strong>Verification is your job</strong> — especially for scientific claims</li>
+<li><strong>Engineer away backpressure</strong> where possible, but keep humans in the loop for judgment</li>
+</ul>
+<h2 is-upgraded>The Key Insight</h2>
+<p>The code writes itself. What doesn&#39;t write itself:</p>
+<ul>
+<li>Knowing what to build</li>
+<li>Noticing when something&#39;s wrong</li>
+<li>Deciding what to try next</li>
+</ul>
+<p>You are the steering mechanism. The agent handles implementation; you handle judgment.</p>
+<h2 is-upgraded>Next Steps</h2>
+<ul>
+<li>Explore the <code>.claude/skills/</code> directory and try writing your own</li>
+<li>Practice the verification workflow on your own data</li>
+<li>Identify where you&#39;re still the bottleneck — and automate it</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
