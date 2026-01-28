@@ -44,8 +44,8 @@
 <ul>
 <li>Python 3.9+ with pip</li>
 <li>Basic familiarity with the command line</li>
-<li>A working Claude Code installation (<code>npm install -g @anthropic-ai/claude-code</code>)</li>
-<li>Optional: familiarity with cosmology concepts (lensing, power spectra)</li>
+<li>A working Claude Code installation (<code>curl -fsSL https://claude.ai/install.sh | bash</code>)</li>
+<li>Helpful: familiarity with cosmology concepts (lensing, correlation functions)</li>
 </ul>
 
 
@@ -53,17 +53,16 @@
     
       <google-codelab-step label="What Makes an Agent Different from a Chatbot?" duration="10">
         <h2 is-upgraded>LLM vs. Agent</h2>
-<p>A <strong>large language model (LLM)</strong> takes text in and produces text out. That&#39;s it. Claude, GPT-4, Gemini — at their core, they&#39;re sophisticated text completion engines.</p>
-<p>An <strong>agent</strong> is an LLM wrapped in a loop with access to tools:</p>
-<pre><code language="language-python" class="language-python">context = startup_information + user_prompt
+<p>A <strong>large language model (LLM)</strong> takes text in and produces text out. Claude, GPT-4, Gemini — at their core, they&#39;re sophisticated <strong>simulators</strong> of text.</p>
+<p>An <strong>agent</strong> is an LLM wrapped (trapped?) in a loop with access to tools (Read, Write, Bash):</p>
+<pre><code language="language-python" class="language-python">context = startup_context + user_prompt
 while True:
     response = llm(context)
     if response.has_tool_calls:
         context += execute(response.tool_calls)
     else:
-        break
+        break # pass turn back to user
 </code></pre>
-<p>The difference is fundamental:</p>
 <table>
 <tr><td colspan="1" rowspan="1"><p>Chatbot</p>
 </td><td colspan="1" rowspan="1"><p>Agent</p>
@@ -81,64 +80,40 @@ while True:
 </td><td colspan="1" rowspan="1"><p>Agent is the feedback loop</p>
 </td></tr>
 </table>
-<p>Every AI coding tool you&#39;ve heard of — Claude Code, Cursor, Codex, Gemini CLI — is built on this same pattern. The model is the engine. The loop + tools is what makes it an agent.</p>
+<p class="image-container"><img alt="Chatbot vs Agent: One-shot vs Action Loop" src="img/ee8c349d0f4f62ab.png"></p>
+<p>Every AI coding tool you&#39;ve heard of — Claude Code, Cursor, Codex, Gemini CLI — is built on this same pattern. The model is the engine and does almost all the work. The loop + tools is what makes it an agent.</p>
 <h2 is-upgraded>What is a Model Harness?</h2>
 <p>The <strong>harness</strong> is everything except the model itself. Think of the model as an engine; the harness is the car — steering, brakes, dashboard, fuel system.</p>
-<pre><code>┌─────────────────────────────────────────────────┐
-│                  MODEL HARNESS                              │
-│  ┌───────────────────────────────────────────┐  │
-│  │  Context Management                                  │  │
-│  │  • What to show the model                            │  │
-│  │  • When to summarize/compact                         │  │
-│  │  • What to persist across sessions                   │  │
-│  └───────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────┐  │
-│  │  Tool Orchestration                                  │  │
-│  │  • File read/write                                   │  │
-│  │  • Shell execution                                   │  │
-│  │  • Web search, API calls                             │  │
-│  └───────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────┐  │
-│  │  Planning &amp; Verification                             │  │
-│  │  • Task decomposition                                │  │
-│  │  • Output validation                                 │  │
-│  │  • Human approval gates                              │  │
-│  └───────────────────────────────────────────┘  │
-│                                                 │
-│            ┌─────────────────┐                  │
-│            │   LLM (Model)   │                  │
-│            │  Claude, GPT,   │                  │
-│            │  Gemini, etc.   │                  │
-│            └─────────────────┘                  │
-└─────────────────────────────────────────────────┘
-</code></pre>
-<p>Note: The model is increasingly commodity — Claude, GPT-4, Gemini perform similarly on benchmarks. <strong>The harness determines whether agents succeed or fail.</strong> This is why Anthropic, Google, and OpenAI are all investing heavily in harness engineering, not just model training.</p>
+<p class="image-container"><img alt="Model harness as car analogy" src="img/39a762e46d34e2c6.png"></p>
+<p>Note: The model is increasingly commodity — Claude Opus 4.5, ChatGPT 5, Gemini 3 perform similarly on benchmarks. <strong>The harness determines whether agents succeed or fail.</strong> This is why Anthropic, Google, and OpenAI are all investing heavily in harness engineering, not just model training.</p>
+<p>A caveat: this is only true because frontier models are roughly equivalent. When there are big jumps in capability, SOTA model beats best harness. But with Opus 4.5, we may be at the point where raw intelligence isn&#39;t the limiting factor — harnessing is.</p>
 <h2 is-upgraded>The Agent Landscape in 2026</h2>
+<p>By the end of 2025, roughly 85% of developers regularly used AI tools for coding. Andrej Karpathy on the shift:</p>
+<pre><code language="language-text" class="language-text">Given the latest lift in LLM coding capability, like many others I rapidly
+went from about 80% manual+autocomplete coding and 20% agents in November
+to 80% agent coding and 20% edits+touchups in December.
+</code></pre>
+<p>This isn&#39;t just for code: mathematicians like Terence Tao use agentic harnesses for mathematics.</p>
 <p>All major AI labs now ship agent harnesses for coding:</p>
 <table>
 <tr><td colspan="1" rowspan="1"><p>Tool</p>
 </td><td colspan="1" rowspan="1"><p>Interface</p>
 </td><td colspan="1" rowspan="1"><p>Approach</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Claude Code</strong></p>
+<tr><td colspan="1" rowspan="1"><p><strong>Claude Code</strong> / <strong>Codex</strong></p>
 </td><td colspan="1" rowspan="1"><p>Terminal-first CLI</p>
-</td><td colspan="1" rowspan="1"><p>Autonomous multi-file operations, background agents, context compaction</p>
+</td><td colspan="1" rowspan="1"><p>Autonomous multi-file operations, background agents, context compaction. Codex is open source, longer-running, harder to steer. Claude Code is more interactive, easier to steer, better at communicating what it&#39;s doing.</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><strong>Cursor</strong></p>
 </td><td colspan="1" rowspan="1"><p>AI-native IDE</p>
 </td><td colspan="1" rowspan="1"><p>Real-time code completion, inline chat, repository-wide edits</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Codex</strong></p>
-</td><td colspan="1" rowspan="1"><p>CLI + Cloud sandbox</p>
-</td><td colspan="1" rowspan="1"><p>Sandboxed execution, deterministic multi-step tasks, open source</p>
-</td></tr>
 <tr><td colspan="1" rowspan="1"><p><strong>Gemini CLI</strong></p>
 </td><td colspan="1" rowspan="1"><p>Terminal CLI</p>
-</td><td colspan="1" rowspan="1"><p>Google Search grounding, 1M token context, MCP extensibility</p>
+</td><td colspan="1" rowspan="1"><p>Google Search grounding, 1M token context, MCP extensibility, unlimited image generation</p>
 </td></tr>
 </table>
-<p>These tools are <strong>converging</strong>. Cursor&#39;s agent mode looks like Claude Code&#39;s agents. Codex adopted similar patterns. They all implement the same core loop — the differences are in the harness: how they manage context, which tools they expose, how they handle failures.</p>
-<p>By the end of 2025, roughly 85% of developers regularly used AI tools for coding. The question isn&#39;t whether to use them — it&#39;s understanding how they work so you can use them effectively.</p>
+<p>These tools are <strong>converging</strong>. Cursor&#39;s agent mode looks like Claude Code&#39;s agents. Codex adopted similar patterns.</p>
 <h2 is-upgraded>Claude Code: A Closer Look</h2>
 <p>Since we&#39;ll use Claude Code in this tutorial, here&#39;s what it does under the hood:</p>
 <p><strong>Core capabilities:</strong></p>
@@ -150,8 +125,8 @@ while True:
 </ul>
 <p><strong>Context management:</strong></p>
 <ul>
-<li><strong>In-session</strong>: Everything the model sees right now (conversation, file contents, tool outputs)</li>
-<li><strong>Compaction</strong>: When context fills up, older content gets summarized</li>
+<li><strong>In-session</strong>: Everything the model sees right now (conversation, file contents, tool outputs). As context fills up, performance tends to go down (some call this the &#34;dumb zone&#34;). This is somewhat to analgous to how human performance goes down towards the end of a long work day.</li>
+<li><strong>Compaction</strong>: When context fills up, older content gets summarized in a lossy compression. The compression may not keep the right context, and some think it&#39;s much better to <code>/clear</code> and rebuild context from &#34;disk&#34; so to speak.</li>
 <li><strong>Persistent (CLAUDE.md)</strong>: Instructions that survive across sessions</li>
 </ul>
 <p><strong>The workflow:</strong></p>
@@ -293,6 +268,9 @@ TreeCorr/
 └── CLAUDE.md              # Project-level: instructions for this codebase
 </code></pre>
 <p>Both load automatically at session start.</p>
+<h2 is-upgraded>Context as RAM</h2>
+<p>We&#39;re back to working with systems that have a Commodore 64&#39;s worth of memory — about 128K tokens. Memory management matters again.</p>
+<p>Polluting context with irrelevant content is harmful. Don&#39;t let things run to the end of the context window; the model gets dumb. The game is keeping context focused on what matters for the current task.</p>
 <h2 is-upgraded>Exercise: Inspect the Context</h2>
 <p>Look at the <code>CLAUDE.md</code> the agent created during <code>/init</code>:</p>
 <pre><code language="language-bash" class="language-bash">cat CLAUDE.md

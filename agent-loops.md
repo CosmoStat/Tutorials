@@ -29,29 +29,27 @@ You'll use an AI agent to implement a real feature in a cosmology library, then 
 
 - Python 3.9+ with pip
 - Basic familiarity with the command line
-- A working Claude Code installation (`npm install -g @anthropic-ai/claude-code`)
-- Optional: familiarity with cosmology concepts (lensing, power spectra)
+- A working Claude Code installation (`curl -fsSL https://claude.ai/install.sh | bash`)
+- Helpful: familiarity with cosmology concepts (lensing, correlation functions)
 
 ## What Makes an Agent Different from a Chatbot?
 Duration: 0:10:00
 
 ### LLM vs. Agent
 
-A **large language model (LLM)** takes text in and produces text out. That's it. Claude, GPT-4, Gemini — at their core, they're sophisticated text completion engines.
+A **large language model (LLM)** takes text in and produces text out. Claude, GPT-4, Gemini — at their core, they're sophisticated **simulators** of text.
 
-An **agent** is an LLM wrapped in a loop with access to tools:
+An **agent** is an LLM wrapped (trapped?) in a loop with access to tools (Read, Write, Bash):
 
 ```python
-context = startup_information + user_prompt
+context = startup_context + user_prompt
 while True:
     response = llm(context)
     if response.has_tool_calls:
         context += execute(response.tool_calls)
     else:
-        break
+        break # pass turn back to user
 ```
-
-The difference is fundamental:
 
 | Chatbot | Agent |
 |---------|-------|
@@ -60,59 +58,42 @@ The difference is fundamental:
 | No memory of execution results | Sees results, adapts, retries |
 | You are the feedback loop | Agent is the feedback loop |
 
+![Chatbot vs Agent: One-shot vs Action Loop](img/chatbot-vs-agent.png)
 
-Every AI coding tool you've heard of — Claude Code, Cursor, Codex, Gemini CLI — is built on this same pattern. The model is the engine. The loop + tools is what makes it an agent.
+Every AI coding tool you've heard of — Claude Code, Cursor, Codex, Gemini CLI — is built on this same pattern. The model is the engine and does almost all the work. The loop + tools is what makes it an agent.
 
 ### What is a Model Harness?
 
 The **harness** is everything except the model itself. Think of the model as an engine; the harness is the car — steering, brakes, dashboard, fuel system.
 
-```
-┌─────────────────────────────────────────────────┐
-│                  MODEL HARNESS                              │
-│  ┌───────────────────────────────────────────┐  │
-│  │  Context Management                                  │  │
-│  │  • What to show the model                            │  │
-│  │  • When to summarize/compact                         │  │
-│  │  • What to persist across sessions                   │  │
-│  └───────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────┐  │
-│  │  Tool Orchestration                                  │  │
-│  │  • File read/write                                   │  │
-│  │  • Shell execution                                   │  │
-│  │  • Web search, API calls                             │  │
-│  └───────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────┐  │
-│  │  Planning & Verification                             │  │
-│  │  • Task decomposition                                │  │
-│  │  • Output validation                                 │  │
-│  │  • Human approval gates                              │  │
-│  └───────────────────────────────────────────┘  │
-│                                                 │
-│            ┌─────────────────┐                  │
-│            │   LLM (Model)   │                  │
-│            │  Claude, GPT,   │                  │
-│            │  Gemini, etc.   │                  │
-│            └─────────────────┘                  │
-└─────────────────────────────────────────────────┘
-```
+![Model harness as car analogy](img/model-harness-diagram.png)
 
-Note: The model is increasingly commodity — Claude, GPT-4, Gemini perform similarly on benchmarks. **The harness determines whether agents succeed or fail.** This is why Anthropic, Google, and OpenAI are all investing heavily in harness engineering, not just model training.
+Note: The model is increasingly commodity — Claude Opus 4.5, ChatGPT 5, Gemini 3 perform similarly on benchmarks. **The harness determines whether agents succeed or fail.** This is why Anthropic, Google, and OpenAI are all investing heavily in harness engineering, not just model training.
+
+A caveat: this is only true because frontier models are roughly equivalent. When there are big jumps in capability, SOTA model beats best harness. But with Opus 4.5, we may be at the point where raw intelligence isn't the limiting factor — harnessing is.
 
 ### The Agent Landscape in 2026
+
+By the end of 2025, roughly 85% of developers regularly used AI tools for coding. Andrej Karpathy on the shift:
+
+```text
+Given the latest lift in LLM coding capability, like many others I rapidly
+went from about 80% manual+autocomplete coding and 20% agents in November
+to 80% agent coding and 20% edits+touchups in December.
+```
+This isn't just for code: mathematicians like Terence Tao use agentic harnesses for mathematics.
+
+---
 
 All major AI labs now ship agent harnesses for coding:
 
 | Tool | Interface | Approach |
 |------|-----------|----------|
-| **Claude Code** | Terminal-first CLI | Autonomous multi-file operations, background agents, context compaction |
+| **Claude Code** / **Codex** | Terminal-first CLI | Autonomous multi-file operations, background agents, context compaction. Codex is open source, longer-running, harder to steer. Claude Code is more interactive, easier to steer, better at communicating what it's doing. |
 | **Cursor** | AI-native IDE | Real-time code completion, inline chat, repository-wide edits |
-| **Codex** | CLI + Cloud sandbox | Sandboxed execution, deterministic multi-step tasks, open source |
-| **Gemini CLI** | Terminal CLI | Google Search grounding, 1M token context, MCP extensibility |
+| **Gemini CLI** | Terminal CLI | Google Search grounding, 1M token context, MCP extensibility, unlimited image generation |
 
-These tools are **converging**. Cursor's agent mode looks like Claude Code's agents. Codex adopted similar patterns. They all implement the same core loop — the differences are in the harness: how they manage context, which tools they expose, how they handle failures.
-
-By the end of 2025, roughly 85% of developers regularly used AI tools for coding. The question isn't whether to use them — it's understanding how they work so you can use them effectively.
+These tools are **converging**. Cursor's agent mode looks like Claude Code's agents. Codex adopted similar patterns. 
 
 ### Claude Code: A Closer Look
 
@@ -125,8 +106,8 @@ Since we'll use Claude Code in this tutorial, here's what it does under the hood
 - **Sub-agents**: Spawn background workers for parallel tasks
 
 **Context management:**
-- **In-session**: Everything the model sees right now (conversation, file contents, tool outputs)
-- **Compaction**: When context fills up, older content gets summarized
+- **In-session**: Everything the model sees right now (conversation, file contents, tool outputs). As context fills up, performance tends to go down (some call this the "dumb zone"). This is somewhat to analgous to how human performance goes down towards the end of a long work day.
+- **Compaction**: When context fills up, older content gets summarized in a lossy compression. The compression may not keep the right context, and some think it's much better to `/clear` and rebuild context from "disk" so to speak.
 - **Persistent (CLAUDE.md)**: Instructions that survive across sessions
 
 **The workflow:**
@@ -294,6 +275,12 @@ TreeCorr/
 ```
 
 Both load automatically at session start.
+
+### Context as RAM
+
+We're back to working with systems that have a Commodore 64's worth of memory — about 128K tokens. Memory management matters again.
+
+Polluting context with irrelevant content is harmful. Don't let things run to the end of the context window; the model gets dumb. The game is keeping context focused on what matters for the current task.
 
 ### Exercise: Inspect the Context
 

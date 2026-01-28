@@ -24,16 +24,17 @@ Implementation — turning a specification into code — is increasingly somethi
 
 ## Part 1: Watch It Work
 
-We're adding a feature to [TreeCorr](https://github.com/rmjarvis/TreeCorr), which computes correlation functions for cosmology — shear-shear, position-position, that sort of thing.
+We're adding a feature to [TreeCorr](https://github.com/rmjarvis/TreeCorr), a widely-used library for computing correlation functions in cosmology — shear-shear, position-position, that sort of thing.
+
+**What's TreeCorr?** When we analyze galaxy catalogs for weak lensing, we measure how galaxy shapes (shear) or positions correlate as a function of separation. TreeCorr handles the pair-counting efficiently using tree structures.
+
+**The new feature.** Gravitational lensing shear traces mass — light bends around structure. Transverse velocities flow toward overdense regions as matter falls into potential wells. Shear and velocity both respond to the same underlying density field, so they're correlated. We'll ask the agent to add shear-velocity correlation functions. This feature doesn't exist yet.
 
 ```bash
 git clone https://github.com/rmjarvis/TreeCorr.git
 cd TreeCorr
 pip install -e .
 ```
-**Quick physics context, also TreeCorr context** Gravitational lensing shear traces mass along the line of sight — light bends around structure. Transverse velocities on the sky flow toward overdense regions as matter falls into potential wells. So shear and velocity are correlated: both respond to the same underlying density field. The cross-correlation probes structure growth differently than either field alone.
-
-We'll ask the agent to add shear-velocity correlations (spin-2 × spin-1). This feature doesn't exist yet.
 
 Initialize a project context:
 
@@ -45,7 +46,7 @@ This creates a `CLAUDE.md` file — the agent reads the codebase and writes itse
 
 Now the prompt (in plan mode):
 
-> please add shear-velocity correlation functions for shear × cosmic velocity fields.
+> Please add shear-velocity correlation functions for measuring correlations between gravitational shear and transverse velocity fields.
 
 Then watch.
 
@@ -63,11 +64,31 @@ When I tried this, it took about 15 minutes and ran out of context once. Compact
 
 **Commands** extend what the agent can do. `/init` is a command. 
 
-**Skills** are reusable capabilities — bundles of instructions the agent can invoke. This repo includes three in `.claude/skills/`: `data-visualization` for plotting, `revealjs` for slides, `frontend-design` for web interfaces.
+**Skills** are reusable capabilities — folders of instructions that Claude loads dynamically. This repo includes a few in `.claude/skills/`: `data-visualization` for plotting, `revealjs` for slides.
 
-**Plugins / MCPS:** connect to external services — databases, APIs, whatever. The agent calls them like any other tool.
-- Don't get too excited..
-- Add official anthropic plugin store and their skills store
+Anthropic maintains an official skills library at [github.com/anthropics/skills](https://github.com/anthropics/skills):
+
+```bash
+# Register the skills marketplace
+/plugin marketplace add anthropics/skills
+
+# Install a skill set
+/plugin install document-skills@anthropic-agent-skills
+```
+
+Then mention the skill in your prompt: "Use the PDF skill to extract form fields from this document."
+
+**Plugins** bundle skills, commands, and MCP servers into installable packages. Anthropic maintains [github.com/anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official):
+
+```bash
+# Browse available plugins
+/plugin > Discover
+
+# Install a specific plugin
+/plugin install {plugin-name}@claude-plugin-directory
+```
+
+MCP (Model Context Protocol) lets plugins connect to external services. For most scientific work, though, skills and command-line tools are more practical than MCP integrations.
 
 ---
 
@@ -91,17 +112,17 @@ The agent can read the plot (it's multimodal) and reason about what it sees.
 
 ## Part 4: Verify
 
-Fit the power spectrum to recover the cosmological parameters. This is a blind test — the data was generated with specific (Ω_m, S8) values that you don't know.
+How do we know Claude didn't just write tests that pass by construction? Independent validation.
 
-> Fit the lensing potential power spectrum C_ℓ^ΦΦ from `data/lcdm_fields/power_spectra.npz` to recover Ω_m and S8.
->
-> Use CAMB to compute theory predictions. Fixed parameters: h=0.70, Ω_b=0.05, n_s=0.96, z_source=1.0.
->
-> Grid search or MCMC over Ω_m ∈ [0.1, 0.5] and S8 ∈ [0.4, 1.0].
+The synthetic catalog was generated with a known signal. We measure the correlation function and check that it matches our theoretical expectation. No fitting — just overplotting theory vs measurement.
 
-Check whether the fit recovers sensible values. The synthetic data has known truth — Planck 2018 gives Ω_m ≈ 0.315, S8 ≈ 0.83. The blind values are intentionally different.
+> Using the new shear-velocity correlation, measure ξ_+ and ξ_- from the catalog in `data/lcdm_fields/`. Overplot the theoretical prediction from the input power spectrum.
 
-The question is whether the agent gives the right answer.
+The agent will run TreeCorr, compute the correlation functions, and compare to theory. Error bars come from the measurement; the theory curve is known exactly.
+
+**The teachable moment:** We're not entirely trusting the AI. We're using critical thinking to build an independent check. The classic approach: generate data with expected signal → measure → verify measurement matches expectation.
+
+If measurement and theory agree within error bars, the implementation is probably correct. If they don't, something's wrong — and now you have a concrete discrepancy to debug.
 
 ---
 
@@ -115,13 +136,17 @@ Most of the time, you can let the agent work. But sometimes you'll want to inter
 
 Your feedback is the bottleneck. Every time you manually check output, copy an error message, or eyeball a result, you're in the loop. You want to [engineer that away](https://banay.me/dont-waste-your-backpressure/).
 
-The simplest case: you paste code into a chatbot, run it, hit an error, paste the error back. You're the feedback loop. Slow, but it works.
+**Tiers of verification:**
 
-Better: give the agent the ability to run the code itself. Build errors, test failures, runtime exceptions — the agent catches them without you. You stay out of the loop until something needs judgment.
+1. **Manual loop.** You paste code into a chatbot, run it, hit an error, paste the error back. You're the feedback loop. Slow, but it works.
 
-Better still: higher-level verification. The agent can view and interact with the webpage it built. A proof assistant checks the math. Numerical metrics grade the output (think [CMBAgent](https://arxiv.org/abs/2410.24076) benchmarks).
+2. **Agentic loop.** The agent runs the code itself. Build errors, test failures, runtime exceptions — caught without you. You stay out until something needs judgment.
 
-For science: what does backpressure look like when the thing you're verifying is a claim about the world? Tests catch bugs. What catches wrong conclusions?
+3. **Autonomous verification.** Higher-level checks that don't require you at all. The agent views the webpage it built. A proof assistant (Lean) checks the math. Numerical metrics grade the output.
+
+For science: what does verification look like when you're checking claims about the world, not just code correctness? Tests catch bugs. What catches wrong conclusions?
+
+**Context as RAM.** We're back to working with systems that have a Commodore 64's worth of memory — about 128K tokens. Memory management matters again. Polluting context with irrelevant content is harmful. Don't let things run to the end of the context window; the model gets dumb. The game is getting as much verification as possible into the autonomous tier, so your scarce attention goes to what actually needs judgment.
 
 ---
 

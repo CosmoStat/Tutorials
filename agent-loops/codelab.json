@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2026-01-28T14:38:13+01:00",
+  "updated": "2026-01-28T22:16:13+01:00",
   "id": "agent-loops",
   "duration": 98,
   "title": "Agent Loops: Software Engineering in 2026",
   "summary": "Learn how to use AI Agents for your research workflows, focusing on context management, skill extension, and verification of scientific code.",
-  "source": "/home/francois/repo/Tutorials/agent-loops.md",
+  "source": "agent-loops.md",
   "theme": "",
   "status": [
     "published"
