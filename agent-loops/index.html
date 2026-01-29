@@ -173,7 +173,7 @@ pip install -e .
 
       </google-codelab-step>
     
-      <google-codelab-step label="Watch It Work" duration="20">
+      <google-codelab-step label="Implement a New Feature" duration="15">
         <h2 is-upgraded>The Task</h2>
 <p>We&#39;ll ask the agent to add <strong>shear-velocity correlations (spin-2 × spin-1)</strong> to TreeCorr. This feature doesn&#39;t exist yet.</p>
 <p><strong>Physics context:</strong> Gravitational lensing shear traces mass along the line of sight — light bends around structure. Transverse velocities flow toward overdense regions as matter falls into potential wells. The cross-correlation probes structure growth differently than either field alone.</p>
@@ -187,7 +187,7 @@ pip install -e .
 <p>This creates a <code>CLAUDE.md</code> file — the agent reads the codebase and writes itself notes on how to work here.</p>
 <h2 is-upgraded>Run the Implementation</h2>
 <p>Now enter this prompt; it&#39;s good to use <strong>plan mode</strong> for complex tasks, which can be done by pressing Shift+Tab or by adding something like &#34;let&#39;s make a plan first&#34; to your prompt.</p>
-<pre><code language="language-text" class="language-text">please implement shear-velocity correlation functions in TreeCorr. let&#39;s make a plan first.
+<pre><code language="language-text" class="language-text">please implement shear-velocity correlation functions in TreeCorr.
 </code></pre>
 <p>Then watch.</p>
 <h2 is-upgraded>What to Observe</h2>
@@ -290,102 +290,85 @@ TreeCorr/
 
       </google-codelab-step>
     
-      <google-codelab-step label="Use What You Built" duration="15">
+      <google-codelab-step label="Test What You Built" duration="10">
         <p>Clear your context and start fresh:</p>
 <pre>/clear
 </pre>
 <p>This simulates a new session — no memory of the implementation, just the codebase as it now exists.</p>
-<h2 is-upgraded>The Data</h2>
-<p>A collaborator sent you synthetic lensing power spectra derived from a gravitational potential Φ:</p>
+<h2 is-upgraded>The Toy Model</h2>
+<p>We&#39;ll test the GV correlation with a simple simulation: halos with Gaussian velocity and shear profiles.</p>
 <table>
 <tr><td colspan="1" rowspan="1"><p>Field</p>
 </td><td colspan="1" rowspan="1"><p>Spin</p>
-</td><td colspan="1" rowspan="1"><p>Description</p>
+</td><td colspan="1" rowspan="1"><p>Profile</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p>κ (convergence)</p>
-</td><td colspan="1" rowspan="1"><p>0</p>
-</td><td colspan="1" rowspan="1"><p>Magnification from lensing</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>δ (deflection derivative)</p>
+<tr><td colspan="1" rowspan="1"><p>v (velocity)</p>
 </td><td colspan="1" rowspan="1"><p>1</p>
-</td><td colspan="1" rowspan="1"><p>Gradient of deflection angle</p>
+</td><td colspan="1" rowspan="1"><p>v = -v₀ exp(-r²/2r₀²) (x+iy)/r₀</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>γ (shear)</p>
 </td><td colspan="1" rowspan="1"><p>2</p>
-</td><td colspan="1" rowspan="1"><p>Shape distortion</p>
+</td><td colspan="1" rowspan="1"><p>γ = -γ₀ exp(-r²/2r₀²) (x+iy)²/r₀²</p>
 </td></tr>
 </table>
-<h2 is-upgraded>Exercise: Plot the Power Spectra</h2>
-<pre><code language="language-text" class="language-text">Using the data-visualization skill, plot the lensing power spectra from
-`data/lcdm_fields/power_spectra.npz`. Show C_ℓ^ΦΦ, C_ℓ^δδ, C_ℓ^αα (EE),
-and C_ℓ^γγ (EE) on a log-log plot.
-</code></pre>
-<p><strong>How to run:</strong> Start a fresh Claude session in the Tutorials directory. Paste the prompt above. The agent will use matplotlib through the data-visualization skill.</p>
-<h2 is-upgraded>Critical Evaluation</h2>
-<p>When the plot appears, ask:</p>
-<pre><code language="language-text" class="language-text">Is the information well conveyed? Does the result make sense physically?
-</code></pre>
-<p>The agent is multimodal — it can see and reason about the plot it created.</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Verify the Results" duration="20">
-        <p>This is a <strong>blind test</strong>. The synthetic data was generated with specific cosmological parameters (Ω_m, S8) that you don&#39;t know.</p>
-<h2 is-upgraded>The Fitting Task</h2>
-<pre><code language="language-text" class="language-text">Fit the lensing potential power spectrum C_ℓ^ΦΦ from
-`data/lcdm_fields/power_spectra.npz` to recover Ω_m and S8.
-
-Use CAMB to compute theory predictions. Fixed parameters:
-h=0.70, Ω_b=0.05, n_s=0.96, z_source=1.0.
-
-Grid search or MCMC over Ω_m ∈ [0.1, 0.5] and S8 ∈ [0.4, 1.0].
-</code></pre>
-<p><strong>How to run:</strong> This may take several minutes. The agent will install CAMB if needed, write fitting code, and iterate until it converges.</p>
-<h2 is-upgraded>Validate Against Physical Expectations</h2>
-<p>Reference values from Planck 2018:</p>
+<p>These are <strong>not physically realistic</strong> — they&#39;re adapted from TreeCorr&#39;s test suite because the correlation functions have closed-form analytic solutions. The negative sign on velocity gives infall toward halo centers; shear is tangential. Both fields trace the same halo positions, so they&#39;re correlated by construction.</p>
 <ul>
-<li>Ω_m ≈ 0.315</li>
-<li>S8 ≈ 0.83</li>
+<li><strong>Small scales</strong> (r &lt; r₀): strong correlations from individual halos</li>
+<li><strong>Large scales</strong> (r » r₀): correlations drop to zero</li>
 </ul>
-<p>The blind test values are intentionally different — but they should be physically reasonable (within the prior range).</p>
-<p><strong>The question is whether the agent gives the right answer.</strong> Don&#39;t blindly trust AI output. Check that the fit converged, the uncertainties are reasonable, and the values make physical sense.</p>
+<p class="image-container"><img alt="Multi-halo fields building up as lenses are added" src="img/c6765f74d8987edb.gif"></p>
+<p>Spin-1 and spin-2 correlation functions have two components, ξ₊ and ξ₋. For the above profiles, the analytic expressions are:</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Correlation</p>
+</td><td colspan="1" rowspan="1"><p>ξ₊(r)</p>
+</td><td colspan="1" rowspan="1"><p>ξ₋(r)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>GG (spin-2)</p>
+</td><td colspan="1" rowspan="1"><p>∝ exp(-r²/4r₀²) (r⁴ - 16r²r₀² + 32r₀⁴)/r₀⁴</p>
+</td><td colspan="1" rowspan="1"><p>∝ exp(-r²/4r₀²) r⁴/r₀⁴</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>VV (spin-1)</p>
+</td><td colspan="1" rowspan="1"><p>∝ exp(-r²/4r₀²) (4r₀² - r²)/r₀²</p>
+</td><td colspan="1" rowspan="1"><p>∝ -exp(-r²/4r₀²) r²/r₀²</p>
+</td></tr>
+</table>
+<p>Full expressions with prefactors (γ₀, v₀, r₀, L, N) are in <code>data/generate_gv_halos.py</code>.</p>
+<p><strong>Pre-generated simulation data is in </strong></p>
+<p><strong><code>data/gv_mock_catalog.fits</code></strong></p>
+<p><strong> — 1000 halos, 50,000 sources.</strong></p>
+<h2 is-upgraded>Measure with TreeCorr</h2>
+<p>Ask Claude to:</p>
+<pre><code>please inspect data/gv_mock_catalog.fits, which is a catalog containing both shear and velocity; 
+use TreeCorr to measure and plot both components of the shear-shear, velocity-velocity, and shear-velocity correlation functions; 
+the plot should contain 6 subplots in a 2x3 layout.
+</code></pre>
+<p>Here&#39;s what I got, with the analytic expressions overplotted for shear-shear and velocity-velocity.</p>
+<p class="image-container"><img alt="Correlation functions: GG, VV, GV with theory" src="img/ce240ede6a49323f.png"></p>
+<p><strong>Take-home Exercise 1:</strong> Overplot the analytic expressions for GG and VV, getting the exact forms from <code>data/generate_gv_halos.py</code>. Or, ask Claude to use <code>emcee</code> to fit for <code>A_g, A_v, r_0</code> :)</p>
+<p class="image-container"><img src="img/6b71019c1f3d7041.png"></p>
+<h2 is-upgraded>Verify the Results</h2>
+<p>Now the critical question: <strong>does the measurement make physical sense?</strong></p>
+<p><strong>What to check:</strong></p>
+<ol type="1">
+<li><strong>GG and VV have analytic predictions</strong> (black dashed lines) — the measurement should match theory within error bars</li>
+<li><strong>GV should show signal at small scales</strong> — this is the correlated infall + shear signal</li>
+<li><strong>All correlations should drop to zero at large scales</strong> — halos are uncorrelated with each other</li>
+</ol>
+<p><strong>Take-home exercise 2:</strong> The actual verification step would be to derive the analytic expression for the shear-velocity case.</p>
+<h2 is-upgraded>Limits of Automation</h2>
+<p>Ask the agent to assess the results:</p>
+<pre><code language="language-text" class="language-text">Look at data/gv_halo_correlation.png. Do the measurements match the
+theory predictions? Is the GV signal physically reasonable?
+</code></pre>
+<p>The agent is multimodal — it can see and reason about the plot. But it is often naive and over-optimistic (the training process biases towards sucess).</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Managing Backpressure" duration="10">
-        <p>Your feedback is the bottleneck. Every manual check is you in the loop.</p>
-<h2 is-upgraded>Levels of Automation</h2>
-<p><strong>Level 1: Manual loop</strong></p>
-<pre><code>You paste code → run it → paste error → repeat
-</code></pre>
-<p>Slow, but it works.</p>
-<p><strong>Level 2: Agent runs code</strong></p>
-<pre><code>Agent writes code → runs it → sees error → fixes → repeats
-You intervene only when judgment is needed
-</code></pre>
-<p><strong>Level 3: Higher-level verification</strong></p>
-<pre><code>Agent builds webpage → views it → adjusts layout
-Proof assistant checks the math
-Numerical benchmarks grade the output
-</code></pre>
-<h2 is-upgraded>The Science Question</h2>
-<p>For science: what does backpressure look like when the thing you&#39;re verifying is a claim about the world? Tests catch bugs. What catches wrong conclusions?</p>
-<p>This is an open problem. Some approaches:</p>
-<ul>
-<li>Cross-validation against independent datasets</li>
-<li>Comparison with published results</li>
-<li>Physical consistency checks (e.g., parameters within expected ranges)</li>
-<li>Human expert review of methodology</li>
-</ul>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Steering and Intervention" duration="5">
-        <p>Most of the time, let the agent work. But know when to intervene.</p>
-<h2 is-upgraded>When to Step In</h2>
+      <google-codelab-step label="Steering and Backpressure" duration="5">
+        <p><strong>Backpressure</strong> is when work piles up waiting for a bottleneck. In agent workflows, that bottleneck is usually you — every manual check, every &#34;looks good,&#34; every error you have to interpret.</p>
+<p>Steering helps: when you see an agent going down a wrong path or repeating mistakes, tweak its context (ideally persistently, in CLAUDE.md or a skill).</p>
+<h2 is-upgraded>When to Intervene</h2>
 <table>
 <tr><td colspan="1" rowspan="1"><p>Situation</p>
 </td><td colspan="1" rowspan="1"><p>Action</p>
@@ -403,22 +386,23 @@ Numerical benchmarks grade the output
 </td><td colspan="1" rowspan="1"><p>Suggest a better path</p>
 </td></tr>
 </table>
-<h2 is-upgraded>When to Stay Out</h2>
-<table>
-<tr><td colspan="1" rowspan="1"><p>Situation</p>
-</td><td colspan="1" rowspan="1"><p>Action</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>Making steady progress</p>
-</td><td colspan="1" rowspan="1"><p>Let it continue</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>Minor style issues</p>
-</td><td colspan="1" rowspan="1"><p>Fix later or ignore</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>Taking longer than expected</p>
-</td><td colspan="1" rowspan="1"><p>Patience — it&#39;s still faster than manual</p>
-</td></tr>
-</table>
 <p>Think of yourself as a senior engineer reviewing a junior&#39;s work in real-time. Guide when needed, but don&#39;t micromanage.</p>
+<h2 is-upgraded>Reducing Backpressure</h2>
+<p><strong>Level 1: Manual loop</strong></p>
+<pre><code>You paste code → run it → paste error → repeat
+</code></pre>
+<p>All backpressure on you.</p>
+<p><strong>Level 2: Agent runs code</strong></p>
+<pre><code>Agent writes → runs → sees error → fixes → repeats
+You intervene only when judgment is needed
+</code></pre>
+<p>Backpressure shifts to judgment calls.</p>
+<p><strong>Level 3: Higher-level verification</strong></p>
+<pre><code>Agent builds webpage → views it → adjusts layout
+Proof assistant checks the math
+Numerical benchmarks grade the output
+</code></pre>
+<p>Backpressure shifts to designing the verification. The million (billion? trillion?) dollar question is how to do this in a robus way for science.</p>
 
 
       </google-codelab-step>
@@ -440,6 +424,45 @@ Numerical benchmarks grade the output
 <li>Deciding what to try next</li>
 </ul>
 <p>You are the steering mechanism. The agent handles implementation; you handle judgment.</p>
+<p>And a perhaps sobering note. Sonnet costs ~$10 / hour (half of a McDonald&#39;s employee&#39;s hourly wage in California) via the API. If you extrapolate this to the subscription plans (<strong>very</strong> back of the envelope):</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Tier</p>
+</td><td colspan="1" rowspan="1"><p>Credits/wk</p>
+</td><td colspan="1" rowspan="1"><p>Sonnet hrs/wk</p>
+</td><td colspan="1" rowspan="1"><p>Opus hrs/wk</p>
+</td><td colspan="1" rowspan="1"><p>Sonnet $/hr</p>
+</td><td colspan="1" rowspan="1"><p>Opus $/hr</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Pro</p>
+</td><td colspan="1" rowspan="1"><p>5M</p>
+</td><td colspan="1" rowspan="1"><p>~4</p>
+</td><td colspan="1" rowspan="1"><p>~2.5</p>
+</td><td colspan="1" rowspan="1"><p>$1.33</p>
+</td><td colspan="1" rowspan="1"><p>$2.13</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Max 5×</p>
+</td><td colspan="1" rowspan="1"><p>41.7M</p>
+</td><td colspan="1" rowspan="1"><p>~31</p>
+</td><td colspan="1" rowspan="1"><p>~20</p>
+</td><td colspan="1" rowspan="1"><p>$0.80</p>
+</td><td colspan="1" rowspan="1"><p>$1.28</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Max 20×</p>
+</td><td colspan="1" rowspan="1"><p>83.3M</p>
+</td><td colspan="1" rowspan="1"><p>~63</p>
+</td><td colspan="1" rowspan="1"><p>~39</p>
+</td><td colspan="1" rowspan="1"><p>$0.80</p>
+</td><td colspan="1" rowspan="1"><p>$1.28</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>API</p>
+</td><td colspan="1" rowspan="1"><p>∞</p>
+</td><td colspan="1" rowspan="1"><p>∞</p>
+</td><td colspan="1" rowspan="1"><p>∞</p>
+</td><td colspan="1" rowspan="1"><p>$10.00</p>
+</td><td colspan="1" rowspan="1"><p>$16.00</p>
+</td></tr>
+</table>
+<p>So for a skilled agent orchestrator, code implementation now costs $1-$2 / hour... make of this information what you will.</p>
 <h2 is-upgraded>Next Steps</h2>
 <ul>
 <li>Explore the <code>.claude/skills/</code> directory and try writing your own</li>

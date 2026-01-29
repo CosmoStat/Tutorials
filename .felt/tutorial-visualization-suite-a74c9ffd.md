@@ -76,3 +76,7 @@ All figures to `output_tutorial/`
 ## Completion
 
 All 5 figures generated and saved. Visually inspect each.
+
+## Comments
+**2026-01-29 01:25** — Session progress: Created 3 diagrams via nano-banana - chatbot vs agent, model harness (text boxes + car), workflow (warm colors with loop). All added to codelab and committed.
+

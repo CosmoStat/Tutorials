@@ -20,6 +20,7 @@ import treecorr
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
+from astropy.table import Table
 
 # Field parameters (following TreeCorr test conventions)
 GAMMA0 = 0.05   # shear amplitude
@@ -28,7 +29,7 @@ R0_G = 10.0     # shear scale radius
 R0_V = 10.0     # velocity scale radius
 R0 = R0_G       # reference scale for box size
 L = 100.0 * R0  # box size
-N_LENS = 1000   # number of lenses
+N_LENS = 1500   # number of lenses
 N_SOURCE = 50000  # number of galaxies (sources)
 
 # Lens clustering parameters
@@ -157,8 +158,8 @@ def measure_correlations(xl, yl, xs, ys, g1, g2, v1, v2):
     vv.process(cat_v)
 
     # GV: shear-velocity correlation
-    gv = treecorr.GVCorrelation(**corr_params)
-    gv.process(cat_g, cat_v)
+    gv = treecorr.VGCorrelation(**corr_params)
+    gv.process(cat_v, cat_g)
 
     return gg, vv, gv
 
@@ -353,8 +354,8 @@ def create_lens_buildup_gif(xl, yl, output_path):
 
     # Compute fields for all lenses to get consistent color scale
     _, _, V1_all, V2_all, G1_all, G2_all = compute_fields_on_grid(xl, yl, plot_max)
-    vmax_v = np.nanpercentile(np.abs(V1_all), 99)
-    vmax_g = np.nanpercentile(np.abs(G1_all), 99)
+    vmax_v = np.nanmax(np.abs(V1_all))
+    vmax_g = np.nanmax(np.abs(G1_all))
 
     for idx, n in enumerate(n_stages):
         # For stages 1 and 2, use visible lenses; for stage 3, use all
@@ -375,19 +376,19 @@ def create_lens_buildup_gif(xl, yl, output_path):
 
         lens_mask = (np.abs(xl_sub) < plot_max) & (np.abs(yl_sub) < plot_max)
 
-        # Top row: 3 panels
+        # Top row: 3 panels (shared y-axis)
         # (a) Lenses
-        ax = fig.add_subplot(gs[0, 0])
-        ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.8)
-        ax.set_xlim(-plot_max, plot_max)
-        ax.set_ylim(-plot_max, plot_max)
-        ax.set_aspect('equal')
-        ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
-        ax.set_title(f'(a) Lenses (N={title_n})')
+        ax0 = fig.add_subplot(gs[0, 0])
+        ax0.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.8)
+        ax0.set_xlim(-plot_max, plot_max)
+        ax0.set_ylim(-plot_max, plot_max)
+        ax0.set_aspect('equal')
+        ax0.set_xlabel('x [arcmin]')
+        ax0.set_ylabel('y [arcmin]')
+        ax0.set_title(f'(a) Lenses (N={title_n})')
 
         # (b) Velocity vectors
-        ax = fig.add_subplot(gs[0, 1])
+        ax = fig.add_subplot(gs[0, 1], sharey=ax0)
         if np.any(v1s != 0):
             v_mag = np.sqrt(v1s**2 + v2s**2)
             v_mag_safe = np.where(v_mag > 0, v_mag, 1e-10)
@@ -396,14 +397,13 @@ def create_lens_buildup_gif(xl, yl, output_path):
                       scale=15, width=0.006, color='C0', alpha=0.7)
         ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.8)
         ax.set_xlim(-plot_max, plot_max)
-        ax.set_ylim(-plot_max, plot_max)
         ax.set_aspect('equal')
         ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
+        plt.setp(ax.get_yticklabels(), visible=False)
         ax.set_title(r'(b) Net velocity $\mathbf{v}$')
 
         # (c) Shear sticks
-        ax = fig.add_subplot(gs[0, 2])
+        ax = fig.add_subplot(gs[0, 2], sharey=ax0)
         if np.any(g1s != 0):
             g_mag = np.sqrt(g1s**2 + g2s**2)
             phi_g = 0.5 * np.arctan2(g2s, g1s)
@@ -419,46 +419,45 @@ def create_lens_buildup_gif(xl, yl, output_path):
                             color='C1', lw=1.2, alpha=0.7)
         ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.8)
         ax.set_xlim(-plot_max, plot_max)
-        ax.set_ylim(-plot_max, plot_max)
         ax.set_aspect('equal')
         ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
+        plt.setp(ax.get_yticklabels(), visible=False)
         ax.set_title(r'(c) Net shear $\gamma$')
 
         ax = fig.add_subplot(gs[0, 3])
         ax.axis('off')
 
-        # Bottom row: 4 components (use consistent color scale)
-        ax = fig.add_subplot(gs[1, 0])
-        ax.pcolormesh(X, Y, V1, cmap='RdBu_r', shading='auto', vmin=-vmax_v, vmax=vmax_v)
-        ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.5)
-        ax.set_aspect('equal')
-        ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
-        ax.set_title(r'(d) $v_1$ — spin-1')
+        # Bottom row: 4 components (shared y-axis, consistent color scale)
+        ax1 = fig.add_subplot(gs[1, 0])
+        ax1.pcolormesh(X, Y, V1, cmap='RdBu_r', shading='auto', vmin=-vmax_v, vmax=vmax_v, rasterized=True)
+        ax1.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.5)
+        ax1.set_aspect('equal')
+        ax1.set_xlabel('x [arcmin]')
+        ax1.set_ylabel('y [arcmin]')
+        ax1.set_title(r'(d) $v_1$ — spin-1')
 
-        ax = fig.add_subplot(gs[1, 1])
-        ax.pcolormesh(X, Y, V2, cmap='RdBu_r', shading='auto', vmin=-vmax_v, vmax=vmax_v)
+        ax = fig.add_subplot(gs[1, 1], sharey=ax1)
+        ax.pcolormesh(X, Y, V2, cmap='RdBu_r', shading='auto', vmin=-vmax_v, vmax=vmax_v, rasterized=True)
         ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.5)
         ax.set_aspect('equal')
         ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
+        plt.setp(ax.get_yticklabels(), visible=False)
         ax.set_title(r'(e) $v_2$ — spin-1')
 
-        ax = fig.add_subplot(gs[1, 2])
-        ax.pcolormesh(X, Y, G1, cmap='RdBu_r', shading='auto', vmin=-vmax_g, vmax=vmax_g)
+        ax = fig.add_subplot(gs[1, 2], sharey=ax1)
+        ax.pcolormesh(X, Y, G1, cmap='RdBu_r', shading='auto', vmin=-vmax_g, vmax=vmax_g, rasterized=True)
         ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.5)
         ax.set_aspect('equal')
         ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
+        plt.setp(ax.get_yticklabels(), visible=False)
         ax.set_title(r'(f) $\gamma_1$ — spin-2')
 
-        ax = fig.add_subplot(gs[1, 3])
-        ax.pcolormesh(X, Y, G2, cmap='RdBu_r', shading='auto', vmin=-vmax_g, vmax=vmax_g)
+        ax = fig.add_subplot(gs[1, 3], sharey=ax1)
+        ax.pcolormesh(X, Y, G2, cmap='RdBu_r', shading='auto', vmin=-vmax_g, vmax=vmax_g, rasterized=True)
         ax.scatter(xl_sub[lens_mask], yl_sub[lens_mask], c='black', s=30, marker='.', alpha=0.5)
         ax.set_aspect('equal')
         ax.set_xlabel('x [arcmin]')
-        ax.set_ylabel('y [arcmin]')
+        plt.setp(ax.get_yticklabels(), visible=False)
         ax.set_title(r'(g) $\gamma_2$ — spin-2')
 
         fig.suptitle(f'Field buildup: {title_n} lens{"es" if title_n > 1 else ""}', fontsize=14, y=0.98)
@@ -714,6 +713,16 @@ def main():
     print(f"  GV ξ+ max: {np.abs(gv.xip).max():.2e}")
 
     plot_correlations(gg, vv, gv, output_dir / 'gv_halo_correlation.png')
+
+    # Save source catalog
+    catalog = Table({
+        'x': xs, 'y': ys,
+        'g1': g1, 'g2': g2,
+        'v1': v1, 'v2': v2
+    })
+    catalog_path = output_dir / 'gv_mock_catalog.fits'
+    catalog.write(catalog_path, overwrite=True)
+    print(f"Saved catalog ({len(catalog)} sources) to {catalog_path}")
 
 
 if __name__ == '__main__':
