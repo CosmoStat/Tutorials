@@ -24,8 +24,8 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ### AI Tools
 
-1. **[Agent Loops: Software Engineering in 2026](https://cosmostat.github.io/Tutorials/agent-loops/agent-loops/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tutorial/agent-loops)
-  *Authors:* [@cailmdaley](https://github.com/cailmdaley), [@EiffL](https://github.com/EiffL), [@calumhrmurray](https://github.com/calumhrmurray)
+1. **[Agent Loops: Software Engineering in 2026](https://cosmostat.github.io/Tutorials/agent-loops/agent-loops/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tutorial/agent-loops)  
+  *Authors:* [@cailmdaley](https://github.com/cailmdaley), [@EiffL](https://github.com/EiffL), [@calumhrmurray](https://github.com/calumhrmurray)  
   This tutorial teaches practitioners how to leverage AI coding agents for research workflows, covering memory management across sessions, extending agent capabilities through custom tools, and validating AI-generated scientific code through independent verification.
 
 ### Career Development
