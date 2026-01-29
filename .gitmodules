@@ -10,3 +10,7 @@
 	path = docs/presentation_tips
 	url = https://github.com/CosmoStat/Tutorials.git
 	branch = presentations
+[submodule "docs/agent-loops"]
+	path = docs/agent-loops
+	url = https://github.com/CosmoStat/Tutorials.git
+	branch = tutorial/agent-loops

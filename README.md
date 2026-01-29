@@ -16,10 +16,17 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
 
 ## Contents
 
+1. [AI Tools](#AI-Tools)
 1. [Career Development](#Career-Development)
 1. [Cosmology](#Cosmology)
 1. [Data Science](#Data-Science)
 1. [Software Carpentries](#Software-Carpentries)
+
+### AI Tools
+
+1. **[Agent Loops: Software Engineering in 2026](https://cosmostat.github.io/Tutorials/agent-loops/agent-loops/index.html)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/tutorial/agent-loops)
+  *Authors:* [@cailmdaley](https://github.com/cailmdaley), [@EiffL](https://github.com/EiffL), [@calumhrmurray](https://github.com/calumhrmurray)
+  This tutorial teaches practitioners how to leverage AI coding agents for research workflows, covering memory management across sessions, extending agent capabilities through custom tools, and validating AI-generated scientific code through independent verification.
 
 ### Career Development
 
@@ -102,7 +109,7 @@ We always welcome new tutorial requests, just click [here](https://github.com/Co
   *Authors:* [@EiffL](https://github.com/EiffL)   
   This tutorial demonstrates how to create a Docker container to distribute a complete Jupyter notebook environment.
 
-5. **[Bash and Scripting Tutorial for Researchers](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial/README.md)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=NU8dYd3RM-E&t=37s) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/bash_tutorial?filepath=intro.ipynb)  
+5. **[Bash and Scripting Tutorial for Researchers](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial/README.md)** | [![github](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/CosmoStat/Tutorials/tree/bash_tutorial) [![youtube](https://img.shields.io/badge/-youtube-red?logo=youtube&labelColor=grey)](https://www.youtube.com/watch?v=NU8dYd3RM-E&t=37s) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CosmoStat/Tutorials/bash_tutorial?filepath=intro.ipynb)
 
     *Authors:* [@fadinammour](https://github.com/fadinammour), [@JulienNGirard](https://github.com/JulienNGirard)(screen segment)
     This tutorial gives the key concepts of bash and its scripts to help researchers manage and process their data with more ease.
