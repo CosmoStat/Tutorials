@@ -105,38 +105,9 @@ Since we'll use Claude Code in this tutorial, here's what it does under the hood
 - **Web search**: Look up documentation, APIs, error messages
 - **Sub-agents**: Spawn background workers for parallel tasks
 
-**Context management:**
-- **In-session**: Everything the model sees right now (conversation, file contents, tool outputs). As context fills up, performance tends to go down (some call this the "dumb zone"). This is somewhat to analgous to how human performance goes down towards the end of a long work day.
-- **Compaction**: When context fills up, older content gets summarized in a lossy compression. The compression may not keep the right context, and some think it's much better to `/clear` and rebuild context from "disk" so to speak.
-- **Persistent (CLAUDE.md)**: Instructions that survive across sessions
-
 **The workflow:**
 
-```
-You: "add shear-velocity correlations"
-     │
-     ▼
-┌─────────────────────────────────────┐
-│ Claude Code reads codebase          │
-│ → finds existing correlation classes│
-│ → understands patterns              │
-└─────────────────────────────────────┘
-     │
-     ▼
-┌─────────────────────────────────────┐
-│ Claude Code writes new class        │
-│ → runs tests                        │
-│ → sees failure                      │
-│ → reads error, fixes, retries       │
-└─────────────────────────────────────┘
-     │
-     ▼
-┌─────────────────────────────────────┐
-│ Tests pass                          │
-│ → Claude Code reports completion    │
-│ → You verify the result             │
-└─────────────────────────────────────┘
-```
+![Agent workflow: prompt → read → retry loop → verify](img/workflow-diagram.png)
 
 Implementation — turning a specification into code — is increasingly handled by agents. What remains is **shaping what to build**, **noticing when it's wrong**, and **deciding what to try next**.
 
@@ -158,7 +129,8 @@ curl -fsSL https://claude.ai/install.sh | bash
 Navigate to any project and start Claude Code:
 
 ```bash
-cd your-project
+git clone --branch tutorial/agent-loops https://github.com/CosmoStat/Tutorials.git
+cd Tutorials
 claude
 ```
 
@@ -168,14 +140,14 @@ On first run, you'll be prompted to authenticate:
 3. Authorize Claude Code
 4. Return to your terminal — you're ready to go
 
-**How to verify:** Run `claude --version` — you should see a version number. Run `claude` and type `/help` to see available commands.
+**A note on models:** Claude offers three flavors of model, in increasing levels of intelligence~cost: Haiku, Sonnet, & Opus. Claude may default to Sonnet, but we **highly** recommend using Opus 4.5. Despite the fact that it is more expensive per "token" (LLM currency), it makes much fewer mistakes than Sonnet and thus has a similar cost / task since it is more likely to "one-shot" a task. You can set this in Claude Code with `/model`.
 
 ### Install TreeCorr (for this tutorial)
 
 We'll add a feature to [TreeCorr](https://github.com/rmjarvis/TreeCorr), a library for computing correlation functions in cosmology.
 
 ```bash
-git clone https://github.com/rmjarvis/TreeCorr.git
+git clone https://github.com/rmjarvis/TreeCorr.git # can do this inside Tutorials/
 cd TreeCorr
 pip install -e .
 ```
@@ -198,7 +170,7 @@ TreeCorr/
 
 **How to verify TreeCorr:** Run `python -c "import treecorr; print(treecorr.__version__)"` — you should see a version number.
 
-## Watch It Work
+## Implement a New Feature
 Duration: 0:20:00
 
 ### The Task
@@ -207,9 +179,15 @@ We'll ask the agent to add **shear-velocity correlations (spin-2 × spin-1)** to
 
 **Physics context:** Gravitational lensing shear traces mass along the line of sight — light bends around structure. Transverse velocities flow toward overdense regions as matter falls into potential wells. The cross-correlation probes structure growth differently than either field alone.
 
+![](data/gv_mock_fields.png)
+
+Transverse velocity is usually not an observable in cosmological contexts, which is why this correlation function isn't in TreeCorr (Mike Jarvis: "I didn't bother implementing VG correlations (spin-1 with spin-2), since that seems not likely to be useful").
+
+However Calum has a nice observable that was the inspiration for this example: **apparent** proper motion of quasars driven by LSS evolution, which imparts a time-varying lensing deflection angle $\alpha$. With $\mu$as resolution (futuristic but feasible), one could measure quasar proper motions and correlate this field with cosmic shear.
+
 ### Initialize Project Context
 
-First, let the agent learn about the codebase:
+First, let the agent learn about the codebase. In the `TreeCorr` directory, start `claude` and run:
 
 ```console
 /init
@@ -217,14 +195,12 @@ First, let the agent learn about the codebase:
 
 This creates a `CLAUDE.md` file — the agent reads the codebase and writes itself notes on how to work here.
 
-**How to run:** In your terminal, navigate to the TreeCorr directory and run `claude`. Then type `/init` and press Enter. Watch as the agent explores the codebase.
-
 ### Run the Implementation
 
-Now give this prompt (use plan mode for complex tasks):
+Now enter this prompt; it's good to use **plan mode** for complex tasks, which can be done by pressing Shift+Tab or by adding something like "let's make a plan first" to your prompt.
 
 ```text
-please add shear-velocity correlation functions for shear × cosmic velocity fields.
+please implement shear-velocity correlation functions in TreeCorr. let's make a plan first.
 ```
 
 Then watch.
@@ -248,21 +224,30 @@ As the agent works, notice:
 | Run tests, debug, repeat | Agent runs tests, debugs, repeats |
 | ~1-2 days for a researcher | ~15-20 minutes |
 
-**Reality check:** The agent may run out of context and need compaction. It may make mistakes and backtrack. This is normal — the key is that it handles the feedback loop, not you.
+The agent may run out of context and need compaction. It may make mistakes and backtrack. This is normal — the key is that it handles the feedback loop ~autonomously. 
+
+Your role is now to cultivate the right context (CLAUDE.md, prompt, etc.), steer, and crucially, **verify/validate at higher levels of abstraction.** You may notice that in the above table, two of the most common verification techniques (reading code, writing tests) are now being handled by the agent...
 
 ## Context Management
 Duration: 0:10:00
 
-Understanding context is essential for effective agent use.
+![Reddit user Arcanh's Commodore 64](img/commodore_64.jpeg)
+
+Understanding context is essential for effective agent use. In some ways, we're back to the old days of Commodore 64s (the best-selling desktop computer of all time) with 64 KB of RAM. Opus' context window is 200K tokens, so actually many times bigger than a Commodore 64's, but you get the point: memory allocation and freeing is important again.
+
+Polluting context with irrelevant content is harmful. Try not to let things run to the end of the context window; the model gets dumb. The game is keeping context focused on what matters for the current task.
 
 ### Two Types of Context
 
 **In-session context** is what the model sees right now:
+- System prompt + Claude.md
 - Your conversation
 - Files it has read
 - Tool outputs and errors
 
-When it fills up, older content gets compacted or dropped.
+As in-session context it fills up, performance tends to go down (some call this the "dumb zone"). This is somewhat to analagous to how human performance goes down towards the end of a long work day.
+
+- **Compaction**: Most harnesses have a `/compact` command which performs a lossy compression of the context window; this is often done automatically when the context window fills up. The compression may not keep the right context, and some think it's much better to `/clear` and rebuild context from "disk" so to speak.
 
 **Persistent context (CLAUDE.md)** survives across sessions:
 
@@ -276,12 +261,6 @@ TreeCorr/
 
 Both load automatically at session start.
 
-### Context as RAM
-
-We're back to working with systems that have a Commodore 64's worth of memory — about 128K tokens. Memory management matters again.
-
-Polluting context with irrelevant content is harmful. Don't let things run to the end of the context window; the model gets dumb. The game is keeping context focused on what matters for the current task.
-
 ### Exercise: Inspect the Context
 
 Look at the `CLAUDE.md` the agent created during `/init`:
@@ -290,7 +269,7 @@ Look at the `CLAUDE.md` the agent created during `/init`:
 cat CLAUDE.md
 ```
 
-**How to run:** Open the CLAUDE.md file and examine it. What conventions did the agent notice? What build commands did it record?
+What conventions did the agent notice? What build commands did it record?
 
 Ask yourself:
 - What did it notice about the codebase structure?
@@ -299,20 +278,37 @@ Ask yourself:
 
 ### Extending Capabilities
 
-**Skills** are reusable instruction bundles:
+**Skills** are reusable instruction bundles, or lazily-loaded context.
 
 ```
 .claude/
 └── skills/
     ├── data-visualization/
-    │   └── SKILL.md        # Instructions for plotting
-    ├── revealjs/
-    │   └── SKILL.md        # Instructions for slides
-    └── frontend-design/
-        └── SKILL.md        # Instructions for web UIs
+    │   ├── SKILL.md
+    │   └── references/
+    │       ├── color-palettes.md
+    │       ├── design-system.md
+    │       └── viz-catalog.md
+    ├── frontend-design/
+    │   └── SKILL.md
+    ├── managing-bibliography/
+    │   └── SKILL.md
+    └── revealjs/
+        ├── SKILL.md
+        └── references/
+            ├── advanced-features.md
+            └── charts.md
 ```
 
-**Plugins (MCPs)** connect to external services — databases, APIs, issue trackers. The agent calls them like any other tool.
+**MCPs** connect to external or local services (databases, APIs, issue trackers), and expose a set of new functions that the agent can call like any other tool. These were all the rage in early 2025, but have lost some momentum because they can be insecure and are context gluttons. Claude Code has started lazily loading MCP functions so the context is less of an issue, but MCPs are still disfavored at the moment.
+
+**Plugins** allow you to share and install skills, MCPs, etc. kind of like VS Code Extensions. Anyone can create a plugin; Anthropic maintains a couple high-quality marketplaces for [skills specifically](https://github.com/anthropics/skills) and [plugins generally](https://github.com/anthropics/claude-plugins-official) (unclear to me if the latter is ..). You can install like
+
+```console
+/plugin marketplace add anthropics/skills
+/plugin marketplace add anthropics/claude-plugins-official
+# then run /plugin to explore interactively
+```
 
 ## Use What You Built
 Duration: 0:15:00
