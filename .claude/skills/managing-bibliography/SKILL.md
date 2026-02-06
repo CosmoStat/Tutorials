@@ -13,6 +13,20 @@ Add BibTeX entries to your bibliography by searching for papers and fetching cit
 - "Find and cite [author name] [year] [topic]"
 - "Add a BibTeX entry for [paper details]"
 
+## ADS API Setup
+
+The ADS API requires an API token. Before using citation features:
+
+1. **Check for token**: The skill reads `$ADS_API_TOKEN` from the environment
+2. **If missing**: Tell the user to create one at https://ui.adsabs.harvard.edu/user/settings/token and set it:
+   ```bash
+   # Add to ~/.zshrc or ~/.bashrc
+   export ADS_API_TOKEN="your-token-here"
+   ```
+3. **Do not proceed** with ADS API calls until the token is available — check with `echo $ADS_API_TOKEN`
+
+---
+
 ## Workflow
 
 When adding a paper to the bibliography:
@@ -23,13 +37,13 @@ When adding a paper to the bibliography:
 
 2. **Query ADS API** to get bibcode using arXiv ID
    ```bash
-   curl -H 'Authorization: Bearer GSRIb8yzvmUuUgvyADwi8qochXcjiYfutkBKVyNK' \
+   curl -H "Authorization: Bearer $ADS_API_TOKEN" \
      'https://api.adsabs.harvard.edu/v1/search/query?q=arXiv:YYMM.NNNNN&fl=bibcode'
    ```
 
 3. **Fetch BibTeX entry** with abstract from ADS
    ```bash
-   curl -H 'Authorization: Bearer GSRIb8yzvmUuUgvyADwi8qochXcjiYfutkBKVyNK' \
+   curl -H "Authorization: Bearer $ADS_API_TOKEN" \
      'https://api.adsabs.harvard.edu/v1/export/bibtexabs/{bibcode}'
    ```
 
@@ -71,7 +85,7 @@ When adding a paper to the bibliography:
 
 ## Key Configuration Points
 
-- **ADS API Token**: `GSRIb8yzvmUuUgvyADwi8qochXcjiYfutkBKVyNK`
+- **ADS API Token**: Read from `$ADS_API_TOKEN` environment variable
 - **ADS Search endpoint**: `https://api.adsabs.harvard.edu/v1/search/query`
 - **ADS Export endpoint**: `https://api.adsabs.harvard.edu/v1/export/bibtexabs/{bibcode}`
 - **Export format**: Use `bibtexabs` endpoint to include abstracts
